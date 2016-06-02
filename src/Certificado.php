@@ -1,6 +1,7 @@
 <?php namespace PhpNFe;
 
 use Carbon\Carbon;
+use Mockery\CountValidator\Exception;
 use PhpNFe\Tools\Asn;
 
 class Certificado
@@ -22,6 +23,7 @@ class Certificado
      * Carrega um arquivo já com as propriedades do certificado.
      *
      * @param $arquivo
+     * @return bool
      */
     public function carregarArquivo($arquivo)
     {
@@ -31,9 +33,8 @@ class Certificado
         //Carregando as propriedades
         $this->chavePri = $content->chave_pri;
         $this->chavePub = $content->chave_pub;
-        $this->certificado = $content->certificado;
-        $this->cnpj = $content->cnpj;
-        $this->validade = $content->validade;
+
+        return true;
     }
 
     /**
@@ -42,16 +43,15 @@ class Certificado
      *
      * @param $pfx
      * @param $senha
+     * @throws Exception
      */
     public function carregarPfx($pfx, $senha)
     {
         $pfxContent = file_get_contents($pfx);
         $data = [];
         
-        if(!openssl_pkcs12_read($pfx, $data, $senha))
-        {
-            throw new Exception("O certificado não pôde ser lido! Senha incorreta, arquivo corrompido
-            ou formato inválido!");    
+        if(!openssl_pkcs12_read($pfxContent, $data, $senha)) {
+            throw new Exception("O certificado não pôde ser lido! Senha incorreta, arquivo corrompido ou formato inválido!");
         }
         
         //Carregando propriedades
@@ -63,11 +63,12 @@ class Certificado
      * salvarArquivo
      * Salva um arquivo com as propriedades do certificado.
      *
-     * @param $nomeArquivo
+     * @param $arquivo
+     * @return bool
      */
     public function salvarArquivo($arquivo)
     {
-        //Verificando se a chave pública está nula
+        // Verificando se a chave pública está nula
         $this->verificaChaveNula();
 
         $xml = file_get_contents(__DIR__ . '/Templates/certificado.xml');
@@ -75,6 +76,8 @@ class Certificado
         $xml = str_replace('{{chave_pri}}', $this->chavePri, $xml);
 
         file_put_contents($arquivo, $xml);
+
+        return true;
     }
 
     /**
@@ -113,7 +116,7 @@ class Certificado
         $data = openssl_x509_read($this->chavePub);
         $certData = openssl_x509_parse($data); 
         
-        return Carbon::createFromFormat('ymd', $certData['validTo']);
+        return Carbon::createFromFormat('ymdHms', $certData['validTo']);
     }
 
     /**
@@ -121,12 +124,15 @@ class Certificado
      * Verifica se a chave pública está nula, caso estiver retorna um erro.
      *
      * @throws \Exception
+     * @return bool
      */
     protected function verificaChaveNula()
     {
         if (is_null($this->chavePub)) {
             throw new \Exception('Chave pública nula! Primeiro você deve usar os métodos carregarArquivo ou carregarPfx!');
         }
+
+        return true;
     }
 
     /**
@@ -138,5 +144,16 @@ class Certificado
     public function getChavePub()
     {
         return $this->chavePub;
+    }
+
+    /**
+     * getChavePri
+     * Retorna a chave pública.
+     *
+     * @return string
+     */
+    public function getChavePri()
+    {
+        return $this->chavePri;
     }
 }
