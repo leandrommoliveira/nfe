@@ -333,7 +333,7 @@ class Asn extends Base
         $data = self::parseCommon($data, $extensionData);
         $result[] = [
             "$text (" . self::$len . ')',
-            [self::parseASN((string) $extensionData, true), ]];
+            [self::parseASN((string) $extensionData, true),] ];
     }
 
     /**
