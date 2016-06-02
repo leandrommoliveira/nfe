@@ -51,7 +51,7 @@ class Certificado
         $data = [];
 
         if (! openssl_pkcs12_read($pfxContent, $data, $senha)) {
-            throw new Exception("O certificado não pôde ser lido! Senha incorreta, arquivo corrompido ou formato inválido!");
+            throw new Exception('O certificado não pôde ser lido! Senha incorreta, arquivo corrompido ou formato inválido!');
         }
 
         //Carregando propriedades
@@ -89,6 +89,7 @@ class Certificado
     public function getCNPJ()
     {
         $this->verificaChaveNula();
+        
         return Asn::getCNPJCert($this->chavePub);
     }
 

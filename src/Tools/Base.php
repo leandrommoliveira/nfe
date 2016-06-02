@@ -11,20 +11,20 @@ class Base
      */
     protected static function pem2Der($pemData)
     {
-        $begin = "CERTIFICATE-----";
-        $end = "-----END";
+        $begin = 'CERTIFICATE-----';
+        $end = '-----END';
         //extrai o conteúdo do certificado entre as marcas BEGIN e END
         $pemData1 = substr($pemData, strpos($pemData, $begin) + strlen($begin));
         $pemData2 = substr($pemData1, 0, strpos($pemData1, $end));
         //converte o resultado para binário obtendo um certificado em formato DER
-        $derData = base64_decode((string)$pemData2);
+        $derData = base64_decode((string) $pemData2);
         return $derData;
     }
 
     /**
      * oidtoHex
      * Converte o numero de identificação do OID em uma representação asc,
-     * coerente com o formato do certificado
+     * coerente com o formato do certificado.
      *
      * @param string $oid numero OID (com os pontos de separação)
      * @return string sequencia em hexadecimal
@@ -34,7 +34,7 @@ class Base
         if ($oid == '') {
             return '';
         }
-        $abBinary = array();
+        $abBinary = [];
         //coloca cada parte do numero do OID em uma linha da matriz
         $partes = explode('.', $oid);
         $bun = 0;
@@ -46,7 +46,7 @@ class Base
                 $bun += $partes[$num];
                 $abBinary[] = $bun;
             } else {
-                $abBinary = self::xBase128((array)$abBinary, (integer)$partes[$num], true);
+                $abBinary = self::xBase128((array) $abBinary, (int) $partes[$num], true);
             }
         }
         $value = chr(0x06) . chr(count($abBinary));
@@ -59,12 +59,12 @@ class Base
 
     /**
      * xBase128
-     * Retorna o dado convertido em asc
+     * Retorna o dado convertido em asc.
      *
      * @param array $abIn
-     * @param integer $qIn
-     * @param boolean $flag
-     * @return integer
+     * @param int $qIn
+     * @param bool $flag
+     * @return int
      */
     protected static function xBase128($abIn, $qIn, $flag)
     {
@@ -82,7 +82,7 @@ class Base
     }
 
     /**
-     * Retorna o valor em caracteres hexadecimais
+     * Retorna o valor em caracteres hexadecimais.
      *
      * @param string $value
      * @return string
@@ -90,7 +90,7 @@ class Base
      */
     protected static function printHex($value)
     {
-        $tabVal = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F');
+        $tabVal = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
         $hex = '';
         for ($i = 0; $i < strlen($value); $i++) {
             $lsig = ord(substr($value, $i, 1)) % 16;
@@ -99,14 +99,15 @@ class Base
             $moreSig = $tabVal[$msig];
             $hex .= $moreSig . $lessSig;
         }
+
         return $hex;
     }
 
     /**
-     * Obtêm o comprimento do conteúdo de uma sequência de dados do certificado
+     * Obtêm o comprimento do conteúdo de uma sequência de dados do certificado.
      *
-     * @param integer $len variável passada por referência
-     * @param integer $bytes variável passada por referência
+     * @param int $len variável passada por referência
+     * @param int $bytes variável passada por referência
      * @param string $data campo a
      * @return void
      */

@@ -2,7 +2,7 @@
 
 class Oids
 {
-    private static $oidsTable = array(
+    private static $oidsTable = [
         '2.5.4.3' => 'CN',
         '2.5.4.4' => 'Surname',
         '2.5.4.6' => 'C',
@@ -868,10 +868,10 @@ class Oids
         '2.16.76.1.4' => 'Atributos Opcionais de Certificados',
         '2.16.76.1.4.1' => 'Entidades Sindicais',
         '2.16.76.1.4.1.1' => 'SINCOR',
-        '2.16.76.1.4.1.1.1' => 'Número de registro do corretor associado');
- 
+        '2.16.76.1.4.1.1.1' => 'Número de registro do corretor associado', ];
+
     /**
-     * getOid
+     * getOid.
      * @param type $key
      * @return mixed
      */
@@ -880,6 +880,7 @@ class Oids
         if (isset(self::$oidsTable[$key])) {
             return self::$oidsTable[$key];
         }
+
         return false;
     }
 }
