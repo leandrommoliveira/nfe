@@ -4,26 +4,26 @@ class Asn extends Base
 {
     /**
      * Comprimento do campo sendo usado
-     * 
-     * @var integer 
+     *
+     * @var int
      */
     protected static $len = 0;
-    
+
     /**
-     * getCNPJCert
-     * 
+     * getCNPJCert.
+     *
      * Obtêm o numero de CNPJ da chave publica do Certificado (A1)
-     * 
+     *
      * @param string $certpem conteúdo do certificado
      * @return string CNPJ
      */
     public static function getCNPJCert($certPem)
     {
-        $certDer = self::pem2Der((string) $certPem);
-        $data = self::getOIDdata((string) $certDer, '2.16.76.1.3.3');
-        return (string) $data[0][1][1][0][1];
+        $certDer = self::pem2Der((string)$certPem);
+        $data = self::getOIDdata((string)$certDer, '2.16.76.1.3.3');
+        return (string)$data[0][1][1][0][1];
     }
-    
+
     /**
      * getOIDdata
      * Recupera a informação referente ao OID contido no certificado
@@ -36,12 +36,12 @@ class Asn extends Base
     protected static function getOIDdata($certDer, $oidNumber)
     {
         //converte onumero OTD de texto para hexadecimal
-        $oidHexa = self::oidtoHex((string) $oidNumber);
+        $oidHexa = self::oidtoHex((string)$oidNumber);
         //Divide o certificado usando a OID como marcador,uma antes do OID e outra contendo o OID.
         //Normalmente o certificado será dividido em duas partes, pois em geral existe
         //apenas um OID de cada tipo no certificado, mas podem haver mais.
         $partes = explode($oidHexa, $certDer);
-        $ret = array();
+        $ret = [];
         //se count($partes) > 1 então o OID foi localizado no certificado
         $tot = count($partes);
         if ($tot > 1) {
@@ -50,11 +50,11 @@ class Asn extends Base
             //identificar o tamanho da sequencia
             for ($i = 1; $i < $tot; $i++) {
                 //recupera da primeira parte os 4 últimos digitos na parte sem o OID
-                $xcv4 = substr($partes[$i-1], strlen($partes[$i-1])-4, 4);
+                $xcv4 = substr($partes[$i - 1], strlen($partes[$i - 1]) - 4, 4);
                 //recupera da primeira parte os 3 ultimos digitos na parte sem o OID
-                $xcv3 = substr($partes[$i-1], strlen($partes[$i-1])-3, 3);
+                $xcv3 = substr($partes[$i - 1], strlen($partes[$i - 1]) - 3, 3);
                 //recupera da primeira parte os 2 ultimos digitos na parte em o OID
-                $xcv2 = substr($partes[$i-1], strlen($partes[$i-1])-2, 2);
+                $xcv2 = substr($partes[$i - 1], strlen($partes[$i - 1]) - 2, 2);
                 //verifica se o primeiro digito é Hex 030
                 if ($xcv4[0] == chr(0x30)) {
                     //se for, então tamanho é definido por esses 4 bytes
@@ -72,14 +72,14 @@ class Asn extends Base
                 //a parte do certificado com o OID
                 $data = $xcv . $oidHexa . $partes[$i];
                 //converte para decimal, o segundo digito da sequencia
-                $len = (integer) ord($data[1]);
+                $len = (int)ord($data[1]);
                 $bytes = 0;
                 // obtem tamanho da parte de dados da oid
-                self::getLength($len, $bytes, (string) $data);
+                self::getLength($len, $bytes, (string)$data);
                 // Obtem o conjunto de bytes pertencentes a oid
                 $oidData = substr($data, 2 + $bytes, $len);
                 //parse dos dados da oid
-                $ret[] =  self::parseASN((string) $oidData);
+                $ret[] = self::parseASN((string)$oidData);
             }
         }
         return $ret;
@@ -94,7 +94,7 @@ class Asn extends Base
      */
     protected static function parseASN($data, $contextEspecific = false)
     {
-        $result = array();
+        $result = [];
         while (strlen($data) > 1) {
             $class = ord($data[0]);
             switch ($class) {
@@ -125,7 +125,7 @@ class Asn extends Base
                 case 0x05:
                     // Null type
                     $data = substr($data, 2);
-                    $result[] = array('null', null);
+                    $result[] = ['null', null];
                     break;
                 case 0x06:
                     self::parseOIDtype($data, $result);
@@ -174,7 +174,7 @@ class Asn extends Base
                     break;
                 default:
                     // Unknown
-                    $result[] = 'UNKNOWN' .  $data;
+                    $result[] = 'UNKNOWN' . $data;
                     $data = '';
                     break;
             }
@@ -185,24 +185,24 @@ class Asn extends Base
             return array_pop($result);
         }
     }
-    
+
     /**
-     * parseCommon
+     * parseCommon.
      * @param string $data
      * @param string $result
      * @return string
      */
     protected static function parseCommon($data, &$result)
     {
-        self::$len = (integer) ord($data[1]);
+        self::$len = (int)ord($data[1]);
         $bytes = 0;
-        self::getLength(self::$len, $bytes, (string) $data);
+        self::getLength(self::$len, $bytes, (string)$data);
         $result = substr($data, 2 + $bytes, self::$len);
         return substr($data, 2 + $bytes + self::$len);
     }
 
     /**
-     * parseBooleanType
+     * parseBooleanType.
      * @param string $data
      * @param array $result
      * @return void
@@ -210,16 +210,16 @@ class Asn extends Base
     protected static function parseBooleanType(&$data, &$result)
     {
         // Boolean type
-        $booleanValue = (boolean) (ord($data[2]) == 0xff);
+        $booleanValue = (bool)(ord($data[2]) == 0xff);
         $dataI = substr($data, 3);
-        $result[] = array(
+        $result[] = [
             'boolean (1)',
-            $booleanValue);
+            $booleanValue];
         $data = $dataI;
     }
 
     /**
-     * parseIntegerType
+     * parseIntegerType.
      * @param string $data
      * @param array $result
      * @return void
@@ -228,9 +228,9 @@ class Asn extends Base
     {
         $dataI = self::parseCommon($data, $integerData);
         if (self::$len == 16) {
-            $result[] = array(
-                'integer('.self::$len.')',
-                $integerData);
+            $result[] = [
+                'integer(' . self::$len . ')',
+                $integerData];
         } else {
             $value = 0;
             if (self::$len <= 4) {
@@ -248,13 +248,13 @@ class Asn extends Base
                     $value = -1;
                 }
             }
-            $result[] = array('integer(' . self::$len . ')', $value);
+            $result[] = ['integer(' . self::$len . ')', $value];
         }
         $data = $dataI;
     }
-     
+
     /**
-     * parseHexExtensions
+     * parseHexExtensions.
      * @param string $data
      * @param array $result
      * @param string $text
@@ -264,14 +264,14 @@ class Asn extends Base
     {
         $extensionData = substr($data, 0, 1);
         $dataI = substr($data, 1);
-        $result[] = array(
-            $text .' (' . self::$len . ')',
-            dechex($extensionData));
+        $result[] = [
+            $text . ' (' . self::$len . ')',
+            dechex($extensionData)];
         $data = $dataI;
     }
 
     /**
-     * parseTimesType
+     * parseTimesType.
      * @param string $data
      * @param array $result
      * @return void
@@ -280,14 +280,14 @@ class Asn extends Base
     {
         // Time types
         $dataI = self::parseCommon($data, $timeData);
-        $result[] = array(
+        $result[] = [
             'utctime (' . self::$len . ')',
-             $timeData);
+            $timeData];
         $data = $dataI;
     }
-    
+
     /**
-     * parsePrintableString
+     * parsePrintableString.
      * @param string $data
      * @param array $result
      * @return void
@@ -296,13 +296,13 @@ class Asn extends Base
     {
         // Printable string type
         $data = self::parseCommon($data, $stringData);
-        $result[] = array(
+        $result[] = [
             'Printable String (' . self::$len . ')',
-            $stringData);
+            $stringData];
     }
-    
+
     /**
-     * parseCharString
+     * parseCharString.
      * @param string $data
      * @param array $result
      * @return void
@@ -311,13 +311,13 @@ class Asn extends Base
     {
         // Character string type
         $data = self::parseCommon($data, $stringData);
-        $result[] = array(
+        $result[] = [
             'string (' . self::$len . ')',
-            self::printHex((string) $stringData));
+            self::printHex((string)$stringData)];
     }
-    
+
     /**
-     * parseExtensions
+     * parseExtensions.
      * @param string $data
      * @param array $result
      * @param string $text
@@ -327,13 +327,13 @@ class Asn extends Base
     {
         // Extensions
         $data = self::parseCommon($data, $extensionData);
-        $result[] = array(
+        $result[] = [
             "$text (" . self::$len . ")",
-            array(self::parseASN((string) $extensionData, true)));
+            array(self::parseASN((string)$extensionData, true))];
     }
-    
+
     /**
-     * parseSequence
+     * parseSequence.
      * @param string $data
      * @param array $result
      * @return void
@@ -342,17 +342,17 @@ class Asn extends Base
     {
         // Sequence
         $data = self::parseCommon($data, $sequenceData);
-        $values = self::parseASN((string) $sequenceData);
-        if (!is_array($values) || is_string($values[0])) {
-            $values = array($values);
+        $values = self::parseASN((string)$sequenceData);
+        if (! is_array($values) || is_string($values[0])) {
+            $values = [$values];
         }
-        $result[] = array(
-            'sequence ('.self::$len.')',
-            $values);
+        $result[] = [
+            'sequence (' . self::$len . ')',
+            $values];
     }
-    
+
     /**
-     * parseOIDtype
+     * parseOIDtype.
      * @param string $data
      * @param array $result
      * @return void
@@ -362,14 +362,14 @@ class Asn extends Base
         // Object identifier type
         $data = self::parseCommon($data, $oidData);
         // Unpack the OID
-        $plain  = floor(ord($oidData[0]) / 40);
+        $plain = floor(ord($oidData[0]) / 40);
         $plain .= '.' . ord($oidData[0]) % 40;
         $value = 0;
         $iCount = 1;
         while ($iCount < strlen($oidData)) {
             $value = $value << 7;
             $value = $value | (ord($oidData[$iCount]) & 0x7f);
-            if (!(ord($oidData[$iCount]) & 0x80)) {
+            if (! (ord($oidData[$iCount]) & 0x80)) {
                 $plain .= '.' . $value;
                 $value = 0;
             }
@@ -377,18 +377,18 @@ class Asn extends Base
         }
         $oidResp = Oids::getOid($plain);
         if ($oidResp) {
-            $result[] =  array(
-                'oid('.self::$len . '): '.$plain,
-                $oidResp);
+            $result[] = [
+                'oid(' . self::$len . '): ' . $plain,
+                $oidResp];
         } else {
-            $result[] = array(
-                'oid('.self::$len.'): '.$plain,
-                $plain);
+            $result[] = [
+                'oid(' . self::$len . '): ' . $plain,
+                $plain];
         }
     }
-    
+
     /**
-     * parseSetOf
+     * parseSetOf.
      * @param string $data
      * @param array $result
      * @return void
@@ -396,13 +396,13 @@ class Asn extends Base
     protected static function parseSetOf(&$data, &$result)
     {
         $data = self::parseCommon($data, $sequenceData);
-        $result[] = array(
+        $result[] = [
             'set (' . self::$len . ')',
-            self::parseASN((string) $sequenceData));
+            self::parseASN((string)$sequenceData)];
     }
-    
+
     /**
-     * parseOctetSting
+     * parseOctetSting.
      * @param string $data
      * @param array $result
      * @param boolean $contextEspecific
@@ -413,18 +413,18 @@ class Asn extends Base
         // Octetstring type
         $data = self::parseCommon($data, $octectstringData);
         if ($contextEspecific) {
-            $result[] = array(
-                'octet string('.self::$len.')',
-                $octectstringData);
+            $result[] = [
+                'octet string(' . self::$len . ')',
+                $octectstringData];
         } else {
-            $result[] = array(
-                'octet string ('.self::$len.')',
-                self::parseASN((string) $octectstringData));
+            $result[] = [
+                'octet string (' . self::$len . ')',
+                self::parseASN((string)$octectstringData)];
         }
     }
-    
+
     /**
-     * parseUtf8String
+     * parseUtf8String.
      * @param string $data
      * @param array $result
      * @param boolean $contextEspecific
@@ -435,18 +435,18 @@ class Asn extends Base
         // UTF8 STRING
         $data = self::parseCommon($data, $octectstringData);
         if ($contextEspecific) {
-            $result[] = array(
-                'utf8 string('.self::$len.')',
-                $octectstringData);
+            $result[] = [
+                'utf8 string(' . self::$len . ')',
+                $octectstringData];
         } else {
-            $result[] = array(
-                'utf8 string ('.self::$len.')',
-                self::parseASN((string) $octectstringData));
+            $result[] = [
+                'utf8 string (' . self::$len . ')',
+                self::parseASN((string)$octectstringData)];
         }
     }
 
     /**
-     * parseIA5String
+     * parseIA5String.
      * @param string $data
      * @param array $result
      * @return void
@@ -455,13 +455,13 @@ class Asn extends Base
     {
         // Character string type
         $data = self::parseCommon($data, $stringData);
-        $result[] = array(
+        $result[] = [
             'IA5 String (' . self::$len . ')',
-            $stringData);
+            $stringData];
     }
-    
+
     /**
-     * parseString
+     * parseString.
      * @param string $data
      * @param array $result
      * @return void
@@ -470,13 +470,13 @@ class Asn extends Base
     {
         // Character string type
         $data = self::parseCommon($data, $stringData);
-        $result[] = array(
+        $result[] = [
             'string (' . self::$len . ')',
-            $stringData);
+            $stringData];
     }
-    
+
     /**
-     * parseBitString
+     * parseBitString.
      * @param string $data
      * @param array $result
      * @return void
@@ -485,8 +485,8 @@ class Asn extends Base
     {
         // Bitstring type
         $data = self::parseCommon($data, $bitstringData);
-        $result[] = array(
-            'bit string ('.self::$len.')',
-            'UnsedBits:'.ord($bitstringData[0]).':'.ord($bitstringData[1]));
+        $result[] = [
+            'bit string (' . self::$len . ')',
+            'UnsedBits:' . ord($bitstringData[0]) . ':' . ord($bitstringData[1])];
     }
 }

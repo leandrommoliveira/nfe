@@ -7,19 +7,19 @@ use PhpNFe\Tools\Asn;
 class Certificado
 {
     /**
-     * Chave Pública
+     * Chave Pública.
      * @var null
      */
     protected $chavePub = null;
-    
+
     /**
-     * Chave Primária
+     * Chave Primária.
      * @var string
      */
     protected $chavePri = '';
 
     /**
-     * carregarArquivo
+     * carregarArquivo.
      * Carrega um arquivo já com as propriedades do certificado.
      *
      * @param $arquivo
@@ -38,7 +38,7 @@ class Certificado
     }
 
     /**
-     * carregarPfx
+     * carregarPfx.
      * Carrega um arquivo .pfx para pegar as propriedades do certificado.
      *
      * @param $pfx
@@ -49,18 +49,18 @@ class Certificado
     {
         $pfxContent = file_get_contents($pfx);
         $data = [];
-        
-        if(!openssl_pkcs12_read($pfxContent, $data, $senha)) {
+
+        if (! openssl_pkcs12_read($pfxContent, $data, $senha)) {
             throw new Exception("O certificado não pôde ser lido! Senha incorreta, arquivo corrompido ou formato inválido!");
         }
-        
+
         //Carregando propriedades
         $this->chavePub = $data['cert'];
         $this->chavePri = $data['pkey'];
     }
 
     /**
-     * salvarArquivo
+     * salvarArquivo.
      * Salva um arquivo com as propriedades do certificado.
      *
      * @param $arquivo
@@ -81,9 +81,9 @@ class Certificado
     }
 
     /**
-     * getCNPJ
+     * getCNPJ.
      * Retorna o CNPJ do certificado.
-     * 
+     *
      * @return string
      */
     public function getCNPJ()
@@ -104,9 +104,9 @@ class Certificado
     }
 
     /**
-     * getValidade
+     * getValidade.
      * Retorna a data e hora da validade do certificado.
-     * 
+     *
      * @return Carbon
      */
     public function getValidade()
@@ -114,13 +114,13 @@ class Certificado
         $this->verificaChaveNula();
 
         $data = openssl_x509_read($this->chavePub);
-        $certData = openssl_x509_parse($data); 
-        
+        $certData = openssl_x509_parse($data);
+
         return Carbon::createFromFormat('ymdHms', $certData['validTo']);
     }
 
     /**
-     * verificaChaveNula
+     * verificaChaveNula..
      * Verifica se a chave pública está nula, caso estiver retorna um erro.
      *
      * @throws \Exception
@@ -136,7 +136,7 @@ class Certificado
     }
 
     /**
-     * getChavePub
+     * getChavePub.
      * Retorna a chave pública.
      *
      * @return string
@@ -147,7 +147,7 @@ class Certificado
     }
 
     /**
-     * getChavePri
+     * getChavePri.
      * Retorna a chave pública.
      *
      * @return string

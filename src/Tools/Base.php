@@ -5,7 +5,7 @@ class Base
     /**
      * pem2Der
      * Transforma o certificado do formato PEM para o formato DER
-     * 
+     *
      * @param string $pem_data
      * @return string
      */
@@ -17,17 +17,17 @@ class Base
         $pemData1 = substr($pemData, strpos($pemData, $begin) + strlen($begin));
         $pemData2 = substr($pemData1, 0, strpos($pemData1, $end));
         //converte o resultado para binário obtendo um certificado em formato DER
-        $derData = base64_decode((string) $pemData2);
+        $derData = base64_decode((string)$pemData2);
         return $derData;
     }
-    
+
     /**
      * oidtoHex
      * Converte o numero de identificação do OID em uma representação asc,
      * coerente com o formato do certificado
-     * 
+     *
      * @param string $oid numero OID (com os pontos de separação)
-     * @return string sequencia em hexadecimal 
+     * @return string sequencia em hexadecimal
      */
     protected static function oidtoHex($oid)
     {
@@ -43,10 +43,10 @@ class Base
             if ($num == 0) {
                 $bun = 40 * $partes[$num];
             } elseif ($num == 1) {
-                $bun +=  $partes[$num];
+                $bun += $partes[$num];
                 $abBinary[] = $bun;
             } else {
-                $abBinary = self::xBase128((array) $abBinary, (integer) $partes[$num], true);
+                $abBinary = self::xBase128((array)$abBinary, (integer)$partes[$num], true);
             }
         }
         $value = chr(0x06) . chr(count($abBinary));
@@ -60,9 +60,9 @@ class Base
     /**
      * xBase128
      * Retorna o dado convertido em asc
-     * 
+     *
      * @param array $abIn
-     * @param integer $qIn 
+     * @param integer $qIn
      * @param boolean $flag
      * @return integer
      */
@@ -70,7 +70,7 @@ class Base
     {
         $abc = $abIn;
         if ($qIn > 127) {
-            $abc = self::xBase128($abc, floor($qIn/128), false);
+            $abc = self::xBase128($abc, floor($qIn / 128), false);
         }
         $qIn2 = $qIn % 128;
         if ($flag) {
@@ -80,34 +80,34 @@ class Base
         }
         return $abc;
     }
-    
+
     /**
      * Retorna o valor em caracteres hexadecimais
-     * 
-     * @param string $value 
+     *
+     * @param string $value
      * @return string
      * @return void
      */
     protected static function printHex($value)
     {
-        $tabVal = array('0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F');
+        $tabVal = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F');
         $hex = '';
-        for ($i=0; $i<strlen($value); $i++) {
+        for ($i = 0; $i < strlen($value); $i++) {
             $lsig = ord(substr($value, $i, 1)) % 16;
             $msig = (ord(substr($value, $i, 1)) - $lsig) / 16;
             $lessSig = $tabVal[$lsig];
             $moreSig = $tabVal[$msig];
-            $hex .=  $moreSig.$lessSig;
+            $hex .= $moreSig . $lessSig;
         }
         return $hex;
     }
-    
+
     /**
      * Obtêm o comprimento do conteúdo de uma sequência de dados do certificado
-     * 
+     *
      * @param integer $len variável passada por referência
      * @param integer $bytes variável passada por referência
-     * @param string $data campo a 
+     * @param string $data campo a
      * @return void
      */
     protected static function getLength(&$len, &$bytes, $data)
@@ -120,7 +120,7 @@ class Base
             // Testa se tamanho indefinido (nao deve ocorrer em uma codificação DER)
             if ($len == chr(0x80)) {
                 // Tamanho indefinido, limitado por 0x0000h
-                $len = strpos($data, chr(0x00).chr(0x00));
+                $len = strpos($data, chr(0x00) . chr(0x00));
                 $bytes = 0;
             } else {
                 //é tamanho definido. diz quantos bytes formam o tamanho
