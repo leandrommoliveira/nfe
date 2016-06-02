@@ -89,7 +89,7 @@ class Certificado
     public function getCNPJ()
     {
         $this->verificaChaveNula();
-        
+
         return Asn::getCNPJCert($this->chavePub);
     }
 

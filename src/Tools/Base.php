@@ -80,7 +80,7 @@ class Base
         } else {
             $abc[] = 0x80 | $qIn2;
         }
-        
+
         return $abc;
     }
 
