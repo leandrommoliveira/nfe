@@ -1,0 +1,30 @@
+{
+    "name"       : "phpnfe/nfe",
+    "description": "NFe para PHP por NetForce",
+    "keywords"   : ["nfe", "php", "netforce"],
+    "license"    : "MIT",
+    "authors"    : [
+        {
+            "name" : "Bruno Gonçalves",
+            "email": "bugotech@gmail.com"
+        },
+        {
+            "name" : "Johann Lucas Scherer",
+            "email": "johann.lucas@hotmail.com"
+        }
+    ],
+
+    "require-dev": {
+        "mockery/mockery": "~0.9.2",
+        "phpunit/phpunit": "~4.1"
+    },
+
+    "autoload": {
+
+        "psr-4": {
+            "PhpNFe\\": "src/"
+        }
+    },
+
+    "minimum-stability": "dev"
+}
