@@ -73,7 +73,7 @@ class Asn extends Base
                 //a parte do certificado com o OID
                 $data = $xcv . $oidHexa . $partes[$i];
                 //converte para decimal, o segundo digito da sequencia
-                $len = (int)ord($data[1]);
+                $len = (int) ord($data[1]);
                 $bytes = 0;
                 // obtem tamanho da parte de dados da oid
                 self::getLength($len, $bytes, (string) $data);
@@ -83,6 +83,7 @@ class Asn extends Base
                 $ret[] = self::parseASN((string) $oidData);
             }
         }
+
         return $ret;
     }
 
@@ -199,6 +200,8 @@ class Asn extends Base
         $bytes = 0;
         self::getLength(self::$len, $bytes, (string) $data);
         $result = substr($data, 2 + $bytes, self::$len);
+
+
         return substr($data, 2 + $bytes + self::$len);
     }
 
@@ -267,7 +270,7 @@ class Asn extends Base
         $dataI = substr($data, 1);
         $result[] = [
             $text . ' (' . self::$len . ')',
-            dechex($extensionData)];
+            dechex($extensionData), ];
         $data = $dataI;
     }
 
@@ -299,7 +302,7 @@ class Asn extends Base
         $data = self::parseCommon($data, $stringData);
         $result[] = [
             'Printable String (' . self::$len . ')',
-            $stringData];
+            $stringData, ];
     }
 
     /**
@@ -314,7 +317,7 @@ class Asn extends Base
         $data = self::parseCommon($data, $stringData);
         $result[] = [
             'string (' . self::$len . ')',
-            self::printHex((string) $stringData)];
+            self::printHex((string) $stringData), ];
     }
 
     /**
@@ -330,7 +333,7 @@ class Asn extends Base
         $data = self::parseCommon($data, $extensionData);
         $result[] = [
             "$text (" . self::$len . ')',
-            array(self::parseASN((string)$extensionData, true))];
+            [self::parseASN((string)$extensionData, true), ]];
     }
 
     /**
@@ -399,7 +402,7 @@ class Asn extends Base
         $data = self::parseCommon($data, $sequenceData);
         $result[] = [
             'set (' . self::$len . ')',
-            self::parseASN((string) $sequenceData)];
+            self::parseASN((string) $sequenceData), ];
     }
 
     /**
@@ -420,7 +423,7 @@ class Asn extends Base
         } else {
             $result[] = [
                 'octet string (' . self::$len . ')',
-                self::parseASN((string)$octectstringData), ];
+                self::parseASN((string) $octectstringData), ];
         }
     }
 
@@ -442,7 +445,7 @@ class Asn extends Base
         } else {
             $result[] = [
                 'utf8 string (' . self::$len . ')',
-                self::parseASN((string)$octectstringData), ];
+                self::parseASN((string) $octectstringData), ];
         }
     }
 

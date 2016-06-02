@@ -4,7 +4,7 @@ class Base
 {
     /**
      * pem2Der
-     * Transforma o certificado do formato PEM para o formato DER
+     * Transforma o certificado do formato PEM para o formato DER.
      *
      * @param string $pem_data
      * @return string
@@ -18,6 +18,7 @@ class Base
         $pemData2 = substr($pemData1, 0, strpos($pemData1, $end));
         //converte o resultado para binário obtendo um certificado em formato DER
         $derData = base64_decode((string) $pemData2);
+
         return $derData;
     }
 
@@ -54,6 +55,7 @@ class Base
         foreach ($abBinary as $item) {
             $value .= chr($item);
         }
+
         return $value;
     }
 
@@ -78,6 +80,7 @@ class Base
         } else {
             $abc[] = 0x80 | $qIn2;
         }
+        
         return $abc;
     }
 
