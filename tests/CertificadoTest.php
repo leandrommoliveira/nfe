@@ -48,7 +48,27 @@ class CertificadoTeste extends TestCase
 
         $this->assertEquals($cert->getCertificado(), $certKey);
 
-        //Excluindo o arquivo salvo
+        //Criando os caminhos dos arquivos para teste de chave
+        $filePub = __DIR__ . '/testeChavePub';
+        $filePri = __DIR__ . '/testeChavePri';
+        $fileCert = __DIR__ . '/testeChaveCert';
+
+        file_put_contents($filePub, '');
+        file_put_contents($filePri, '');
+        file_put_contents($fileCert, '');
+
+        $cert->salvaChave($filePub, 'publico');
+        $cert->salvaChave($filePri, 'privado');
+        $cert->salvaChave($fileCert, 'certificado');
+
+        $this->assertFileEquals($filePub, __DIR__ . '/utils/pub.key');
+        $this->assertFileEquals($filePri, __DIR__ . '/utils/pri.key');
+        $this->assertFileEquals($fileCert, __DIR__ . '/utils/cert.key');
+
+        //Excluindo os arquivos de teste
+        unlink($filePub);
+        unlink($filePri);
+        unlink($certKey);
         unlink($certTeste);
     }
 }

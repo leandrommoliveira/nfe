@@ -6,6 +6,10 @@ use PhpNFe\Tools\Asn;
 
 class Certificado
 {
+    const Publico = 'publico';
+    const Privado = 'privado';
+    const Certificado = 'certificado';
+
     /**
      * Chave Pública.
      * @var null
@@ -168,4 +172,40 @@ class Certificado
     {
         return trim($this->chavePri) . "\r\n" . trim($this->chavePub);
     }
+
+    /**
+     * salvaChave
+     * Salva a chave especificada no arquivo passado por parâmetro.
+     *
+     * @param $arquivo
+     * @param string $chave
+     */
+    public function salvaChave($arquivo, $chave)
+    {
+        switch ($chave){
+            case self::Publico:
+                file_put_contents($arquivo, $this->chavePub);
+                break;
+            case self::Privado:
+                file_put_contents($arquivo, $this->chavePri);
+                break;
+            case self::Certificado:
+                file_put_contents($arquivo, $this->getCertificado());
+                break;
+            default:
+                throw new Exception("Tipo de chave invalida!\r\nOpcoes: publico, privado, certificado.");
+        }
+    }
+
+    public function assinarXML($xml, $tag)
+    {
+        $xml = simplexml_load_file($xml);
+
+        $node = $xml->$tag;
+
+        $docId = $node->getAttribute('Id');
+
+
+    }
+
 }
