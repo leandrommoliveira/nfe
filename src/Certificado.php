@@ -117,7 +117,7 @@ class Certificado
         $data = openssl_x509_read($this->chavePub);
         $certData = openssl_x509_parse($data);
 
-        return Carbon::createFromFormat('ymdHis', str_replace('Z', '' , $certData['validTo']));
+        return Carbon::createFromFormat('ymdHis', str_replace('Z', '', $certData['validTo']));
     }
 
     /**
@@ -161,7 +161,7 @@ class Certificado
     /**
      * getCertificado.
      * Retorna a chave do certificado (Chave Pública + Chave Privada).
-     * 
+     *
      * @return string
      */
     public function getCertificado()

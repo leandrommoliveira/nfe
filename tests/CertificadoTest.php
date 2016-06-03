@@ -51,5 +51,4 @@ class CertificadoTeste extends TestCase
         //Excluindo o arquivo salvo
         unlink($certTeste);
     }
-
 }
