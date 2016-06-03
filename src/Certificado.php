@@ -13,7 +13,7 @@ class Certificado
     protected $chavePub = null;
 
     /**
-     * Chave Primária.
+     * Chave Privada.
      * @var string
      */
     protected $chavePri = '';
@@ -31,8 +31,8 @@ class Certificado
         $content = simplexml_load_file($arquivo);
 
         //Carregando as propriedades
-        $this->chavePri = $content->chave_pri;
-        $this->chavePub = $content->chave_pub;
+        $this->chavePri = trim($content->chave_pri);
+        $this->chavePub = trim($content->chave_pub);
 
         return true;
     }
@@ -55,8 +55,8 @@ class Certificado
         }
 
         //Carregando propriedades
-        $this->chavePub = $data['cert'];
-        $this->chavePri = $data['pkey'];
+        $this->chavePub = trim($data['cert']);
+        $this->chavePri = trim($data['pkey']);
     }
 
     /**
@@ -116,8 +116,13 @@ class Certificado
 
         $data = openssl_x509_read($this->chavePub);
         $certData = openssl_x509_parse($data);
-
-        return Carbon::createFromFormat('ymdHms', $certData['validTo']);
+        $ano = substr($certData['validTo'], 0, 2);
+        $mes = substr($certData['validTo'], 2, 2);
+        $dia = substr($certData['validTo'], 4, 2);
+        $horas = substr($certData['validTo'], 6, 2);
+        $minutos = substr($certData['validTo'], 8, 2);
+        $segundos = substr($certData['validTo'], 10, 2);
+        return Carbon::createFromFormat('ymdHis', str_replace('Z', '' , $certData['validTo']));
     }
 
     /**
@@ -156,5 +161,16 @@ class Certificado
     public function getChavePri()
     {
         return $this->chavePri;
+    }
+
+    /**
+     * getCertificado.
+     * Retorna a chave do certificado (Chave Pública + Chave Privada).
+     * 
+     * @return string
+     */
+    public function getCertificado()
+    {
+        return trim($this->chavePri) . "\r\n" . trim($this->chavePub);
     }
 }
