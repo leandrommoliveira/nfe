@@ -39,13 +39,13 @@ class CertificadoTeste extends TestCase
         $this->assertEquals($cert->getChavePub(), $pubKey);
         $this->assertEquals($cert->getChavePri(), $priKey);
         $this->assertEquals($cert->getValidade()->format('Y-m-d H:i:s'), '2016-07-03 11:32:33');
-        
+
         if (Carbon::now() > Carbon::create(2016, 07, 03, 11, 32, 33)) {
             $this->assertFalse($cert->ehValido());
         } else {
             $this->assertTrue($cert->ehValido());
         }
-        
+
         $this->assertEquals($cert->getCertificado(), $certKey);
 
         //Excluindo o arquivo salvo

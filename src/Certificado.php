@@ -116,12 +116,7 @@ class Certificado
 
         $data = openssl_x509_read($this->chavePub);
         $certData = openssl_x509_parse($data);
-        $ano = substr($certData['validTo'], 0, 2);
-        $mes = substr($certData['validTo'], 2, 2);
-        $dia = substr($certData['validTo'], 4, 2);
-        $horas = substr($certData['validTo'], 6, 2);
-        $minutos = substr($certData['validTo'], 8, 2);
-        $segundos = substr($certData['validTo'], 10, 2);
+
         return Carbon::createFromFormat('ymdHis', str_replace('Z', '' , $certData['validTo']));
     }
 
