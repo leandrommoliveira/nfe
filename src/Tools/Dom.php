@@ -143,7 +143,7 @@ class Dom extends DOMDocument
 
         return '';
     }
-    
+
     /**
      * appChild
      * Acrescenta DOMElement a pai DOMElement
