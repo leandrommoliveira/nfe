@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe43120103987283000133550010000006241607910981" versao="3.10">
+        <ide>
+            <cUF>43</cUF>
+            <cNF>60791098</cNF>
+            <natOp>5.101 - VENDA</natOp>
+            <indPag>1</indPag>
+            <mod>55</mod>
+            <serie>1</serie>
+            <nNF>624</nNF>
+            <dhEmi>2016-06-01T18:30:01-03:00</dhEmi>
+            <tpNF>1</tpNF>
+            <idDest>2</idDest>
+            <cMunFG>1111111</cMunFG>
+            <tpImp>1</tpImp>
+            <tpEmis>1</tpEmis>
+            <cDV>1</cDV>
+            <tpAmb>2</tpAmb>
+            <finNFe>1</finNFe>
+            <indFinal>1</indFinal>
+            <indPres>0</indPres>
+            <procEmi>0</procEmi>
+            <verProc>2.02</verProc>
+        </ide>
+        <emit>
+            <CNPJ>18227795000130</CNPJ>
+            <xNome>MINHA EMPRESA TESTE LTDA.</xNome>
+            <xFant>MINHA EMPRESA FANTASIA TESTE</xFant>
+            <enderEmit>
+                <xLgr>RUA TESTE</xLgr>
+                <nro>123</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4312345</cMun>
+                <xMun>PORTO ALEGRE</xMun>
+                <UF>RS</UF>
+                <CEP>93000000</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+                <fone>5111223344</fone>
+            </enderEmit>
+            <IE>0868689965</IE>
+            <CRT>1</CRT>
+        </emit>
+        <dest>
+            <CNPJ>99999999000191</CNPJ>
+            <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+            <enderDest>
+                <xLgr>AV. DOS TESTES</xLgr>
+                <nro>202</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4369854</cMun>
+                <xMun>PORTO ALEGRE</xMun>
+                <UF>RS</UF>
+                <CEP>93000000</CEP>
+                <cPais>1058</cPais>
+                <xPais>BRASIL</xPais>
+            </enderDest>
+            <indIEDest>9</indIEDest>
+        </dest>
+        <det nItem="1">
+            <prod>
+                <cProd>15036</cProd>
+                <cEAN/>
+                <xProd>PRODUTO TESTE REF 123123</xProd>
+                <NCM>84123123</NCM>
+                <CFOP>5101</CFOP>
+                <uCom>UND</uCom>
+                <qCom>1.0000</qCom>
+                <vUnCom>590.0000</vUnCom>
+                <vProd>590.00</vProd>
+                <cEANTrib>11111111999999999999</cEANTrib>
+                <uTrib>UND</uTrib>
+                <qTrib>1.0000</qTrib>
+                <vUnTrib>590.0000</vUnTrib>
+                <indTot>1</indTot>
+            </prod>
+            <imposto>
+                <ICMS>
+                    <ICMSSN101>
+                        <orig>0</orig>
+                        <CSOSN>101</CSOSN>
+                        <pCredSN>2.82</pCredSN>
+                        <vCredICMSSN>16.64</vCredICMSSN>
+                    </ICMSSN101>
+                </ICMS>
+                <PIS>
+                    <PISOutr>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pPIS>0.00</pPIS>
+                        <vPIS>0.00</vPIS>
+                    </PISOutr>
+                </PIS>
+                <COFINS>
+                    <COFINSOutr>
+                        <CST>99</CST>
+                        <vBC>0.00</vBC>
+                        <pCOFINS>0.00</pCOFINS>
+                        <vCOFINS>0.00</vCOFINS>
+                    </COFINSOutr>
+                </COFINS>
+            </imposto>
+        </det>
+        <total>
+            <ICMSTot>
+                <vBC>0.00</vBC>
+                <vICMS>0.00</vICMS>
+                <vICMSDeson>0.00</vICMSDeson>
+                <vBCST>0.00</vBCST>
+                <vST>0</vST>
+                <vProd>590.00</vProd>
+                <vFrete>0.00</vFrete>
+                <vSeg>0.00</vSeg>
+                <vDesc>0.00</vDesc>
+                <vII>0.00</vII>
+                <vIPI>0.00</vIPI>
+                <vPIS>0.00</vPIS>
+                <vCOFINS>0.00</vCOFINS>
+                <vOutro>0.00</vOutro>
+                <vNF>590.00</vNF>
+            </ICMSTot>
+        </total>
+        <transp>
+            <modFrete>1</modFrete>
+        </transp>
+        <cobr>
+            <dup>
+                <nDup>624</nDup>
+                <dVenc>2013-02-08</dVenc>
+                <vDup>590.00</vDup>
+            </dup>
+        </cobr>
+        <infAdic>
+            <infCpl>TESTE DE INFORMACOES ADICIONAIS</infCpl>
+        </infAdic>
+    </infNFe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFe43120103987283000133550010000006241607910981">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>yebOhQRK6svu1OL3UnYkRhNoMPE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>
+            TAF5k/p9JKSbdrz0sC9Ymac9RqB03QxahNrsbrl99vFrV9Aoo7ZM3mj4SCpFGumpkf4YDycQDyGC4NRKJQRzxRZW4oJDqs73ZT4nZpaw/NzdR1e7wOQI2rgnq7TZhulQWXpC2VzXJKRBLRtVN8iWZDtT7wH25VR+aT0/BcVXoIQ=
+        </SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>
+                    MIIC3TCCAkagAwIBAgIRAJ+d/K+grcMEKtYOGEj9jakwDQYJKoZIhvcNAQEFBQAwLzEPMA0GA1UEAwwGUEhQTkZlMRwwGgYDVQQKDBNQSFBORmUgT3JnYW5pemF0aW9uMB4XDTE2MDYwMzExMzIzM1oXDTE2MDcwMzExMzIzM1owgaoxCzAJBgNVBAYTAlNDMS0wKwYJKoZIhvcNAQkBFh5kZXNlbnZvbHZlZG9yMUBuZXRmb3JjZS5jb20uYnIxGjAYBgNVBAwMEWNlcnRpZmljYWRvX3Rlc3RlMRQwEgYDVQQLDAtQSFBORmUgVW5pdDEcMBoGA1UECgwTUEhQTkZlIE9yZ2FuaXphdGlvbjEcMBoGA1UEAwwTW1RFU1RdIEpvaGFubiBMdWNhczCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAo5A0OYZI9/A9PJ2TyZsM6tDHYFHctsItvn+5zBnfk368PV0udtjlSWteu9j47oSAmaqqmrAj3suUa4rT2q+i49Z4W0JMCOIdr2SI1IkojeT4RoFbhCjIqS3ARMdN6Bnp0/OCrp6wyvKNJVv7z9XkN3HoQFTEMstwyeUNenL2/EUCAwEAAaN9MHswCwYDVR0PBAQDAgTwMCwGA1UdJQEB/wQiMCAGCCsGAQUFBwMEBggrBgEFBQcDAgYKKwYBBAGCNwoDDDAdBgNVHQ4EFgQUDrwZeeoqv2NhQEobRgnwtQGfYQMwHwYDVR0jBBgwFoAUljjwBMBpRmdXyx4h0JIDR7xtUoQwDQYJKoZIhvcNAQEFBQADgYEAU+nMe7d13o/PknuubQd9R5u7B355jAkJt8IjPrJVptE8xP/kn+iWLC3W4yedrr6WSBPO+BvkgPZUOTNs1EGv7JJIfkphn+LosN6Kh5xf1r4qq8D2PjytWoVtqDTrvm0FM7pcGmWMIyYv8Q1l6W3aObP5PdwDNrVhueOsJndKZ1c=
+                </X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFe>

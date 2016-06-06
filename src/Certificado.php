@@ -3,6 +3,8 @@
 use Carbon\Carbon;
 use Mockery\CountValidator\Exception;
 use PhpNFe\Tools\Asn;
+use PhpNFe\Tools\Dom;
+use PhpNFe\Tools\Pkcs12;
 
 class Certificado
 {
@@ -174,7 +176,7 @@ class Certificado
     }
 
     /**
-     * salvaChave
+     * salvaChave.
      * Salva a chave especificada no arquivo passado por parâmetro.
      *
      * @param $arquivo
@@ -197,15 +199,36 @@ class Certificado
         }
     }
 
+    /**
+     * assinarXml.
+     * Assina o xml passado por parâmetro com a tag também passada por parâmetro.
+     * 
+     * @param $xml
+     * @param $tag
+     * @return string
+     * @throws \Exception
+     */
     public function assinarXML($xml, $tag)
     {
-        $xml = simplexml_load_file($xml);
+        $xml = file_get_contents($xml);
+        $xmlDoc = new Dom();
+        
+        //Limpando o XML
+        $order = array("\r\n", "\n", "\r", "\t");
+        $xml = str_replace($order, '', $xml);
 
-        $node = $xml->$tag;
+        $xmlDoc->loadXMLString($xml);
+        $node = $xmlDoc->getElementsByTagName($tag)->item(0);
+        
+        //Raiz 
+        $root = $xmlDoc->documentElement;
 
-        $docId = $node->getAttribute('Id');
-
-
+        $pkcs = new Pkcs12('', $this->getChavePub(), $this->getChavePri(), $this->getCertificado());
+        
+        //Assinando
+        $objSSLPriKey = openssl_get_privatekey($this->chavePri);
+        $sxml = $pkcs->zSignXML($xmlDoc, $root, $node, $objSSLPriKey);
+        
+        return $sxml;
     }
-
 }
