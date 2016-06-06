@@ -36,6 +36,7 @@ class Validar
             foreach ($errors as $error) {
                 $returnErrors[] = $error->message;
             }
+
             return $returnErrors;
         } else {
             return true;

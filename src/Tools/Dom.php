@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Tools;
 
-/**
+/*
  * Classe auxiliar com funções de DOM extendidas
  * @category   NFePHP
  * @package    NFePHP\Common\DomDocument
@@ -34,7 +34,7 @@ class Dom extends DOMDocument
             throw new Exception($msg);
         }
     }
-    
+
     public function loadXMLFile($pathXmlFile = '')
     {
         $data = readfile($pathXmlFile);
@@ -55,11 +55,13 @@ class Dom extends DOMDocument
         $node = $this->getElementsByTagName($nodeName)->item($itemNum);
         if (isset($node)) {
             $texto = html_entity_decode(trim($node->nodeValue), ENT_QUOTES, 'UTF-8');
+
             return $extraTextBefore . $texto . $extraTextAfter;
         }
+
         return '';
     }
-    
+
     /**
      * getValue.
      * @param DOMElement $node
@@ -76,12 +78,12 @@ class Dom extends DOMDocument
 
         return html_entity_decode($texto, ENT_QUOTES, 'UTF-8');
     }
-    
+
     /**
      * getNode
      * Retorna o node solicitado.
      * @param string $nodeName
-     * @param integer $itemNum
+     * @param int $itemNum
      * @return DOMElement se existir ou string vazia se não
      */
     public function getNode($nodeName, $itemNum = 0)
@@ -90,6 +92,7 @@ class Dom extends DOMDocument
         if (isset($node)) {
             return $node;
         }
+
         return '';
     }
 
@@ -108,11 +111,11 @@ class Dom extends DOMDocument
      */
     public function addChild(&$parent, $name, $content = '', $obrigatorio = false, $descricao = '', $force = false)
     {
-        if ($obrigatorio && $content === '' && !$force) {
+        if ($obrigatorio && $content === '' && ! $force) {
             $this->erros[] = [
                 'tag' => $name,
                 'desc' => $descricao,
-                'erro' => 'Preenchimento Obrigatório!'
+                'erro' => 'Preenchimento Obrigatório!',
             ];
         }
         if ($obrigatorio || $content !== '') {
@@ -122,6 +125,7 @@ class Dom extends DOMDocument
             $parent->appendChild($temp);
         }
     }
+
     /**
      * getChave.
      * @param string $nodeName
@@ -133,8 +137,10 @@ class Dom extends DOMDocument
         if (! empty($node)) {
             $chaveId = $node->getAttribute('Id');
             $chave = preg_replace('/[^0-9]/', '', $chaveId);
+
             return $chave;
         }
+
         return '';
     }
 
@@ -159,7 +165,7 @@ class Dom extends DOMDocument
             $parent->appendChild($child);
         }
     }
-    
+
     /**
      * addArrayChild
      * Adiciona a um DOMNode parent, outros elementos passados em um array de DOMElements.

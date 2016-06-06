@@ -19,16 +19,16 @@ class Pkcs12
 {
     /**
      * Path para o diretorio onde o arquivo pfx está localizado.
-     * @var string 
+     * @var string
      */
     public $pathCerts = '';
-    
+
     /**
      * Path para o arquivo pfx (certificado digital em formato de transporte).
      * @var string
      */
     public $pfxFileName = '';
-    
+
     /**
      * Conteudo do arquivo pfx.
      * @var string
@@ -40,45 +40,45 @@ class Pkcs12
      * @var string
      */
     public $cnpj = '';
-    
+
     /**
      * String que contêm a chave publica em formato PEM.
-     * @var string 
+     * @var string
      */
     public $pubKey = '';
-    
+
     /**
      * String quem contêm a chave privada em formato PEM.
      * @var string
      */
     public $priKey = '';
-    
+
     /**
      * String que conten a combinação da chave publica e privada em formato PEM
      * e a cadeida completa de certificação caso exista.
      * @var string
      */
     public $certKey = '';
-    
+
     /**
      * Flag para ignorar testes de validade do certificado
      * isso é usado apenas para fins de testes.
-     * @var boolean 
+     * @var bool
      */
     public $ignoreValidCert = false;
-    
+
     /**
      * Path para a chave publica em arquivo.
      * @var string
      */
     public $pubKeyFile = '';
-    
+
     /**
      * Path para a chave privada em arquivo.
      * @var string
      */
     public $priKeyFile = '';
-    
+
     /**
      * Path para o certificado em arquivo.
      * @var string
@@ -90,16 +90,16 @@ class Pkcs12
      * @var float
      */
     public $expireTimestamp = 0;
-    
+
     /**
      * Mensagem de erro da classe.
      * @var string
      */
     public $error = '';
-    
+
     /**
      * Id do docimento sendo assinado.
-     * @var string 
+     * @var string
      */
     public $docId = '';
 
@@ -124,7 +124,7 @@ class Pkcs12
         if ($pubKey != '' && $priKey != '' && strlen($pubKey) > 500 && strlen($priKey) > 500) {
             $this->pubKey = $pubKey;
             $this->priKey = $priKey;
-            $this->certKey = $priKey."\r\n" . $pubKey;
+            $this->certKey = $priKey . "\r\n" . $pubKey;
             $flagCert = true;
         }
         if ($certKey != '') {
@@ -140,7 +140,7 @@ class Pkcs12
      * Método de inicialização da classe irá verificar
      * os parâmetros, arquivos e validade dos mesmos
      * Em caso de erro o motivo da falha será indicada na parâmetro
-     * error da classe, os outros parâmetros serão limpos e os 
+     * error da classe, os outros parâmetros serão limpos e os
      * arquivos inválidos serão removidos da pasta.
      * @param bool $flagCert indica que as chaves já foram passas como strings
      * @return bool
@@ -159,11 +159,11 @@ class Pkcs12
                 $this->pathCerts .= DIRECTORY_SEPARATOR;
             }
             //monta o path completo com o nome da chave privada
-            $this->priKeyFile = $this->pathCerts.$this->cnpj . '_priKEY.pem';
+            $this->priKeyFile = $this->pathCerts . $this->cnpj . '_priKEY.pem';
             //monta o path completo com o nome da chave publica
-            $this->pubKeyFile =  $this->pathCerts.$this->cnpj . '_pubKEY.pem';
+            $this->pubKeyFile =  $this->pathCerts . $this->cnpj . '_pubKEY.pem';
             //monta o path completo com o nome do certificado (chave publica e privada) em formato pem
-            $this->certKeyFile = $this->pathCerts.$this->cnpj . '_certKEY.pem';
+            $this->certKeyFile = $this->pathCerts . $this->cnpj . '_certKEY.pem';
             //se as chaves não foram passadas em strings, verifica se os certificados existem
             if (is_file($this->priKeyFile) && is_file($this->pubKeyFile) && is_file($this->certKeyFile)) {
                 //se as chaves existem deve ser verificado sua validade
@@ -176,6 +176,7 @@ class Pkcs12
                 }
             }
         }
+
         return true;
     }
 
@@ -203,6 +204,7 @@ class Pkcs12
             );
         }
         $this->pfxCert = file_get_contents($pathPfx);
+
         return $this->loadPfx($this->pfxCert, $password, $createFiles, $ignoreValidity, $ignoreOwner);
     }
 
@@ -212,9 +214,9 @@ class Pkcs12
      * Isso deverá ocorrer a cada atualização do certificado digital, ou seja,
      * pelo menos uma vez por ano, uma vez que a validade do certificado
      * é anual.
-     * Será verificado também se o certificado pertence realmente ao CNPJ 
-     * Essa verificação checa apenas se o certificado pertence a matriz ou filial 
-     * comparando apenas os primeiros 8 digitos do CNPJ, dessa forma ambas a 
+     * Será verificado também se o certificado pertence realmente ao CNPJ
+     * Essa verificação checa apenas se o certificado pertence a matriz ou filial
+     * comparando apenas os primeiros 8 digitos do CNPJ, dessa forma ambas a
      * matriz e as filiais poderão usar o mesmo certificado indicado na instanciação
      * da classe, se não for um erro irá ocorrer e
      * o certificado não será convertido para o formato PEM.
@@ -244,11 +246,11 @@ class Pkcs12
         $x509certdata = [];
         if (! openssl_pkcs12_read($pfxContent, $x509certdata, $password)) {
             throw new Exception(
-                "O certificado não pode ser lido!! Senha errada ou arquivo corrompido ou formato inválido!!"
+                'O certificado não pode ser lido!! Senha errada ou arquivo corrompido ou formato inválido!!'
             );
         }
         $this->pfxCert = $pfxContent;
-        if (!$ignoreValidity) {
+        if (! $ignoreValidity) {
             //verifica sua data de validade
             if (! $this->zValidCerts($x509certdata['cert'])) {
                 throw new Exception($this->error);
@@ -263,18 +265,18 @@ class Pkcs12
             }
         }
         //monta o path completo com o nome da chave privada
-        $this->priKeyFile = $this->pathCerts . $this->cnpj.'_priKEY.pem';
+        $this->priKeyFile = $this->pathCerts . $this->cnpj . '_priKEY.pem';
         //monta o path completo com o nome da chave publica
-        $this->pubKeyFile =  $this->pathCerts . $this->cnpj.'_pubKEY.pem';
+        $this->pubKeyFile =  $this->pathCerts . $this->cnpj . '_pubKEY.pem';
         //monta o path completo com o nome do certificado (chave publica e privada) em formato pem
         $this->certKeyFile = $this->pathCerts . $this->cnpj . '_certKEY.pem';
         $this->zRemovePemFiles();
         if ($createFiles) {
             $this->zSavePemFiles($x509certdata);
         }
-        $this->pubKey=$x509certdata['cert'];
-        $this->priKey=$x509certdata['pkey'];
-        $this->certKey=$x509certdata['pkey'] . "\r\n" . $x509certdata['cert'];
+        $this->pubKey = $x509certdata['cert'];
+        $this->priKey = $x509certdata['pkey'];
+        $this->certKey = $x509certdata['pkey'] . "\r\n" . $x509certdata['cert'];
         return true;
     }
     
@@ -297,15 +299,15 @@ class Pkcs12
             );
         }
         //recriar os arquivos pem com o arquivo pfx
-        if (!file_put_contents($this->priKeyFile, $x509certdata['pkey'])) {
+        if (! file_put_contents($this->priKeyFile, $x509certdata['pkey'])) {
             throw new Exception(
                 'Falha de permissão de escrita na pasta dos certificados!!'
             );
         }
         file_put_contents($this->pubKeyFile, $x509certdata['cert']);
-        file_put_contents($this->certKeyFile, $x509certdata['pkey'] . "\r\n".$x509certdata['cert']);
+        file_put_contents($this->certKeyFile, $x509certdata['pkey'] . "\r\n" . $x509certdata['cert']);
     }
-    
+
     /**
      * aadChain.
      * @param array $aCerts Array com os caminhos completos para cada certificado da cadeia
@@ -328,7 +330,7 @@ class Pkcs12
             file_put_contents($this->certKeyFile, $certificate);
         }
     }
-    
+
     /**
      * signXML.
      * @param string $docxml
@@ -510,7 +512,7 @@ class Pkcs12
 
         return true;
     }
-    
+
     /**
      * verifySignature
      * Verifica a validade da assinatura digital contida no xml.
@@ -527,7 +529,7 @@ class Pkcs12
             throw new Exception($msg);
         }
         if ($tagid == '') {
-            $msg = "Não foi indicada a TAG a ser verificada.";
+            $msg = 'Não foi indicada a TAG a ser verificada.';
             throw new Exception($msg);
         }
         $xml = $docxml;
@@ -541,7 +543,7 @@ class Pkcs12
 
         return $flag;
     }
-    
+
     /**
      * zSignCheck.
      * @param DOMDocument $dom
@@ -578,7 +580,7 @@ class Pkcs12
 
         return true;
     }
-    
+
     /**
      * zDigCheck.
      * @param DOMDocument $dom
@@ -616,7 +618,7 @@ class Pkcs12
 
         return true;
     }
-    
+
     /**
      * zValidCerts
      * Verifica a data de validade do certificado digital
@@ -630,11 +632,11 @@ class Pkcs12
     {
         if (! $data = openssl_x509_read($pubKey)) {
             //o dado não é uma chave válida
-                $this->zRemovePemFiles();
-                $this->zLeaveParam();
-                $this->error = 'A chave passada está corrompida ou não é uma chave. Obtenha s chaves corretas!!';
+            $this->zRemovePemFiles();
+            $this->zLeaveParam();
+            $this->error = 'A chave passada está corrompida ou não é uma chave. Obtenha s chaves corretas!!';
 
-                return false;
+            return false;
         }
         $certData = openssl_x509_parse($data);
         // reformata a data de validade;
@@ -655,9 +657,10 @@ class Pkcs12
 
             return false;
         }
+
         return true;
     }
-    
+
     /**
      * zCleanPubKey
      * Remove a informação de inicio e fim do certificado
@@ -684,13 +687,13 @@ class Pkcs12
 
         return $data;
     }
-    
+
     /**
      * zSplitLines
      * Divide a string do certificado publico em linhas
      * com 76 caracteres (padrão original).
      * @param string $cntIn certificado
-     * @return string certificado reformatado 
+     * @return string certificado reformatado
      */
     protected function zSplitLines($cntIn = '')
     {
@@ -702,7 +705,7 @@ class Pkcs12
 
         return $cnt;
     }
-    
+
     /**
      * zRemovePemFiles
      * Apaga os arquivos PEM do diretório
@@ -721,23 +724,23 @@ class Pkcs12
             unlink($this->certKeyFile);
         }
     }
-    
+
     /**
      * zLeaveParam
      * Limpa os parametros da classe.
      */
     private function zLeaveParam()
     {
-        $this->pfxCert ='';
-        $this->pubKey ='';
-        $this->priKey ='';
-        $this->certKey ='';
-        $this->pubKeyFile ='';
-        $this->priKeyFile ='';
-        $this->certKeyFile ='';
-        $this->expireTimestamp ='';
+        $this->pfxCert = '';
+        $this->pubKey = '';
+        $this->priKey = '';
+        $this->certKey = '';
+        $this->pubKeyFile = '';
+        $this->priKeyFile = '';
+        $this->certKeyFile = '';
+        $this->expireTimestamp = '';
     }
-    
+
     /**
      * zGetOpenSSLError.
      * @param string $msg
