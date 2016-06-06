@@ -8,7 +8,6 @@ class CertificadoTeste extends TestCase
     protected static $priKey;
     protected static $certKey;
     protected static $certTeste;
-    
     protected static $cert;
 
     public static function setUpBeforeClass()
@@ -17,8 +16,8 @@ class CertificadoTeste extends TestCase
         self::$priKey = file_get_contents(__DIR__ . '/utils/pri.key');
         self::$certKey = self::$priKey . "\r\n" . self::$pubKey;
         self::$certTeste = __DIR__ . '/utils/certificado_teste.xml';
-        
-        self::$cert = new \PhpNFe\Certificado(); 
+
+        self::$cert = new \PhpNFe\Certificado();
     }
 
     public function testCarregarPfx()
@@ -84,13 +83,12 @@ class CertificadoTeste extends TestCase
         file_put_contents($filePub, '');
         file_put_contents($filePri, '');
         file_put_contents($fileCert, '');
-        
 
         // Salvando as chaves nos arquivos criados
         self::$cert->salvaChave($filePub, 'publico');
         self::$cert->salvaChave($filePri, 'privado');
         self::$cert->salvaChave($fileCert, 'certificado');
-        
+
         // Fazendo os assertsFileEquals comparando com arquivos de testes fixos
         $this->assertFileEquals($filePub, __DIR__ . '/utils/pub.key');
         $this->assertFileEquals($filePri, __DIR__ . '/utils/pri.key');
@@ -110,7 +108,7 @@ class CertificadoTeste extends TestCase
 
         // Xml assinado padrão de teste
         $signXmlTeste = preg_replace('/\s+/', '', file_get_contents(__DIR__ . '/utils/signXmlTeste.xml'));
-        
+
         // Comparando os xmls
         $this->assertEquals($signXmlTeste, $signXml);
     }
@@ -122,10 +120,10 @@ class CertificadoTeste extends TestCase
         unlink(__DIR__ . '/testeChaveCert');
         unlink(__DIR__ . '/utils/certificado_teste.xml');
     }
-    
+
     protected function ajustaXml($xml)
     {
-        $xml =  preg_replace('/\s+/', '', $xml);
+        $xml = preg_replace('/\s+/', '', $xml);
         $xml = preg_replace('%<DigestValue>(.+)</DigestValue>%', '<DigestValue>yebOhQRK6svu1OL3UnYkRhNoMPE=</DigestValue>', $xml);
         $xml = preg_replace('%<SignatureValue>.+</SignatureValue>%', '<SignatureValue>TAF5k/p9JKSbdrz0sC9Ymac9RqB03QxahNrsbrl99vFrV9Aoo7ZM3mj4SCpFGumpkf4YDycQDyGC4NRKJQRzxRZW4oJDqs73ZT4nZpaw/NzdR1e7wOQI2rgnq7TZhulQWXpC2VzXJKRBLRtVN8iWZDtT7wH25VR+aT0/BcVXoIQ=</SignatureValue>', $xml);
 

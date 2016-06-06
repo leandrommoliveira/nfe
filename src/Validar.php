@@ -7,7 +7,7 @@ class Validar
     /**
      * validar.
      * Valida um xml assinado.
-     * 
+     *
      * @param $xml
      * @param $tag
      * @return array|bool
@@ -30,15 +30,14 @@ class Validar
         $xsdFile = '/nfe_v' .  $versao . '.xsd';
         $xsdPath = __DIR__ . '/schemes/PL_008i2' . $xsdFile;
 
-        if(! $dom->schemaValidate($xsdPath)) {
+        if (! $dom->schemaValidate($xsdPath)) {
             $errors = libxml_get_errors();
             $returnErrors = [];
             foreach ($errors as $error) {
                 $returnErrors[] = $error->message;
             }
             return $returnErrors;
-        }
-        else {
+        } else {
             return true;
         }
     }

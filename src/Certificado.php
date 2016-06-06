@@ -184,7 +184,7 @@ class Certificado
      */
     public function salvaChave($arquivo, $chave)
     {
-        switch ($chave){
+        switch ($chave) {
             case self::Publico:
                 file_put_contents($arquivo, $this->chavePub);
                 break;
@@ -202,7 +202,7 @@ class Certificado
     /**
      * assinarXml.
      * Assina o xml passado por parâmetro com a tag também passada por parâmetro.
-     * 
+     *
      * @param $xml
      * @param $tag
      * @return string
@@ -212,23 +212,23 @@ class Certificado
     {
         $xml = file_get_contents($xml);
         $xmlDoc = new Dom();
-        
+
         //Limpando o XML
-        $order = array("\r\n", "\n", "\r", "\t");
+        $order = ["\r\n", "\n", "\r", "\t"];
         $xml = str_replace($order, '', $xml);
 
         $xmlDoc->loadXMLString($xml);
         $node = $xmlDoc->getElementsByTagName($tag)->item(0);
-        
-        //Raiz 
+
+        // Raiz
         $root = $xmlDoc->documentElement;
 
         $pkcs = new Pkcs12('', $this->getChavePub(), $this->getChavePri(), $this->getCertificado());
-        
-        //Assinando
+
+        // Assinando
         $objSSLPriKey = openssl_get_privatekey($this->chavePri);
         $sxml = $pkcs->zSignXML($xmlDoc, $root, $node, $objSSLPriKey);
-        
+
         return $sxml;
     }
 }
