@@ -34,7 +34,7 @@ class Validar
             $errors = libxml_get_errors();
             $returnErrors = [];
             foreach ($errors as $error) {
-                $returnErrors[] = $error->message . 'at line '.$error->line;
+                $returnErrors[] = $error->message . 'at line ' . $error->line;
             }
 
             return $returnErrors;
