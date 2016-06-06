@@ -34,7 +34,7 @@ class Pkcs12
      * @var string
      */
     public $pfxCert = '';
-    
+
     /**
      * Numero do CNPJ do emitente.
      * @var string
@@ -84,7 +84,7 @@ class Pkcs12
      * @var string
      */
     public $certKeyFile = '';
-    
+
     /**
      * Timestamp da data de validade do certificado.
      * @var float
@@ -134,7 +134,7 @@ class Pkcs12
             throw new Exception($this->error);
         }
     }
-    
+
     /**
      * zInit
      * Método de inicialização da classe irá verificar
@@ -161,7 +161,7 @@ class Pkcs12
             //monta o path completo com o nome da chave privada
             $this->priKeyFile = $this->pathCerts . $this->cnpj . '_priKEY.pem';
             //monta o path completo com o nome da chave publica
-            $this->pubKeyFile =  $this->pathCerts . $this->cnpj . '_pubKEY.pem';
+            $this->pubKeyFile = $this->pathCerts . $this->cnpj . '_pubKEY.pem';
             //monta o path completo com o nome do certificado (chave publica e privada) em formato pem
             $this->certKeyFile = $this->pathCerts . $this->cnpj . '_certKEY.pem';
             //se as chaves não foram passadas em strings, verifica se os certificados existem
@@ -267,7 +267,7 @@ class Pkcs12
         //monta o path completo com o nome da chave privada
         $this->priKeyFile = $this->pathCerts . $this->cnpj . '_priKEY.pem';
         //monta o path completo com o nome da chave publica
-        $this->pubKeyFile =  $this->pathCerts . $this->cnpj . '_pubKEY.pem';
+        $this->pubKeyFile = $this->pathCerts . $this->cnpj . '_pubKEY.pem';
         //monta o path completo com o nome do certificado (chave publica e privada) em formato pem
         $this->certKeyFile = $this->pathCerts . $this->cnpj . '_certKEY.pem';
         $this->zRemovePemFiles();
@@ -277,9 +277,10 @@ class Pkcs12
         $this->pubKey = $x509certdata['cert'];
         $this->priKey = $x509certdata['pkey'];
         $this->certKey = $x509certdata['pkey'] . "\r\n" . $x509certdata['cert'];
+
         return true;
     }
-    
+
     /**
      * zSavePemFiles.
      * @param array $x509certdata
@@ -496,7 +497,7 @@ class Pkcs12
         //retorna o documento assinado
         return $xmlResp;
     }
-   
+
     /**
      * signatureExists
      * Check se o xml possi a tag Signature.
