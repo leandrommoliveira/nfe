@@ -8,7 +8,6 @@
  * @author     Roberto L. Machado <linux dot rlm at gmail dot com>
  * @link       http://github.com/nfephp-org/nfephp for the canonical source repository
  */
-
 class Strings
 {
     /**
@@ -26,6 +25,7 @@ class Strings
             'c', 'A', 'A', 'A', 'A', 'E', 'E', 'I', 'O', 'O', 'O', 'U', 'U', 'C', ];
         $novoTexto = str_replace($aFind, $aSubs, $texto);
         $novoTexto = preg_replace("/[^a-zA-Z0-9 @,-.;:\/]/", '', $novoTexto);
+
         return $novoTexto;
     }
 
@@ -93,6 +93,7 @@ class Strings
         if (strpos($nnmsg, '> ')) {
             $nnmsg = self::clearMsg((string) $nnmsg);
         }
+        
         return $nnmsg;
     }
 }

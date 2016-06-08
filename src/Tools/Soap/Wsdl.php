@@ -37,7 +37,7 @@ class Wsdl
 
             return '';
         }
-        
+
         return $resposta;
     }
 }

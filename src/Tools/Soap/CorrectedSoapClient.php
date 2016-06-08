@@ -39,7 +39,7 @@ class CorrectedSoapClient extends \SoapClient
         $aFind = [':ns1', 'ns1:', "\n", "\r"];
         $sReplace = '';
         $newrequest = str_replace($aFind, $sReplace, $request);
-        
+
         return parent::__doRequest($newrequest, $location, $action, $version, $oneWay);
     }
 }//fim da classe

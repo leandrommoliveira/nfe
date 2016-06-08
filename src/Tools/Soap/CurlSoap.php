@@ -362,7 +362,7 @@ class CurlSoap
         //carrega a variavel debug
         $this->soapDebug = $data . "\n\n" . $txtInfo . "\n" . $resposta;
     }
-    
+
     /**
      * getIBPTProd
      * Consulta o serviço do IBPT para obter os impostos ao consumidor.
@@ -392,7 +392,7 @@ class CurlSoap
                 return (array) json_decode($json, true);
             }
         }
-        
+
         return [];
     }
 }
