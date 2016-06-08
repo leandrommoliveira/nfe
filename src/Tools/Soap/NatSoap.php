@@ -40,7 +40,7 @@ class NatSoap
     private $certKEY;
     private $pubKEY;
     private $priKEY;
-       
+    
     /**
      * @param string $publicKey
      * @param string $privateKey
