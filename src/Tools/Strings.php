@@ -93,7 +93,7 @@ class Strings
         if (strpos($nnmsg, '> ')) {
             $nnmsg = self::clearMsg((string) $nnmsg);
         }
-        
+
         return $nnmsg;
     }
 }
