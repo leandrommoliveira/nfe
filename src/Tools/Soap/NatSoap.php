@@ -23,26 +23,25 @@ class NatSoap
      */
     public $soapTimeout = 10;
     /**
-     * @var array 
+     * @var array
      */
     public $aError = [];
     /**
-     * @var string 
+     * @var string
      */
     public $pathWsdl = '';
-    
+
     protected $enableSVAN = false;
     protected $enableSVRS = false;
     protected $enableSVCAN = false;
     protected $enableSVCRS = false;
     protected $enableSCAN = false; //será desativado em 12/2014
-   
+
     private $certKEY;
     private $pubKEY;
     private $priKEY;
        
     /**
-     * 
      * @param string $publicKey
      * @param string $privateKey
      * @param string $certificateKey
@@ -74,7 +73,7 @@ class NatSoap
     }
 
     //fim __construct
-    
+
     /**
      * Estabelece comunicaçao com servidor SOAP 1.1 ou 1.2 da SEFAZ,
      * usando as chaves publica e privada parametrizadas na contrução da classe.
@@ -98,7 +97,7 @@ class NatSoap
         $tpAmb = '2'
     ) {
         try {
-            if (! class_exists("SoapClient")) {
+            if (! class_exists('SoapClient')) {
                 $msg = 'A classe SOAP não está disponível no PHP, veja a configuração.';
                 throw new Exception($msg);
             }
@@ -154,7 +153,7 @@ class NatSoap
                 'compression'   => 0,
                 'exceptions'    => true,
                 'connection_timeout' => $tout,
-                'cache_wsdl'    => WSDL_CACHE_NONE
+                'cache_wsdl'    => WSDL_CACHE_NONE,
             ];
             //instancia a classe soap
             $oSoapClient = new CorrectedSoapClient($sefazURL, $options);

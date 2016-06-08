@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Tools\Soap;
 
-/**
+/*
  * Classe auxiliar para o envio de mesagens SOAP usando o SOAP nativo do PHP
  * @category   NFePHP
  * @package    NfePHP\Common\Soap
@@ -16,7 +16,7 @@ class CorrectedSoapClient extends \SoapClient
 {
     /**
      * __construct.
-     * 
+     *
      * @param mixed $wsdl
      * @param array $options
      */
@@ -31,14 +31,15 @@ class CorrectedSoapClient extends \SoapClient
      * @param  string$location
      * @param  string $action
      * @param  int $version
-     * @param  int $oneWay 
+     * @param  int $oneWay
      * @return string
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = 0)
     {
-        $aFind = [':ns1','ns1:',"\n","\r"];
+        $aFind = [':ns1', 'ns1:', "\n", "\r"];
         $sReplace = '';
         $newrequest = str_replace($aFind, $sReplace, $request);
+        
         return parent::__doRequest($newrequest, $location, $action, $version, $oneWay);
     }
 }//fim da classe

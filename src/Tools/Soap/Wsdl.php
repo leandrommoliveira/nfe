@@ -9,7 +9,6 @@
  * @author     Roberto L. Machado <linux.rlm@gamil.com>
  * @link       http://github.com/nfephp-org/spedphp for the canonical source repository
  */
-
 class Wsdl
 {
     /**
@@ -35,8 +34,10 @@ class Wsdl
         $resposta = $soap->getWsdl($url);
         if (! $resposta) {
             $this->soapDebug = $soap->soapDebug;
+
             return '';
         }
+        
         return $resposta;
     }
 }

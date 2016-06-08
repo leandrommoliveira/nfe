@@ -40,10 +40,10 @@ class CurlSoap
      * infoCurl.
      * @var array
      */
-    protected $infoCurl = array();
+    protected $infoCurl = [];
     /**
      * pubKeyPath.
-     * @var string 
+     * @var string
      */
     private $pubKeyPath = '';
     /**
@@ -73,7 +73,7 @@ class CurlSoap
     private $proxyUSER = '';
     /**
      * proxyPASS.
-     * @var string 
+     * @var string
      */
     private $proxyPASS = '';
     /**
@@ -81,10 +81,10 @@ class CurlSoap
      * @var int
      */
     private $sslProtocol = 0;
-    
+
     /**
      * __construct.
-     * 
+     *
      * @param string $priKeyPath path para a chave privada
      * @param string $pubKeyPath path para a chave publica
      * @param string $certKeyPath path para o certificado
@@ -125,8 +125,9 @@ class CurlSoap
         $this->proxyUSER = $user;
         $this->proxyPASS = $pass;
     }
+
     //fim setProxy
-    
+
     /**
      * getProxy.
      * Retorna os dados de configuração do Proxy em um array.
@@ -138,9 +139,10 @@ class CurlSoap
         $aProxy['port'] = $this->proxyPORT;
         $aProxy['username'] = $this->proxyUSER;
         $aProxy['password'] = $this->proxyPASS;
+
         return $aProxy;
     }
-    
+
     /**
      * Envia mensagem ao webservice.
      * @param string $urlsevice
@@ -158,7 +160,7 @@ class CurlSoap
         $data .= 'xmlns:xsd="http://www.w3.org/2001/XMLSchema" ';
         $data .= 'xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">';
         $data .= '<soap12:Header>' . $header . '</soap12:Header>';
-        $data .= '<soap12:Body>'  .$body . '</soap12:Body>';
+        $data .= '<soap12:Body>'  . $body . '</soap12:Body>';
         $data .= '</soap12:Envelope>';
         $data = Strings::clearMsg($data);
         $this->lastMsg = $data;
@@ -172,7 +174,7 @@ class CurlSoap
         $parametros = [
             'Content-Type: application/soap+xml;charset=utf-8',
             'SOAPAction: "' . $method . '"',
-            "Content-length: $tamanho"];
+            "Content-length: $tamanho", ];
         //solicita comunicação via cURL
         $resposta = $this->zCommCurl($urlservice, $data, $parametros);
         if (empty($resposta)) {
@@ -198,7 +200,7 @@ class CurlSoap
             $xml = '';
         }
         //testa para saber se é um xml mesmo ou é um html
-        $result = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR+LIBXML_ERR_FATAL + LIBXML_ERR_NONE);
+        $result = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR + LIBXML_ERR_FATAL + LIBXML_ERR_NONE);
         if ($result === false) {
             //não é um xml então pode limpar
             $xml = '';
@@ -210,6 +212,7 @@ class CurlSoap
         if ($xml != '' && substr($xml, 0, 5) != '<?xml') {
             $xml = '<?xml version="1.0" encoding="utf-8"?>' . $xml;
         }
+
         return $xml;
     }
 
@@ -238,6 +241,7 @@ class CurlSoap
             return false;
         }
         $wsdl = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" . trim(substr($resposta, $nPos));
+
         return $wsdl;
     }
 
@@ -259,7 +263,7 @@ class CurlSoap
             curl_setopt($oCurl, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
             curl_setopt($oCurl, CURLOPT_PROXY, $this->proxyIP . ':' . $this->proxyPORT);
             if ($this->proxyPASS != '') {
-                curl_setopt($oCurl, CURLOPT_PROXYUSERPWD, $this->proxyUSER.':'.$this->proxyPASS);
+                curl_setopt($oCurl, CURLOPT_PROXYUSERPWD, $this->proxyUSER . ':' . $this->proxyPASS);
                 curl_setopt($oCurl, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
             } //fim if senha proxy
         }//fim if aProxy
@@ -319,7 +323,7 @@ class CurlSoap
         //retorna resposta
         return $resposta;
     }
-    
+
     /**
      * zDebug.
      * @param array $info
@@ -356,13 +360,13 @@ class CurlSoap
             }
         }
         //carrega a variavel debug
-        $this->soapDebug = $data."\n\n".$txtInfo."\n".$resposta;
+        $this->soapDebug = $data . "\n\n" . $txtInfo . "\n" . $resposta;
     }
     
     /**
      * getIBPTProd
      * Consulta o serviço do IBPT para obter os impostos ao consumidor.
-     * conforme Lei 12.741/2012
+     * conforme Lei 12.741/2012.
      * @param string $cnpj
      * @param string $tokenIBPT
      * @param string $ncm
@@ -384,9 +388,11 @@ class CurlSoap
         if (! empty($aResp[1])) {
             if (substr($aResp[1], 0, 1) == '{') {
                 $json = $aResp[1];
+
                 return (array) json_decode($json, true);
             }
         }
+        
         return [];
     }
 }
