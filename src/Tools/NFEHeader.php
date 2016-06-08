@@ -32,7 +32,7 @@ class NFEHeader
         $node = $xml->getElementsByTagName('cUF')->item(0);
         $uf = $node->nodeValue;
 
-        return new NFEHeader($uf, $versaoDados);
+        return new self($uf, $versaoDados);
     }
 
     public function __toString()

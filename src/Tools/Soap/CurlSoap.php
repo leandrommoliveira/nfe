@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Tools\Soap;
 
-/**
+/*
  * Classe auxiliar para envio das mensagens SOAP usando cURL
  * @category   NFePHP
  * @package    NFePHP\Common\Soap
@@ -16,80 +16,80 @@ use Exception;
 class CurlSoap
 {
     /**
-     * soapDebug
+     * soapDebug.
      * @var string
      */
     public $soapDebug = '';
     /**
-     * soapTimeout
-     * @var integer
+     * soapTimeout.
+     * @var int
      */
     public $soapTimeout = 10;
     /**
-     * lastMsg
+     * lastMsg.
      * @var string
      */
     public $lastMsg = '';
 
     /**
-     * errorCurl
+     * errorCurl.
      * @var string
      */
     private $errorCurl = '';
     /**
-     * infoCurl
+     * infoCurl.
      * @var array
      */
     protected $infoCurl = array();
     /**
-     * pubKeyPath
+     * pubKeyPath.
      * @var string 
      */
     private $pubKeyPath = '';
     /**
-     * priKeyPath
+     * priKeyPath.
      * @var string
      */
     private $priKeyPath = '';
     /**
-     * certKeyPath
+     * certKeyPath.
      * @var string
      */
     private $certKeyPath = '';
     /**
-     * proxyIP
+     * proxyIP.
      * @var string
      */
     private $proxyIP = '';
     /**
-     * proxyPORT
+     * proxyPORT.
      * @var string
      */
     private $proxyPORT = '';
     /**
-     * proxyUSER
+     * proxyUSER.
      * @var string
      */
     private $proxyUSER = '';
     /**
-     * proxyPASS
+     * proxyPASS.
      * @var string 
      */
     private $proxyPASS = '';
     /**
-     * sslProtocol
-     * @var integer 
+     * sslProtocol.
+     * @var int
      */
     private $sslProtocol = 0;
     
     /**
-     * __construct
+     * __construct.
      * 
      * @param string $priKeyPath path para a chave privada
      * @param string $pubKeyPath path para a chave publica
      * @param string $certKeyPath path para o certificado
      * @param string $timeout tempo de espera da resposta do webservice
-     * @param integer $sslProtocol 
+     * @param int $sslProtocol
      */
     public function __construct($priKeyPath = '', $pubKeyPath = '', $certKeyPath = '', $timeout = 10, $sslProtocol = 0)
     {
@@ -108,15 +108,15 @@ class CurlSoap
             throw new Exception($msg);
         }
     }
-    
-    /**
+
+    /*
      * setProxy
-     * Seta o uso do proxy
+     * Seta o uso do proxy.
      * @param string $ipNumber numero IP do proxy server
      * @param string $port numero da porta usada pelo proxy
      * @param string $user nome do usuário do proxy
      * @param string $pass senha de acesso ao proxy
-     * @return boolean
+     * @return bool
      */
     public function setProxy($ipNumber, $port, $user = '', $pass = '')
     {
@@ -124,11 +124,12 @@ class CurlSoap
         $this->proxyPORT = $port;
         $this->proxyUSER = $user;
         $this->proxyPASS = $pass;
-    }//fim setProxy
+    }
+    //fim setProxy
     
     /**
-     * getProxy
-     * Retorna os dados de configuração do Proxy em um array
+     * getProxy.
+     * Retorna os dados de configuração do Proxy em um array.
      * @return array
      */
     public function getProxy()
@@ -141,23 +142,23 @@ class CurlSoap
     }
     
     /**
-     * Envia mensagem ao webservice
+     * Envia mensagem ao webservice.
      * @param string $urlsevice
      * @param string $namespace
      * @param string $header
      * @param string $body
      * @param string $method
-     * @return boolean|string
+     * @return bool|string
      */
     public function send($urlservice, $namespace, $header, $body, $method)
     {
         //monta a mensagem ao webservice
-        $data = '<?xml version="1.0" encoding="utf-8"?>'.'<soap12:Envelope ';
+        $data = '<?xml version="1.0" encoding="utf-8"?>' . '<soap12:Envelope ';
         $data .= 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ';
         $data .= 'xmlns:xsd="http://www.w3.org/2001/XMLSchema" ';
         $data .= 'xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">';
-        $data .= '<soap12:Header>'.$header.'</soap12:Header>';
-        $data .= '<soap12:Body>'.$body.'</soap12:Body>';
+        $data .= '<soap12:Header>' . $header . '</soap12:Header>';
+        $data .= '<soap12:Body>'  .$body . '</soap12:Body>';
         $data .= '</soap12:Envelope>';
         $data = Strings::clearMsg($data);
         $this->lastMsg = $data;
@@ -168,10 +169,10 @@ class CurlSoap
         //    'Content-Type: application/soap+xml;charset=utf-8;action="'.$namespace."/".$method.'"',
         //    'SOAPAction: "'.$method.'"',
         //    "Content-length: $tamanho");
-        $parametros = array(
+        $parametros = [
             'Content-Type: application/soap+xml;charset=utf-8',
-            'SOAPAction: "'.$method.'"',
-            "Content-length: $tamanho");
+            'SOAPAction: "' . $method . '"',
+            "Content-length: $tamanho"];
         //solicita comunicação via cURL
         $resposta = $this->zCommCurl($urlservice, $data, $parametros);
         if (empty($resposta)) {
@@ -179,9 +180,9 @@ class CurlSoap
             throw new Exception($msg);
         }
         //obtem o bloco html da resposta
-        $xPos = stripos($resposta, "<");
+        $xPos = stripos($resposta, '<');
         $blocoHtml = substr($resposta, 0, $xPos);
-        if ($this->infoCurl["http_code"] != '200') {
+        if ($this->infoCurl['http_code'] != '200') {
             //se não é igual a 200 houve erro
             $msg = $blocoHtml;
             throw new Exception($msg);
@@ -189,34 +190,36 @@ class CurlSoap
         //obtem o tamanho da resposta
         $lenresp = strlen($resposta);
         //localiza a primeira marca de tag
-        $xPos = stripos($resposta, "<");
+        $xPos = stripos($resposta, '<');
         //se não existir não é um xml nem um html
         if ($xPos !== false) {
-            $xml = substr($resposta, $xPos, $lenresp-$xPos);
+            $xml = substr($resposta, $xPos, $lenresp - $xPos);
         } else {
             $xml = '';
         }
         //testa para saber se é um xml mesmo ou é um html
-        $result = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR+LIBXML_ERR_FATAL+LIBXML_ERR_NONE);
+        $result = simplexml_load_string($xml, 'SimpleXmlElement', LIBXML_NOERROR+LIBXML_ERR_FATAL + LIBXML_ERR_NONE);
         if ($result === false) {
             //não é um xml então pode limpar
             $xml = '';
         }
         if ($xml == '') {
-            $msg = "Não houve retorno de um xml verifique soapDebug!!";
+            $msg = 'Não houve retorno de um xml verifique soapDebug!!';
             throw new Exception($msg);
         }
         if ($xml != '' && substr($xml, 0, 5) != '<?xml') {
-            $xml = '<?xml version="1.0" encoding="utf-8"?>'.$xml;
+            $xml = '<?xml version="1.0" encoding="utf-8"?>' . $xml;
         }
         return $xml;
-    } //fim send
+    }
+
+    //fim send
 
     /**
      * getWsdl
-     * Baixa o arquivo wsdl do webservice
+     * Baixa o arquivo wsdl do webservice.
      * @param string $urlsefaz
-     * @return boolean|string
+     * @return bool|string
      */
     public function getWsdl($urlservice)
     {
@@ -234,19 +237,19 @@ class CurlSoap
             //não retornou um wsdl
             return false;
         }
-        $wsdl = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n".trim(substr($resposta, $nPos));
+        $wsdl = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" . trim(substr($resposta, $nPos));
         return $wsdl;
     }
 
     /**
      * zCommCurl
-     * Realiza da comunicação via cURL
+     * Realiza da comunicação via cURL.
      * @param string $url
      * @param string $data
      * @param string $parametros
      * @return string
      */
-    protected function zCommCurl($url, $data = '', $parametros = array(), $port = 443)
+    protected function zCommCurl($url, $data = '', $parametros = [], $port = 443)
     {
         //incializa cURL
         $oCurl = curl_init();
@@ -254,7 +257,7 @@ class CurlSoap
         if ($this->proxyIP != '') {
             curl_setopt($oCurl, CURLOPT_HTTPPROXYTUNNEL, 1);
             curl_setopt($oCurl, CURLOPT_PROXYTYPE, CURLPROXY_HTTP);
-            curl_setopt($oCurl, CURLOPT_PROXY, $this->proxyIP.':'.$this->proxyPORT);
+            curl_setopt($oCurl, CURLOPT_PROXY, $this->proxyIP . ':' . $this->proxyPORT);
             if ($this->proxyPASS != '') {
                 curl_setopt($oCurl, CURLOPT_PROXYUSERPWD, $this->proxyUSER.':'.$this->proxyPASS);
                 curl_setopt($oCurl, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
@@ -293,7 +296,7 @@ class CurlSoap
             curl_setopt($oCurl, CURLOPT_SSLCERT, $this->certKeyPath);
             curl_setopt($oCurl, CURLOPT_SSLKEY, $this->priKeyPath);
         } else {
-            $agent= 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+            $agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
             curl_setopt($oCurl, CURLOPT_USERAGENT, $agent);
         }
         curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, 1);
@@ -301,7 +304,7 @@ class CurlSoap
             curl_setopt($oCurl, CURLOPT_POST, 1);
             curl_setopt($oCurl, CURLOPT_POSTFIELDS, $data);
         }
-        if (!empty($parametros)) {
+        if (! empty($parametros)) {
             curl_setopt($oCurl, CURLOPT_HTTPHEADER, $parametros);
         }
         //inicia a conexão
@@ -318,38 +321,38 @@ class CurlSoap
     }
     
     /**
-     * zDebug
+     * zDebug.
      * @param array $info
      * @param string $data
      * @param string $resposta
      */
-    private function zDebug($info = array(), $data = '', $resposta = '')
+    private function zDebug($info = [], $data = '', $resposta = '')
     {
-        $this->infoCurl["url"] = $info["url"];
-        $this->infoCurl["content_type"] = $info["content_type"];
-        $this->infoCurl["http_code"] = $info["http_code"];
-        $this->infoCurl["header_size"] = $info["header_size"];
-        $this->infoCurl["request_size"] = $info["request_size"];
-        $this->infoCurl["filetime"] = $info["filetime"];
-        $this->infoCurl["ssl_verify_result"] = $info["ssl_verify_result"];
-        $this->infoCurl["redirect_count"] = $info["redirect_count"];
-        $this->infoCurl["total_time"] = $info["total_time"];
-        $this->infoCurl["namelookup_time"] = $info["namelookup_time"];
-        $this->infoCurl["connect_time"] = $info["connect_time"];
-        $this->infoCurl["pretransfer_time"] = $info["pretransfer_time"];
-        $this->infoCurl["size_upload"] = $info["size_upload"];
-        $this->infoCurl["size_download"] = $info["size_download"];
-        $this->infoCurl["speed_download"] = $info["speed_download"];
-        $this->infoCurl["speed_upload"] = $info["speed_upload"];
-        $this->infoCurl["download_content_length"] = $info["download_content_length"];
-        $this->infoCurl["upload_content_length"] = $info["upload_content_length"];
-        $this->infoCurl["starttransfer_time"] = $info["starttransfer_time"];
-        $this->infoCurl["redirect_time"] = $info["redirect_time"];
+        $this->infoCurl['url'] = $info['url'];
+        $this->infoCurl['content_type'] = $info['content_type'];
+        $this->infoCurl['http_code'] = $info['http_code'];
+        $this->infoCurl['header_size'] = $info['header_size'];
+        $this->infoCurl['request_size'] = $info['request_size'];
+        $this->infoCurl['filetime'] = $info['filetime'];
+        $this->infoCurl['ssl_verify_result'] = $info['ssl_verify_result'];
+        $this->infoCurl['redirect_count'] = $info['redirect_count'];
+        $this->infoCurl['total_time'] = $info['total_time'];
+        $this->infoCurl['namelookup_time'] = $info['namelookup_time'];
+        $this->infoCurl['connect_time'] = $info['connect_time'];
+        $this->infoCurl['pretransfer_time'] = $info['pretransfer_time'];
+        $this->infoCurl['size_upload'] = $info['size_upload'];
+        $this->infoCurl['size_download'] = $info['size_download'];
+        $this->infoCurl['speed_download'] = $info['speed_download'];
+        $this->infoCurl['speed_upload'] = $info['speed_upload'];
+        $this->infoCurl['download_content_length'] = $info['download_content_length'];
+        $this->infoCurl['upload_content_length'] = $info['upload_content_length'];
+        $this->infoCurl['starttransfer_time'] = $info['starttransfer_time'];
+        $this->infoCurl['redirect_time'] = $info['redirect_time'];
         //coloca as informações em uma variável
-        $txtInfo ="";
+        $txtInfo = '';
         foreach ($info as $key => $content) {
             if (is_string($content)) {
-                $txtInfo .= strtoupper($key).'='.$content."\n";
+                $txtInfo .= strtoupper($key) . '=' . $content . "\n";
             }
         }
         //carrega a variavel debug
@@ -358,7 +361,7 @@ class CurlSoap
     
     /**
      * getIBPTProd
-     * Consulta o serviço do IBPT para obter os impostos ao consumidor 
+     * Consulta o serviço do IBPT para obter os impostos ao consumidor.
      * conforme Lei 12.741/2012
      * @param string $cnpj
      * @param string $tokenIBPT
@@ -375,15 +378,15 @@ class CurlSoap
         $exTarif = '0'
     ) {
         $url = "http://iws.ibpt.org.br/api/Produtos?token=$tokenIBPT&cnpj=$cnpj&codigo=$ncm&uf=$siglaUF&ex=$exTarif";
-        $resposta = $this->zCommCurl($url, '', array(), 80);
-        $retorno = str_replace("\r\n", "|", $resposta);
-        $aResp = explode("||", $retorno);
-        if (!empty($aResp[1])) {
+        $resposta = $this->zCommCurl($url, '', [], 80);
+        $retorno = str_replace("\r\n", '|', $resposta);
+        $aResp = explode('||', $retorno);
+        if (! empty($aResp[1])) {
             if (substr($aResp[1], 0, 1) == '{') {
                 $json = $aResp[1];
                 return (array) json_decode($json, true);
             }
         }
-        return array();
+        return [];
     }
 }

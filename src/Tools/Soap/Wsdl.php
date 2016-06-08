@@ -2,9 +2,8 @@
 
 /**
  * Classe usada para obter os arquivos WSDL, que são as especificações
- * da comunicação SOAP com os webservices da SEFAZ e das Prefeituras;
+ * da comunicação SOAP com os webservices da SEFAZ e das Prefeituras;.
  * @category   NFePHP
- * @package    NFePHP\Common\Soap
  * @copyright  Copyright (c) 2008-2015
  * @license    http://www.gnu.org/licenses/lesser.html LGPL v3
  * @author     Roberto L. Machado <linux.rlm@gamil.com>
@@ -14,7 +13,7 @@
 class Wsdl
 {
     /**
-     * soapDebug
+     * soapDebug.
      * @var string
      */
     public $soapDebug = '';
@@ -34,7 +33,7 @@ class Wsdl
     {
         $soap = new CurlSoap($priKeyPath, $pubKeyPath, $certKeyPath);
         $resposta = $soap->getWsdl($url);
-        if (!$resposta) {
+        if (! $resposta) {
             $this->soapDebug = $soap->soapDebug;
             return '';
         }

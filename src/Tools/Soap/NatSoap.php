@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Tools\Soap;
 
-/**
+/*
  * Classe auxiliar para envio das mensagens SOAP usando SOAP nativo do PHP
  * @category   NFePHP
  * @package    NFePHP\Common\Soap
@@ -10,28 +10,23 @@
  * @link       http://github.com/nfephp-org/nfephp for the canonical source repository
  */
 
-use NFePHP\Common\Soap\CorrectedSoapClient;
-use NFePHP\Common\Exception;
+use Exception;
 
 class NatSoap
 {
     /**
-     *
      * @var string
      */
     public $soapDebug = '';
     /**
-     *
-     * @var integer 
+     * @var int
      */
     public $soapTimeout = 10;
     /**
-     *
      * @var array 
      */
-    public $aError = array();
+    public $aError = [];
     /**
-     *
      * @var string 
      */
     public $pathWsdl = '';
@@ -52,42 +47,45 @@ class NatSoap
      * @param string $privateKey
      * @param string $certificateKey
      * @param string $pathWsdl
-     * @param integer $timeout
-     * @return boolean
+     * @param int $timeout
+     * @return bool
      */
     public function __construct($publicKey = '', $privateKey = '', $certificateKey = '', $pathWsdl = '', $timeout = 10)
     {
         try {
             if ($certificateKey == '' || $privateKey == '' || $publicKey == '') {
                 $msg = 'O path para as chaves deve ser passado na instânciação da classe.';
-                throw new Exception\InvalidArgumentException($msg);
+                throw new Exception($msg);
             }
             if ($pathWsdl == '') {
                 $msg = 'O path para os arquivos WSDL deve ser passado na instânciação da classe.';
-                throw new Exception\InvalidArgumentException($msg);
+                throw new Exception($msg);
             }
             $this->pubKEY = $publicKey;
             $this->priKEY = $privateKey;
             $this->certKEY = $certificateKey;
             $this->pathWsdl = $pathWsdl;
             $this->soapTimeout = $timeout;
-        } catch (Exception\RuntimeException $e) {
+        } catch (Exception $e) {
             $this->aError[] = $e->getMessage();
+
             return false;
         }
-    }//fim __construct
+    }
+
+    //fim __construct
     
     /**
      * Estabelece comunicaçao com servidor SOAP 1.1 ou 1.2 da SEFAZ,
      * usando as chaves publica e privada parametrizadas na contrução da classe.
-     * Conforme Manual de Integração Versão 4.0.1 
+     * Conforme Manual de Integração Versão 4.0.1.
      *
      * @param string $urlsefaz
      * @param string $namespace
      * @param string $cabecalho
      * @param string $dados
      * @param string $metodo
-     * @param integer $ambiente  tipo de ambiente 1 - produção e 2 - homologação
+     * @param int $ambiente  tipo de ambiente 1 - produção e 2 - homologação
      * @param string $UF unidade da federação, necessário para diferenciar AM, MT e PR
      * @return mixed false se houve falha ou o retorno em xml do SEFAZ
      */
@@ -100,9 +98,9 @@ class NatSoap
         $tpAmb = '2'
     ) {
         try {
-            if (!class_exists("SoapClient")) {
-                $msg = "A classe SOAP não está disponível no PHP, veja a configuração.";
-                throw new Exception\RuntimeException($msg);
+            if (! class_exists("SoapClient")) {
+                $msg = 'A classe SOAP não está disponível no PHP, veja a configuração.';
+                throw new Exception($msg);
             }
             $soapFault = '';
             //ativa retorno de erros soap
@@ -142,9 +140,9 @@ class NatSoap
                 $tout = $this->soapTimeout;
             }
             //completa a url do serviço para baixar o arquivo WSDL
-            $sefazURL = $urlsefaz.'?WSDL';
+            $sefazURL = $urlsefaz . '?WSDL';
             $this->soapDebug = $urlsefaz;
-            $options = array(
+            $options = [
                 'encoding'      => 'UTF-8',
                 'verifypeer'    => false,
                 'verifyhost'    => true,
@@ -157,18 +155,18 @@ class NatSoap
                 'exceptions'    => true,
                 'connection_timeout' => $tout,
                 'cache_wsdl'    => WSDL_CACHE_NONE
-            );
+            ];
             //instancia a classe soap
             $oSoapClient = new CorrectedSoapClient($sefazURL, $options);
             //monta o cabeçalho da mensagem
-            $varCabec = new SoapVar($cabecalho, XSD_ANYXML);
-            $header = new SoapHeader($namespace, 'nfeCabecMsg', $varCabec);
+            $varCabec = new \SoapVar($cabecalho, XSD_ANYXML);
+            $header = new \SoapHeader($namespace, 'nfeCabecMsg', $varCabec);
             //instancia o cabeçalho
             $oSoapClient->__setSoapHeaders($header);
             //monta o corpo da mensagem soap
-            $varBody = new SoapVar($dados, XSD_ANYXML);
+            $varBody = new \SoapVar($dados, XSD_ANYXML);
             //faz a chamada ao metodo do webservices
-            $resp = $oSoapClient->__soapCall($metodo, array($varBody));
+            $resp = $oSoapClient->__soapCall($metodo, [$varBody]);
             if (is_soap_fault($resp)) {
                 $soapFault = "SOAP Fault: (faultcode: {$resp->faultcode}, faultstring: {$resp->faultstring})";
             }
@@ -178,10 +176,16 @@ class NatSoap
             $this->soapDebug .= "\n" . $oSoapClient->__getLastRequest();
             $this->soapDebug .= "\n" . $oSoapClient->__getLastResponseHeaders();
             $this->soapDebug .= "\n" . $oSoapClient->__getLastResponse();
-        } catch (Exception\RuntimeException $e) {
+        } catch (Exception $e) {
             $this->aError[] = $e->getMessage();
+
             return false;
         }
+
         return $resposta;
-    } //fim nfeSOAP
-}//fim da classe NatSoap
+    }
+
+    //fim nfeSOAP
+}
+
+//fim da classe NatSoap

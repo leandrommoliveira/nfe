@@ -15,7 +15,7 @@ use \SoapClient;
 class CorrectedSoapClient extends \SoapClient
 {
     /**
-     * __construct
+     * __construct.
      * 
      * @param mixed $wsdl
      * @param array $options
@@ -24,9 +24,9 @@ class CorrectedSoapClient extends \SoapClient
     {
         parent::SoapClient($wsdl, $options);
     }
-    
+
     /**
-     * __doRequest
+     * __doRequest.
      * @param  string $request
      * @param  string$location
      * @param  string $action
@@ -36,7 +36,7 @@ class CorrectedSoapClient extends \SoapClient
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = 0)
     {
-        $aFind = array(":ns1","ns1:","\n","\r");
+        $aFind = [':ns1','ns1:',"\n","\r"];
         $sReplace = '';
         $newrequest = str_replace($aFind, $sReplace, $request);
         return parent::__doRequest($newrequest, $location, $action, $version, $oneWay);
