@@ -1,10 +1,10 @@
 <?php namespace PhpNFe;
 
 use Carbon\Carbon;
-use Mockery\CountValidator\Exception;
 use PhpNFe\Tools\Asn;
 use PhpNFe\Tools\Dom;
 use PhpNFe\Tools\Pkcs12;
+use Exception;
 
 class Certificado
 {
@@ -177,25 +177,36 @@ class Certificado
 
     /**
      * salvaChave.
-     * Salva a chave especificada no arquivo passado por parâmetro.
+     * Salva a chave especificada no arquivo passado por parâmetro, caso não especificar a chave
+     * verifica se o $arquivo é um diretório, caso for, salva as 3 chaves lá.
      *
      * @param $arquivo
      * @param string $chave
      */
-    public function salvaChave($arquivo, $chave)
+    public function salvaChave($arquivo, $chave = null)
     {
         switch ($chave) {
             case self::Publico:
                 file_put_contents($arquivo, $this->chavePub);
                 break;
+
             case self::Privado:
                 file_put_contents($arquivo, $this->chavePri);
                 break;
+
             case self::Certificado:
                 file_put_contents($arquivo, $this->getCertificado());
                 break;
+
             default:
-                throw new Exception("Tipo de chave invalida!\r\nOpcoes: publico, privado, certificado.");
+                if (! is_dir($arquivo)) {
+                    throw new Exception("Tipo de chave invalida!\r\nOpcoes: publico, privado, certificado.");
+                }
+
+                $this->salvaChave($arquivo . '/pri.key', self::Privado);
+                $this->salvaChave($arquivo . '/pub.key', self::Publico);
+                $this->salvaChave($arquivo . '/cert.key', self::Certificado);
+                break;
         }
     }
 
@@ -206,7 +217,7 @@ class Certificado
      * @param $xml
      * @param $tag
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     public function assinarXML($xml, $tag)
     {

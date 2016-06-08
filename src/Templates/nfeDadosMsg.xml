@@ -1,0 +1,7 @@
+<nfeDadosMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/NfeAutorizacao">
+    <enviNFe xmlns="{{urlportal}}" versao="{{versao}}">
+        <idLote>{{idlote}}</idLote>
+        <indSinc>{{idSinc}}</indSinc>
+        {{xml}}
+    </enviNFe>
+</nfeDadosMsg>
