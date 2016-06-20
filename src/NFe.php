@@ -44,27 +44,8 @@ class NFe
     }
 
     /**
-     * Envia um xml assinado e validado para a Receita Federal para
-     * ser realizada a autorização.
-     *
-     * @param $xml
-     * @throws \Exception
-     * @return AutorizaRetorno
-     */
-    public function autorizar($xml)
-    {
-        $xml =  NFeXML::createByXml($xml);
-        $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtAutoriza);
-        $header = NFEHeader::loadDOM($xml, $method->operation, $method->version, 'infNFe');
-        $body = NFEBody::loadDOM($xml, $method->operation, 'enviNFe', 'infNFe');
-
-        // Executar o comando "nfeAutorizacaoLote"
-        return new AutorizaRetorno($this->soap($method, $header, $body), $xml);
-    }
-    
-    /**
      * Envia um evento para o cancelamento da NFe
-     * 
+     *
      * @param $xml
      * @param $justificativa
      * @param $seqEvento
@@ -79,12 +60,30 @@ class NFe
         $signedMsg = AjustaXML::limpaXml($this->certificado->assinarXML($mensagem, 'infEvento'));
         $header = NFEHeader::loadDOM($xml, $method->operation, $method->version, 'infEvento');
         $body = EvBody::loadDOM(XML::createByXml($signedMsg), $method->operation, 'enviNFe', 'infEvento');
-        
+
         return new EventoRetorno($this->soap($method, $header, $body), NFeXML::createByXml($signedMsg));
+    }
+    /**
+     * Envia um xml assinado e validado para a Receita Federal para
+     * ser realizada a autorização.
+     *
+     * @param $xml
+     * @throws \Exception
+     * @return AutorizaRetorno
+     */
+    public function autorizar($xml)
+    {
+        $xml = NFeXML::createByXml($xml);
+        $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtAutoriza);
+        $header = NFEHeader::loadDOM($xml, $method->operation, $method->version, 'infNFe');
+        $body = NFEBody::loadDOM($xml, $method->operation, 'enviNFe', 'infNFe');
+
+        // Executar o comando "nfeAutorizacaoLote"
+        return new AutorizaRetorno($this->soap($method, $header, $body), $xml);
     }
 
     /**
-     * Envia um evento para o carta de correção da NFe
+     * Envia um evento para o carta de correção da NFe.
      *
      * @param $xml
      * @param $xCorrecao
@@ -94,7 +93,7 @@ class NFe
      */
     public function cartaCorrecao($xml, $xCorrecao, $seqEvento)
     {
-        $xml =  NFeXML::createByXml($xml);
+        $xml = NFeXML::createByXml($xml);
         $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtCartaCorrecao);
         $mensagem = EvCCDados::loadDOM($xml, $xCorrecao, $seqEvento);
         $signedMsg = AjustaXML::limpaXml($this->certificado->assinarXML($mensagem, 'infEvento'));

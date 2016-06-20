@@ -1,6 +1,5 @@
 <?php namespace PhpNFe\Tools;
 
-
 class EvBody
 {
     /**
@@ -17,7 +16,7 @@ class EvBody
      * @var
      */
     protected $xml;
-    
+
     public function __construct($idLote, $versao, $xml)
     {
         $this->idLote = $idLote;
@@ -34,10 +33,10 @@ class EvBody
         $idLote = substr(str_replace(',', '', number_format(microtime(true) * 1000000, 0)), 0, 15);
         $versao = $xml->documentElement->getAttribute('versao');
         $xml = $xml->saveXML();
-        
+
         return new self($idLote, $versao, $xml);
     }
-    
+
     public function __toString()
     {
         $xml = file_get_contents(__DIR__ . '/../Templates/evDadosMsg.xml');

@@ -24,7 +24,7 @@ class NFeXML extends XML
 
     /**
      * Retorna o ambiente da NFe.
-     * 
+     *
      * @return string
      * @throws \Exception
      */

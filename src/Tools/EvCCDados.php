@@ -1,6 +1,5 @@
 <?php namespace PhpNFe\Tools;
 
-
 class EvCCDados
 {
     /**
@@ -85,7 +84,7 @@ class EvCCDados
         $this->xCondUso = $xCondUso;
         $this->eventId = $eventId;
     }
-    
+
     public static function loadDOM(\DOMDocument $xml, $xCorrecao, $nSeqEvento)
     {
         $versao = '1.00';
@@ -94,9 +93,9 @@ class EvCCDados
         $chNFe = str_replace('NFe', '', $xml->getElementsByTagName('infNFe')->item(0)->getAttribute('Id'));
         $dhEvento = (string) str_replace(' ', 'T', date('Y-m-d H:i:sP'));
         $tpEvento = '110110';
-        $sSeqEvento = str_pad($nSeqEvento, 2, "0", STR_PAD_LEFT);
+        $sSeqEvento = str_pad($nSeqEvento, 2, '0', STR_PAD_LEFT);
 
-        $eventId = "ID" . $tpEvento . $chNFe . $sSeqEvento;
+        $eventId = 'ID' . $tpEvento . $chNFe . $sSeqEvento;
 
         $xCondUso = file_get_contents(__DIR__ . '/../Templates/condicaoUso');
 
@@ -110,7 +109,7 @@ class EvCCDados
         return new self($cOrgao, $tpAmb, $cnpj, $chNFe, $dhEvento, $tpEvento,
             $nSeqEvento, $versao, $descEvento, $tagAdic, $xCorrecao, $xCondUso, $eventId);
     }
-    
+
     public function __toString()
     {
         $xml = file_get_contents(__DIR__ . '/../Templates/EvCancelaMsg.xml');
@@ -129,6 +128,7 @@ class EvCCDados
         $xml = str_replace('$eventId', $this->eventId, $xml);
 
         $xml = AjustaXML::limpaXml($xml);
+        
         return $xml;
     }
 }

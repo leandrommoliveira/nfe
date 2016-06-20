@@ -4,14 +4,14 @@
 class EventoRetorno extends Retorno
 {
     /**
-     * XML do Retorno
+     * XML do Retorno.
      *
      * @var
      */
     protected $retorno;
 
     /**
-     * XML da nfe assinada
+     * XML da nfe assinada.
      *
      * @var
      */

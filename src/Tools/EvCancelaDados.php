@@ -95,9 +95,9 @@ class EvCancelaDados
         $chNFe = str_replace('NFe', '', $xml->getElementsByTagName('infNFe')->item(0)->getAttribute('Id'));
         $dhEvento = (string) str_replace(' ', 'T', date('Y-m-d H:i:sP'));
         $tpEvento = '110111';
-        $sSeqEvento = str_pad($nSeqEvento, 2, "0", STR_PAD_LEFT);
+        $sSeqEvento = str_pad($nSeqEvento, 2, '0', STR_PAD_LEFT);
 
-        $eventId = "ID" . $tpEvento . $chNFe . $sSeqEvento;
+        $eventId = 'ID' . $tpEvento . $chNFe . $sSeqEvento;
 
         $nProt = $xml->getElementsByTagName('nProt')->item(0)->textContent;
 
@@ -107,11 +107,11 @@ class EvCancelaDados
 
         $cOrgao = '42';
         $tpAmb = '2';
-        
-        return new self($cOrgao, $tpAmb, $cnpj, $chNFe, $dhEvento, $tpEvento, 
+
+        return new self($cOrgao, $tpAmb, $cnpj, $chNFe, $dhEvento, $tpEvento,
                         $nSeqEvento, $versao, $descEvento, $tagAdic, $xJust, $nProt, $eventId);
     }
-    
+
     public function __toString()
     {
         $xml = file_get_contents(__DIR__ . '/../Templates/EvCancelaMsg.xml');
@@ -128,8 +128,9 @@ class EvCancelaDados
         $xml = str_replace('$nProt', $this->nProt, $xml);
         $xml = str_replace('$xJust', $this->xJust, $xml);
         $xml = str_replace('$eventId', $this->eventId, $xml);
-        
+
         $xml = AjustaXML::limpaXml($xml);
+        
         return $xml;
     }
 }

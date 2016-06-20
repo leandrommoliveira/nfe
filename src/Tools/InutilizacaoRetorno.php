@@ -4,7 +4,7 @@
 class InutilizacaoRetorno extends Retorno
 {
     /**
-     * XML do Retorno
+     * XML do Retorno.
      *
      * @var
      */

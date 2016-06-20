@@ -45,7 +45,7 @@ class NFEBody
         $versao = $node->getAttribute('versao');
         $idLote = substr(str_replace(',', '', number_format(microtime(true) * 1000000, 0)), 0, 15);
         $xml = $xml->saveXML();
-        
+
         return new self($versao, $idLote, '', $xml);
     }
 

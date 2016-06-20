@@ -23,7 +23,7 @@ class MethodSefaz
 
     /**
      * Retorna a URL do NameSpace.
-     * 
+     *
      * @return string
      */
     public function getNamespace()

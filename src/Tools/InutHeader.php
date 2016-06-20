@@ -40,7 +40,7 @@ class InutHeader
         $xml = str_replace('{{metodo}}', 'NfeInutilizacao2', $xml);
         $xml = str_replace('{{cUF}}', $this->cUF, $xml);
         $xml = str_replace('{{versaoDados}}', $this->versao, $xml);
-        
+
         return $xml;
     }
 

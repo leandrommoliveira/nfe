@@ -90,7 +90,7 @@ class AutorizaRetorno extends Retorno
 
         $versao = $this->retorno->getElementsByTagName('retEnviNFe')->item(0)->getAttribute('versao');
         $urlPortal = $this->retorno->getElementsByTagName('retEnviNFe')->item(0)->getAttribute('xmlns');
-        
+
         // Prot
         $prot = $this->retorno->getElementsByTagName('protNFe')->item(0)->C14N();
         $prot = preg_replace('/\s+/', ' ', preg_replace('%xmlns:[a-z]+="[a-zA-Z0-9:/.-]+"%', '', $prot));

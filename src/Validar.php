@@ -19,10 +19,10 @@ class Validar
         libxml_use_internal_errors(true);
         libxml_clear_errors();
 
-        if(is_file($xml)) {
+        if (is_file($xml)) {
             $xml = file_get_contents($xml);
         }
-        
+
         $dom = new DOMDocument('1.0', 'utf-8');
 
         $dom->loadXML($xml, LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -43,7 +43,7 @@ class Validar
 
             return $returnErrors;
         }
-        
+
         return true;
     }
 }

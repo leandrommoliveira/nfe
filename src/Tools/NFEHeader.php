@@ -22,7 +22,7 @@ class NFEHeader
      */
     protected $metodo;
 
-    public function __construct($cuf, $versaoDados, $metodo = '', $tag)
+    public function __construct($cuf, $versaoDados, $metodo, $tag)
     {
         $this->cUF = $cuf;
         $this->versaoDados = $versaoDados;
@@ -33,7 +33,7 @@ class NFEHeader
     /**
      * @param \DOMDocument $xml
      * @param string $metodo
-     * 
+     *
      * @return NFEHeader
      */
     public static function loadDOM(\DOMDocument $xml, $metodo, $versao, $tag)
@@ -43,6 +43,7 @@ class NFEHeader
         // Pegar o estado
         $node = $xml->getElementsByTagName('cUF')->item(0);
         $uf = $node->nodeValue;
+
         return new self($uf, $versao, $metodo, $tag);
     }
 
@@ -52,7 +53,7 @@ class NFEHeader
         $xml = str_replace('{{versaoDados}}', $this->versaoDados, $xml);
         $xml = str_replace('{{cUF}}', $this->cUF, $xml);
         $xml = str_replace('{{metodo}}', $this->metodo, $xml);
-        
+
         return $xml;
     }
 }

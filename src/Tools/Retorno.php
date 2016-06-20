@@ -26,7 +26,7 @@ abstract class Retorno
     /**
      * Verifrica se o retorno é um erro.
      *
-     * @return boolean
+     * @return bool
      */
     abstract public function isError();
 
@@ -39,7 +39,7 @@ abstract class Retorno
 
     /**
      * Salvar o arquivo xml protocolado.
-     * 
+     *
      * @param $arquivo
      */
     public function salvaXML($arquivo)
