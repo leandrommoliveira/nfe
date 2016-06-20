@@ -35,7 +35,7 @@ class EvCCXmlRetorno
         $xml = str_replace('{{versao}}', $this->versao, $xml);
         $xml = str_replace('{{signedMsg}}', $this->signedMsg, $xml);
         $xml = str_replace('{{retEvento}}', $this->retEvento, $xml);
-        
+
         return $xml;
     }
 }

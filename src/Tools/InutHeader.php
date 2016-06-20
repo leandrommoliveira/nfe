@@ -1,6 +1,5 @@
 <?php namespace PhpNFe\Tools;
 
-
 class InutHeader
 {
     /**
@@ -43,5 +42,4 @@ class InutHeader
 
         return $xml;
     }
-
 }

@@ -1,6 +1,5 @@
 <?php namespace PhpNFe\Tools;
 
-
 class InutilizacaoRetorno extends Retorno
 {
     /**

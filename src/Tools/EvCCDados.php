@@ -128,7 +128,7 @@ class EvCCDados
         $xml = str_replace('$eventId', $this->eventId, $xml);
 
         $xml = AjustaXML::limpaXml($xml);
-        
+
         return $xml;
     }
 }

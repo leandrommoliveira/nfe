@@ -80,5 +80,4 @@ class EventoRetorno extends Retorno
         return EvCCXmlRetorno::loadDOM($this->xml,
             $this->retorno->getElementsByTagName('retEvento')->item(0)->C14N(), $versao);
     }
-
 }

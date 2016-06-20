@@ -44,7 +44,7 @@ class NFe
     }
 
     /**
-     * Envia um evento para o cancelamento da NFe
+     * Envia um evento para o cancelamento da NFe.
      *
      * @param $xml
      * @param $justificativa
@@ -54,7 +54,7 @@ class NFe
      */
     public function cancela($xml, $justificativa, $seqEvento)
     {
-        $xml =  NFeXML::createByXml($xml);
+        $xml = NFeXML::createByXml($xml);
         $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtCancela);
         $mensagem = EvCancelaDados::loadDOM($xml, $justificativa, $seqEvento);
         $signedMsg = AjustaXML::limpaXml($this->certificado->assinarXML($mensagem, 'infEvento'));
@@ -63,6 +63,7 @@ class NFe
 
         return new EventoRetorno($this->soap($method, $header, $body), NFeXML::createByXml($signedMsg));
     }
+
     /**
      * Envia um xml assinado e validado para a Receita Federal para
      * ser realizada a autorização.
@@ -149,7 +150,7 @@ class NFe
 
             $client = new Soap\CurlSoap($dir . '/pri.key', $dir . '/pub.key', $dir . '/cert.key');
             $resp = $client->send($method->url, $method->getNamespace(), $header, $body, $method->method);
-            
+
             $xml = XML::createByXml($resp);
 
             $this->file->deleteDirectory($dir);

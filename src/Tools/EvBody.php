@@ -44,7 +44,7 @@ class EvBody
         $xml = str_replace('{{versao}}', $this->versao, $xml);
         $xml = str_replace('{{xml}}', $this->xml, $xml);
         $xml = AjustaXML::limpaXml($xml);
-        
+
         return $xml;
     }
 
