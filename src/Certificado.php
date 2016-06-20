@@ -25,7 +25,6 @@ class Certificado
     protected $chavePri = '';
 
     /**
-     * carregarArquivo.
      * Carrega um arquivo já com as propriedades do certificado.
      *
      * @param $arquivo
@@ -44,7 +43,6 @@ class Certificado
     }
 
     /**
-     * carregarPfx.
      * Carrega um arquivo .pfx para pegar as propriedades do certificado.
      *
      * @param $pfx
@@ -66,7 +64,6 @@ class Certificado
     }
 
     /**
-     * salvarArquivo.
      * Salva um arquivo com as propriedades do certificado.
      *
      * @param $arquivo
@@ -87,7 +84,6 @@ class Certificado
     }
 
     /**
-     * getCNPJ.
      * Retorna o CNPJ do certificado.
      *
      * @return string
@@ -100,7 +96,6 @@ class Certificado
     }
 
     /**
-     * ehValido.
      * Verifica se o certificado não está com a data de validade vencida.
      *
      * @return bool
@@ -111,7 +106,6 @@ class Certificado
     }
 
     /**
-     * getValidade.
      * Retorna a data e hora da validade do certificado.
      *
      * @return Carbon
@@ -127,7 +121,6 @@ class Certificado
     }
 
     /**
-     * verificaChaveNula..
      * Verifica se a chave pública está nula, caso estiver retorna um erro.
      *
      * @throws \Exception
@@ -143,7 +136,6 @@ class Certificado
     }
 
     /**
-     * getChavePub.
      * Retorna a chave pública.
      *
      * @return string
@@ -154,8 +146,7 @@ class Certificado
     }
 
     /**
-     * getChavePri.
-     * Retorna a chave pública.
+     * Retorna a chave privada.
      *
      * @return string
      */
@@ -165,7 +156,6 @@ class Certificado
     }
 
     /**
-     * getCertificado.
      * Retorna a chave do certificado (Chave Pública + Chave Privada).
      *
      * @return string
@@ -176,7 +166,6 @@ class Certificado
     }
 
     /**
-     * salvaChave.
      * Salva a chave especificada no arquivo passado por parâmetro, caso não especificar a chave
      * verifica se o $arquivo é um diretório, caso for, salva as 3 chaves lá.
      *
@@ -211,7 +200,6 @@ class Certificado
     }
 
     /**
-     * assinarXml.
      * Assina o xml passado por parâmetro com a tag também passada por parâmetro.
      *
      * @param $xml
@@ -221,7 +209,6 @@ class Certificado
      */
     public function assinarXML($xml, $tag)
     {
-        $xml = file_get_contents($xml);
         $xmlDoc = new Dom();
 
         //Limpando o XML

@@ -155,7 +155,7 @@ class CurlSoap
     public function send($urlservice, $namespace, $header, $body, $method)
     {
         //monta a mensagem ao webservice
-        $data = '<?xml version="1.0" encoding="utf-8"?>' . '<soap12:Envelope ';
+        $data = '<soap12:Envelope ';
         $data .= 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ';
         $data .= 'xmlns:xsd="http://www.w3.org/2001/XMLSchema" ';
         $data .= 'xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">';
@@ -173,7 +173,7 @@ class CurlSoap
         //    "Content-length: $tamanho");
         $parametros = [
             'Content-Type: application/soap+xml;charset=utf-8',
-            'SOAPAction: "' . $method . '"',
+            'SOAPAction: "' . $namespace . '/' . $method . '"',
             "Content-length: $tamanho", ];
         //solicita comunicação via cURL
         $resposta = $this->zCommCurl($urlservice, $data, $parametros);

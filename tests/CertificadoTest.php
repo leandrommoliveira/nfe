@@ -102,7 +102,7 @@ class CertificadoTeste extends TestCase
         self::$cert->carregarArquivo(__DIR__ . '/utils/certificado_teste.xml');
 
         // Assinando o xml
-        $signXml = self::$cert->assinarXML(__DIR__ . '/utils/xmlTeste.xml', 'infNFe');
+        $signXml = self::$cert->assinarXML(file_get_contents(__DIR__ . '/utils/xmlTeste.xml'), 'infNFe');
 
         $signXml = $this->ajustaXml($signXml);
 

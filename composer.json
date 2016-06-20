@@ -15,7 +15,8 @@
     ],
 
     "require": {
-        "nesbot/carbon": "1.*"
+        "nesbot/carbon": "1.*",
+        "illuminate/filesystem": "5.2.*"
     },
 
     "require-dev": {

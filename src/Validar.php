@@ -4,21 +4,25 @@ use DOMDocument;
 
 class Validar
 {
+    const versaoSchema = 'PL_008i2';
+
     /**
-     * validar.
      * Valida um xml assinado.
      *
      * @param $xml
      * @param $tag
      * @return array|bool
      */
-    public function validar($xml, $tag)
+    public static function validar($xml, $tag)
     {
         //Para poder pegar os erros caso houver
         libxml_use_internal_errors(true);
         libxml_clear_errors();
 
-        $xml = file_get_contents($xml);
+        if(is_file($xml)) {
+            $xml = file_get_contents($xml);
+        }
+        
         $dom = new DOMDocument('1.0', 'utf-8');
 
         $dom->loadXML($xml, LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -28,7 +32,7 @@ class Validar
         $versao = $node->getAttribute('versao');
 
         $xsdFile = '/nfe_v' .  $versao . '.xsd';
-        $xsdPath = __DIR__ . '/schemes/PL_008i2' . $xsdFile;
+        $xsdPath = __DIR__ . '/schemes/' . self::versaoSchema . $xsdFile;
 
         if (! $dom->schemaValidate($xsdPath)) {
             $errors = libxml_get_errors();
@@ -38,8 +42,8 @@ class Validar
             }
 
             return $returnErrors;
-        } else {
-            return true;
         }
+        
+        return true;
     }
 }

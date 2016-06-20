@@ -1,28 +1,152 @@
 <?php namespace PhpNFe;
 
+use DOMDocument;
+use PhpNFe\Tools\AjustaXML;
+use PhpNFe\Tools\AutorizaRetorno;
+use PhpNFe\Tools\EvBody;
+use PhpNFe\Tools\EvCancelaDados;
+use PhpNFe\Tools\EvCCDados;
+use PhpNFe\Tools\EvCCXmlRetorno;
+use PhpNFe\Tools\EventoRetorno;
+use PhpNFe\Tools\InutHeader;
+use PhpNFe\Tools\InutilizacaoRetorno;
+use PhpNFe\Tools\MethodSefaz;
 use PhpNFe\Tools\NFEBody;
 use PhpNFe\Tools\NFEHeader;
+use PhpNFe\Tools\NFeInutBody;
+use PhpNFe\Tools\NFeInutDados;
+use PhpNFe\Tools\NFeXML;
+use PhpNFe\Tools\Sefaz;
 use PhpNFe\Tools\Soap;
-use DOMDocument;
+use Illuminate\Filesystem\Filesystem;
+use PhpNFe\Tools\XML;
 
 class NFe
 {
-    public function enviaSefaz($xml, Certificado $certificado)
+    /**
+     * Classe de controle do certificado.
+     * @var Certificado
+     */
+    protected $certificado;
+
+    /**
+     * @var Filesystem
+     */
+    protected $file;
+
+    /**
+     * NFe constructor.
+     * @param Certificado $certificado
+     */
+    public function __construct(Certificado $certificado)
     {
-        $dom = new DOMDocument('1.0', 'utf-8');
-        $dom->loadXML($xml, LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
+        $this->certificado = $certificado;
+        $this->file = new Filesystem();
+    }
 
-        $urlService = 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx';
-        $urlNamespace = sprintf('%s/wsdl/%s', 'http://www.portalfiscal.inf.br/nfe', 'NfeAutorizacao');
-        $header = NFEHeader::loadDOM($dom);
-        $body = NFEBody::loadDOM($dom);
+    /**
+     * Envia um xml assinado e validado para a Receita Federal para
+     * ser realizada a autorização.
+     *
+     * @param $xml
+     * @throws \Exception
+     * @return AutorizaRetorno
+     */
+    public function autorizar($xml)
+    {
+        $xml =  NFeXML::createByXml($xml);
+        $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtAutoriza);
+        $header = NFEHeader::loadDOM($xml, $method->operation, $method->version, 'infNFe');
+        $body = NFEBody::loadDOM($xml, $method->operation, 'enviNFe', 'infNFe');
 
-        $certsDir = __DIR__ . '/certs';
-        @mkdir($certsDir);
+        // Executar o comando "nfeAutorizacaoLote"
+        return new AutorizaRetorno($this->soap($method, $header, $body), $xml);
+    }
+    
+    /**
+     * Envia um evento para o cancelamento da NFe
+     * 
+     * @param $xml
+     * @param $seqEvento
+     * @param $justificativa
+     * @return EventoRetorno
+     * @throws \Exception
+     */
+    public function cancela($xml, $seqEvento, $justificativa)
+    {
+        $xml =  NFeXML::createByXml($xml);
+        $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtCancela);
+        $mensagem = EvCancelaDados::loadDOM($xml, $justificativa, $seqEvento);
+        $signedMsg = AjustaXML::limpaXml($this->certificado->assinarXML($mensagem, 'infEvento'));
+        $header = NFEHeader::loadDOM($xml, $method->operation, $method->version, 'infEvento');
+        $body = EvBody::loadDOM(XML::createByXml($signedMsg), $method->operation, 'enviNFe', 'infEvento');
+        
+        return new EventoRetorno($this->soap($method, $header, $body), NFeXML::createByXml($signedMsg));
+    }
 
-        $certificado->salvaChave($certsDir);
+    /**
+     * Envia um evento para o carta de correção da NFe
+     *
+     * @param $xml
+     * @param $xCorrecao
+     * @param $seqEvento
+     * @return EvRetornoErro|EvRetornoOK
+     * @throws \Exception
+     */
+    public function cartaCorrecao($xml, $xCorrecao, $seqEvento)
+    {
+        $xml =  NFeXML::createByXml($xml);
+        $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtCartaCorrecao);
+        $mensagem = EvCCDados::loadDOM($xml, $xCorrecao, $seqEvento);
+        $signedMsg = AjustaXML::limpaXml($this->certificado->assinarXML($mensagem, 'infEvento'));
+        $header = NFEHeader::loadDOM($xml, $method->operation, $method->version, 'infEvento');
+        $body = EvBody::loadDOM(XML::createByXml($signedMsg), $method->operation, 'enviNFe', 'infEvento');
 
-        $client = new Soap\CurlSoap($certsDir . '/pri.key', $certsDir . '/pub.key', $certsDir . '/cert.key');
-        $client->send($urlService, $urlNamespace, $header, $body, 'nfeAutorizacaoLote');
+        return new EventoRetorno($this->soap($method, $header, $body), NFeXML::createByXml($signedMsg));
+    }
+
+    public function inutiliza($sAno, $cnpj, $serie, $nIni, $nFin, $tpAmb, $cUF, $xJust)
+    {
+        $method = Sefaz::getMethodInfo($tpAmb, $cUF, Sefaz::mtInutilizacao);
+        $mensagem = NFeInutDados::loadDOM($sAno, $cnpj, $serie, $nIni, $nFin, $xJust, $method);
+        $signedMsg = AjustaXML::limpaXml($this->certificado->assinarXML($mensagem, 'infInut'));
+        $header = InutHeader::loadDOM($cUF, $method->version);
+        $body = NFeInutBody::loadDOM(XML::createByXml($signedMsg));
+
+        return new InutilizacaoRetorno($this->soap($method, $header, $body));
+    }
+
+    /**
+     * Fazer requisição SOAP.
+     *
+     * @param MethodSefaz $method
+     * @param $header
+     * @param $body
+     * @return DOMDocument
+     * @throws \Exception
+     */
+    protected function soap(MethodSefaz $method, $header, $body)
+    {
+        $dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid();
+        try {
+            // Criar diretorio temporario.
+            $this->file->makeDirectory($dir);
+
+            // Salvar certificados na pasta temp criada.
+            $this->certificado->salvaChave($dir);
+
+            $client = new Soap\CurlSoap($dir . '/pri.key', $dir . '/pub.key', $dir . '/cert.key');
+            $resp = $client->send($method->url, $method->getNamespace(), $header, $body, $method->method);
+            
+            $xml = XML::createByXml($resp);
+
+            $this->file->deleteDirectory($dir);
+
+            return $xml;
+        } catch (\Exception $e) {
+            $this->file->deleteDirectory($dir);
+
+            throw $e;
+        }
     }
 }
