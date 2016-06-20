@@ -47,5 +47,4 @@ class EvBody
 
         return $xml;
     }
-
 }

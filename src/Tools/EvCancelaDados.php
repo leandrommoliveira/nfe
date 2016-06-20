@@ -1,9 +1,7 @@
 <?php namespace PhpNFe\Tools;
 
-
 class EvCancelaDados
 {
-
     /**
      * @var
      */

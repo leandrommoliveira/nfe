@@ -30,10 +30,8 @@ $auxDois = str_split($dois);
 
 $resultado = [];
 
-for ($i = 0; $i < count($auxUm); $i++)
-{
-    if($auxUm[$i] != $auxDois[$i])
-    {
+for ($i = 0; $i < count($auxUm); $i++) {
+    if ($auxUm[$i] != $auxDois[$i]) {
         $resultado[] = $auxUm[$i];
     }
 }
