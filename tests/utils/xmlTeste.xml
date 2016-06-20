@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-        <infNFe versao="3.10" Id="NFe42160618227795000130550010000000391999759991">
+        <infNFe versao="3.10" Id="NFe42160618227795000130550010000000431999859999">
             <ide>
                 <cUF>42</cUF>
-                <cNF>99975999</cNF>
+                <cNF>99985999</cNF>
                 <natOp>TESTE</natOp>
                 <indPag>0</indPag>
                 <mod>55</mod>
                 <serie>1</serie>
-                <nNF>40</nNF>
+                <nNF>43</nNF>
                 <dhEmi>2016-06-13T14:27:00-03:00</dhEmi>
                 <tpNF>1</tpNF>
                 <idDest>1</idDest>
                 <cMunFG>4202008</cMunFG>
                 <tpImp>1</tpImp>
                 <tpEmis>1</tpEmis>
-                <cDV>1</cDV>
+                <cDV>9</cDV>
                 <tpAmb>2</tpAmb>
                 <finNFe>1</finNFe>
                 <indFinal>0</indFinal>

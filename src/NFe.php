@@ -6,7 +6,6 @@ use PhpNFe\Tools\AutorizaRetorno;
 use PhpNFe\Tools\EvBody;
 use PhpNFe\Tools\EvCancelaDados;
 use PhpNFe\Tools\EvCCDados;
-use PhpNFe\Tools\EvCCXmlRetorno;
 use PhpNFe\Tools\EventoRetorno;
 use PhpNFe\Tools\InutHeader;
 use PhpNFe\Tools\InutilizacaoRetorno;
@@ -67,12 +66,12 @@ class NFe
      * Envia um evento para o cancelamento da NFe
      * 
      * @param $xml
-     * @param $seqEvento
      * @param $justificativa
+     * @param $seqEvento
      * @return EventoRetorno
      * @throws \Exception
      */
-    public function cancela($xml, $seqEvento, $justificativa)
+    public function cancela($xml, $justificativa, $seqEvento)
     {
         $xml =  NFeXML::createByXml($xml);
         $method = Sefaz::getMethodInfo($xml->getAmbiente(), $xml->getCuf(), Sefaz::mtCancela);
@@ -90,7 +89,7 @@ class NFe
      * @param $xml
      * @param $xCorrecao
      * @param $seqEvento
-     * @return EvRetornoErro|EvRetornoOK
+     * @return EventoRetorno
      * @throws \Exception
      */
     public function cartaCorrecao($xml, $xCorrecao, $seqEvento)
@@ -105,6 +104,20 @@ class NFe
         return new EventoRetorno($this->soap($method, $header, $body), NFeXML::createByXml($signedMsg));
     }
 
+    /**
+     * Inutilizar uma faixa de numeração de nota fiscal.
+     *
+     * @param $sAno
+     * @param $cnpj
+     * @param $serie
+     * @param $nIni
+     * @param $nFin
+     * @param $tpAmb
+     * @param $cUF
+     * @param $xJust
+     * @return InutilizacaoRetorno
+     * @throws \Exception
+     */
     public function inutiliza($sAno, $cnpj, $serie, $nIni, $nFin, $tpAmb, $cUF, $xJust)
     {
         $method = Sefaz::getMethodInfo($tpAmb, $cUF, Sefaz::mtInutilizacao);

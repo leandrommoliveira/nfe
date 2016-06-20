@@ -56,7 +56,7 @@ class EventoRetorno extends Retorno
      */
     public function isError()
     {
-        return $this->getCode() != '100' && $this->getCode() != '135';
+        return $this->getCode() != '135';
     }
 
     /**
