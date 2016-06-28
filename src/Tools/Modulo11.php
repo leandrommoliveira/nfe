@@ -4,7 +4,7 @@ class Modulo11
 {
     public static function nfeCalculaDV($chave43)
     {
-        $multiplicadores = array(2, 3, 4, 5, 6, 7, 8, 9);
+        $multiplicadores = [2, 3, 4, 5, 6, 7, 8, 9];
 
         $i = 42;
         $soma_ponderada = 0;

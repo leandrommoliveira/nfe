@@ -2,7 +2,6 @@
 
 class PropriedadeNull
 {
-
     /**
      * @var string
      */
@@ -42,7 +41,7 @@ class PropriedadeNull
         return call_user_func_array([$this->__load(), $name], $arguments);
     }
 
-    public function & __get($name)
+    public function &__get($name)
     {
         return $this->__load()->{$name};
     }

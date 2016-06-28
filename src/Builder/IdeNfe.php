@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder;
 
-class IdeNFe extends Builder
+class IdeNfe extends Builder
 {
     /**
      * Código da UF do emitente do Documento Fiscal. Utilizar a
@@ -13,7 +13,7 @@ class IdeNFe extends Builder
     /**
      * Código numérico que compõe a Chave de Acesso. Número
      * aleatório gerado pelo emitente para cada NF-e para evitar
-     * acessos indevidos da NF-e. (v2.0)
+     * acessos indevidos da NF-e. (v2.0).
      * @var string
      */
     public $cNF = '';
@@ -40,7 +40,7 @@ class IdeNFe extends Builder
     /**
      * 55=NF-e emitida em substituição ao modelo 1 ou 1A;
      * 65=NFC-e, utilizada nas operações de venda no varejo (a
-     * critério da UF aceitar este modelo de documento)
+     * critério da UF aceitar este modelo de documento).
      * @var string
      */
     public $mod = '55';
@@ -51,20 +51,20 @@ class IdeNFe extends Builder
      * Série 890-899: uso exclusivo para emissão de NF-e avulsa, pelo
      * contribuinte com seu certificado digital, através do site do Fisco
      * (procEmi=2). (v2.0)
-     * Serie 900-999: uso exclusivo de NF-e emitidas no SCAN. (v2.0)
+     * Serie 900-999: uso exclusivo de NF-e emitidas no SCAN. (v2.0).
      * @var string
      */
     public $serie = '';
 
     /**
-     * Número do Documento Fiscal
+     * Número do Documento Fiscal.
      * @var string
      */
     public $nNF = '';
 
     /**
      * Data e hora no formato UTC (Universal Coordinated Time):
-     * AAAA-MM-DDThh:mm:ssTZD
+     * AAAA-MM-DDThh:mm:ssTZD.
      * @var string
      */
     public $dhEmi = '';
@@ -72,14 +72,14 @@ class IdeNFe extends Builder
     /**
      * Data e hora no formato UTC (Universal Coordinated Time):
      * AAAA-MM-DDThh:mm:ssTZD.
-     * Não informar este campo para a NFC-e
+     * Não informar este campo para a NFC-e.
      * @var string|null
      */
     public $dhSaiEnt = null;
 
     /**
      * 0=Entrada;
-     * 1=Saída
+     * 1=Saída.
      * @var string
      */
     public $tpNF = '1';
@@ -95,7 +95,7 @@ class IdeNFe extends Builder
     /**
      * Informar o município de ocorrência do fato gerador do ICMS.
      * Utilizar a Tabela do IBGE (Anexo IX - Tabela de UF, Município e
-     * País)
+     * País).
      * @var string
      */
     public $cMunFG = '';
@@ -109,7 +109,7 @@ class IdeNFe extends Builder
      * 5=DANFE NFC-e em mensagem eletrônica (o envio de
      * mensagem eletrônica pode ser feita de forma simultânea com a
      * impressão do DANFE; usar o tpImp=5 quando esta for a única
-     * forma de disponibilização do DANFE)
+     * forma de disponibilização do DANFE).
      * @var string
      */
     public $tpImp = '';
@@ -197,14 +197,14 @@ class IdeNFe extends Builder
 
     /**
      * Data e hora no formato UTC (Universal Coordinated Time):
-     * AAAA-MM-DDThh:mm:ssTZD
+     * AAAA-MM-DDThh:mm:ssTZD.
      * @var string
      */
     public $dhCont;
 
     /**
      * Justificativa da entrada em contingência.
-     * (v2.0)
+     * (v2.0).
      * @var
      */
     public $xJust;

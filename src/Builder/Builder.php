@@ -32,7 +32,7 @@ abstract class Builder
             $xml = '';
             $attrIndex = $valor->getAttrIndex();
             foreach ($valor->getItems() as $i => $item) {
-                if ($item instanceof Builder) {
+                if ($item instanceof self) {
                     $attr = ($attrIndex != '') ? sprintf(' %s="%s"', $attrIndex, ($i + 1)) : '';
 
                     $xml .= sprintf('<%s%s>', $nome, $attr);
@@ -50,7 +50,7 @@ abstract class Builder
         }
 
         // Se for Builder
-        if ($valor instanceof Builder) {
+        if ($valor instanceof self) {
 
             $xml = sprintf('<%s>', $nome);
             $xml .= $valor->geraXmlPropriedades();
@@ -77,7 +77,7 @@ abstract class Builder
     }
 
     /**
-     * Formatar float para o número de casas decimais correto
+     * Formatar float para o número de casas decimais correto.
      * @param $nome
      * @param $valor
      * @return string
@@ -110,7 +110,7 @@ abstract class Builder
     protected function verificaObj($valor)
     {
         foreach ($valor as $val) {
-            if (!is_null($val)) {
+            if (! is_null($val)) {
                 if (is_object($val)) {
                     if (property_exists($val, $val->__obj)) {
                         if ($val->__obj != null) {

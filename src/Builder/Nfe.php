@@ -8,7 +8,7 @@ use PhpNFe\Builder\Total\TotalNfe;
 use PhpNFe\Builder\Transp\TranspNfe;
 use PhpNFe\Tools\Modulo11;
 
-class NFe extends Builder
+class Nfe extends Builder
 {
     const Versao = '3.10';
 
