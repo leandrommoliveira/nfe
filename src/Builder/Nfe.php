@@ -69,7 +69,7 @@ class Nfe extends Builder
      */
     public function __construct()
     {
-        $this->ide = new IdeNFe();
+        $this->ide = new IdeNfe();
         $this->emit = new EmitNfe();
         $this->dest = new DestNfe();
         $this->det = new Colecoes([], '\PhpNFe\Builder\DetNfe', 'nItem');
