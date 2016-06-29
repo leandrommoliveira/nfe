@@ -2,8 +2,7 @@
 
 /**
  * Grupo Cobrança.
- * Class CobrNfe
- * @package PhpNFe\Builder
+ * Class CobrNfe.
  */
 class CobrNfe extends \PhpNFe\Builder\Builder
 {
