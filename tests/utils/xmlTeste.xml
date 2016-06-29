@@ -95,7 +95,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -139,7 +139,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -183,7 +183,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -227,7 +227,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>

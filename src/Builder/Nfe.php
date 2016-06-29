@@ -86,7 +86,9 @@ class Nfe extends Builder
     protected function getID()
     {
         // Gerar número aleatorio
-        $this->ide->cNF = mt_rand(10000000, 99999999);
+        if ($this->ide->cNF == '') {
+            $this->ide->cNF = mt_rand(10000000, 99999999);
+        }
 
         $dt = Carbon::createFromFormat(Carbon::ATOM, $this->ide->dhEmi, 'America/Sao_Paulo')->format('ym');
 
@@ -109,7 +111,8 @@ class Nfe extends Builder
      */
     public function getXML()
     {
-        $xml = '<NFe xmlns="http://www.portalfiscal.inf.br/nfe">';
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>';
+        $xml .= '<NFe xmlns="http://www.portalfiscal.inf.br/nfe">';
         $xml .= '<infNFe versao="' . self::Versao . '" Id="' . $this->getID() . '">';
 
         $xml .= $this->geraXmlPropriedades();
@@ -125,9 +128,6 @@ class Nfe extends Builder
      */
     public function salvaXML($arquivo)
     {
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>';
-        $xml .= $this->getXML();
-
-        file_put_contents($arquivo, $xml);
+        file_put_contents($arquivo, $this->getXML());
     }
 }
