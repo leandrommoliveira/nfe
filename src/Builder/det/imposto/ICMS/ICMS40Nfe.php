@@ -21,7 +21,7 @@ class ICMS40Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -30,7 +30,7 @@ class ICMS40Nfe extends \PhpNFe\Builder\Builder
      * Tributação do ICMS = 40, 41 ou 50
      * 40=Isenta;
      * 41=Não tributada;
-     * 50=Suspensão
+     * 50=Suspensão.
      * @var string
      */
     public $CST = '';
@@ -43,7 +43,7 @@ class ICMS40Nfe extends \PhpNFe\Builder\Builder
      * b) destinadas à SUFRAMA, informando-se o valor que seria
      * devido se não houvesse isenção.
      * c) de venda a órgão da administração pública direta e suas
-     * fundações e autarquias com isenção do ICMS. (NT 2011/004)
+     * fundações e autarquias com isenção do ICMS. (NT 2011/004).
      * @var float
      * @dec 2
      */
@@ -66,7 +66,7 @@ class ICMS40Nfe extends \PhpNFe\Builder\Builder
      * 10=Deficiente Condutor (Convênio ICMS 38/12);
      * 11=Deficiente Não Condutor (Convênio ICMS 38/12).
      * Revogada a partir da versão 3.01 a possibilidade de usar o
-     * motivo 2=Deficiente Físico
+     * motivo 2=Deficiente Físico.
      * @var string
      */
     public $motDesICMS = '';

@@ -9,8 +9,7 @@
  * nas operações interestaduais de produtos que tiveram retenção
  * antecipada de ICMS por ST na UF do remetente. Repasse via
  * Substituto Tributário. (v2.0).
- * Class ICMSSTNfe
- * @package PhpNFe\Builder
+ * Class ICMSSTNfe.
  */
 class ICMSSTNfe extends \PhpNFe\Builder\Builder
 {
@@ -33,7 +32,7 @@ class ICMSSTNfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -49,7 +48,7 @@ class ICMSSTNfe extends \PhpNFe\Builder\Builder
      * Valor do BC do ICMS ST retido na UF
      * remetente.
      * Informar o valor da BC do ICMS ST retido na UF remetente
-     * (v2.0)
+     * (v2.0).
      * @var float
      * @dec 2
      */
@@ -73,7 +72,7 @@ class ICMSSTNfe extends \PhpNFe\Builder\Builder
 
     /**
      * Valor do ICMS ST da UF destino.
-     * Informar o valor do ICMS ST da UF destino (v2.0)
+     * Informar o valor do ICMS ST da UF destino (v2.0).
      * @var float
      * @dec 2
      */

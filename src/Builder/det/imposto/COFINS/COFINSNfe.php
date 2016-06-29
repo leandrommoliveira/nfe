@@ -4,8 +4,7 @@
  * Grupo COFINS
  * Informar apenas um dos grupos S02, S03, S04 ou S04 com
  * base valor atribuído ao campo de CST da COFINS.
- * Class COFINSNfe
- * @package PhpNFe\Builder
+ * Class COFINSNfe.
  */
 class COFINSNfe extends \PhpNFe\Builder\Builder
 {
@@ -18,7 +17,7 @@ class COFINSNfe extends \PhpNFe\Builder\Builder
     /**
      * Grupo de COFINS tributado por Qtde.
      * 03=Operação Tributável (base de cálculo = quantidade vendida
-     * x alíquota por unidade de produto);
+     * x alíquota por unidade de produto);.
      * @var COFINSQtde
      */
     public $COFINSQtde;

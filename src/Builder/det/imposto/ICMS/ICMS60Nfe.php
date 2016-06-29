@@ -21,7 +21,7 @@ class ICMS60Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação.
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -47,7 +47,7 @@ class ICMS60Nfe extends \PhpNFe\Builder\Builder
      * Valor do ICMS ST retido.
      * Valor do ICMS ST cobrado anteriormente por ST (v2.0). O valor
      * pode ser omitido quando a legislação não exigir a sua
-     * informação. (NT 2011/004)
+     * informação. (NT 2011/004).
      * @var float
      * @dec 2
      */

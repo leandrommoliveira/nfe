@@ -22,7 +22,7 @@ class ICMSTotNfe extends \PhpNFe\Builder\Builder
      * @dec 2
      */
     public $vICMSDeson = 0.00;
-    
+
     /**
      * Base de Cálculo do ICMS ST.
      * @var float

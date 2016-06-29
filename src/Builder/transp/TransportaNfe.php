@@ -2,8 +2,7 @@
 
 /**
  * Grupo Transportador.
- * Class TransportaNfe
- * @package PhpNFe\Builder
+ * Class TransportaNfe.
  */
 class TransportaNfe extends \PhpNFe\Builder\Builder
 {
@@ -33,7 +32,7 @@ class TransportaNfe extends \PhpNFe\Builder\Builder
      * - Literal “ISENTO” para transportador isento de inscrição no
      * cadastro de contribuintes ICMS;
      * - Não informar a tag para não contribuinte do ICMS,
-     * A UF deve ser informada se informado uma IE. (v2.0)
+     * A UF deve ser informada se informado uma IE. (v2.0).
      * @var string|null
      */
     public $IE = null;
@@ -45,7 +44,7 @@ class TransportaNfe extends \PhpNFe\Builder\Builder
     public $xEnder = null;
 
     /**
-     * Nome do município;
+     * Nome do município.
      * @var string|null
      */
     public $xMun = null;

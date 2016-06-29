@@ -43,7 +43,7 @@ class PISOutrNfe extends \PhpNFe\Builder\Builder
      * 74=Operação de Aquisição; sem Incidência da Contribuição;
      * 75=Operação de Aquisição por Substituição Tributária;
      * 98=Outras Operações de Entrada;
-     * 99=Outras Operações;
+     * 99=Outras Operações;.
      * @var string
      */
     public $CST = '';

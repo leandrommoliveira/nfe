@@ -36,7 +36,7 @@ class DestNfe extends \PhpNFe\Builder\Builder
     public $xNome = '';
 
     /**
-     * Grupo obrigatório para a NF-e (modelo 55)
+     * Grupo obrigatório para a NF-e (modelo 55).
      * @var EnderDestNfe
      */
     public $enderDest;
@@ -52,7 +52,7 @@ class DestNfe extends \PhpNFe\Builder\Builder
      * Nota 2: No caso de operação com o Exterior informar
      * indIEDest=9 e não informar a tag IE do destinatário;
      * Nota 3: No caso de Contribuinte Isento de Inscrição
-     * (indIEDest=2), não informar a tag IE do destinatário
+     * (indIEDest=2), não informar a tag IE do destinatário.
      * @var string
      */
     public $indIEDest = '';
@@ -71,7 +71,7 @@ class DestNfe extends \PhpNFe\Builder\Builder
      * operação pelo Sistema de Mercadoria Nacional da SUFRAMA e
      * a liberação da Declaração de Ingresso, prejudicando a
      * comprovação do ingresso / internamento da mercadoria nestas
-     * áreas. (v2.0)
+     * áreas. (v2.0).
      * @var string|null
      */
     public $ISUF = null;
@@ -86,7 +86,7 @@ class DestNfe extends \PhpNFe\Builder\Builder
 
     /**
      * Campo pode ser utilizado para informar o e-mail de recepção da
-     * NF-e indicada pelo destinatário (v2.0)
+     * NF-e indicada pelo destinatário (v2.0).
      * @var string|null
      */
     public $email = null;

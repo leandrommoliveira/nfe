@@ -10,8 +10,7 @@ use PhpNFe\Builder\Det\Imposto\PIS\PISNfe;
  * Grupo ISSQN mutuamente exclusivo com os grupos ICMS e II,
  * isto é, se o grupo ISSQN for informado os grupos ICMS e II não
  * serão informados e vice-versa.
- * Class ImpostoNfe
- * @package PhpNFe\Builder
+ * Class ImpostoNfe.
  */
 class ImpostoNfe extends \PhpNFe\Builder\Builder
 {

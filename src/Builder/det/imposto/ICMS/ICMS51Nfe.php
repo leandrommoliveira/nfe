@@ -27,7 +27,7 @@ class ICMS51Nfe extends \PhpNFe\Builder\Builder
 
     /**
      * Tributação do ICMS = 51.
-     * 51=Diferimento
+     * 51=Diferimento.
      * @var string
      */
     public $CST = '';

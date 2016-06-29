@@ -5,8 +5,7 @@
  * CSOSN=202 ou 203.
  * Tributação ICMS pelo Simples Nacional, CSOSN=202 ou 203
  * (v2.0).
- * Class ICMSSN202Nfe
- * @package PhpNFe\Builder
+ * Class ICMSSN202Nfe.
  */
 class ICMSSN202Nfe extends \PhpNFe\Builder\Builder
 {
@@ -29,7 +28,7 @@ class ICMSSN202Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -41,7 +40,7 @@ class ICMSSN202Nfe extends \PhpNFe\Builder\Builder
      * e com cobrança do ICMS por Substituição Tributária;
      * 203- Isenção do ICMS nos Simples Nacional para faixa de
      * receita bruta e com cobrança do ICMS por Substituição
-     * Tributária (v2.0)
+     * Tributária (v2.0).
      * @var string
      */
     public $CSOSN = '';

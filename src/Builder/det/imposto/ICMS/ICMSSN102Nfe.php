@@ -34,7 +34,7 @@ class ICMSSN102Nfe extends \PhpNFe\Builder\Builder
      * 103=Isenção do ICMS no Simples Nacional para faixa de
      * receita bruta.
      * 300=Imune.
-     * 400=Não tributada pelo Simples Nacional (v2.0)
+     * 400=Não tributada pelo Simples Nacional (v2.0).
      * @var string
      */
     public $CSOSN = '';

@@ -2,8 +2,7 @@
 
 /**
  * Informar apenas quando o item for sujeito ao IPI.
- * Class IPINfe
- * @package PhpNFe\Builder
+ * Class IPINfe.
  */
 class IPINfe extends \PhpNFe\Builder\Builder
 {
@@ -11,7 +10,7 @@ class IPINfe extends \PhpNFe\Builder\Builder
      * Classe de enquadramento do IPI para
      * Cigarros e Bebidas.
      * Preenchimento conforme Atos Normativos editados pela
-     * Receita Federal (Observação 2)
+     * Receita Federal (Observação 2).
      * @var string
      */
     public $clEnq = '';
@@ -28,7 +27,7 @@ class IPINfe extends \PhpNFe\Builder\Builder
     /**
      * Código do selo de controle IPI.
      * Preenchimento conforme Atos Normativos editados pela
-     * Receita Federal (Observação 3)
+     * Receita Federal (Observação 3).
      * @var string
      */
     public $cSelo = '';

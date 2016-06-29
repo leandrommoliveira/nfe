@@ -37,7 +37,7 @@ class EmitNfe extends \PhpNFe\Builder\Builder
      * @var EnderEmitNfe
      */
     public $enderEmit;
-    
+
     /**
      * Inscrição Estadual do Emitente.
      * Informar somente os algarismos, sem os caracteres de
@@ -52,7 +52,7 @@ class EmitNfe extends \PhpNFe\Builder\Builder
     /**
      * IE do Substituto Tributário.
      * IE do Substituto Tributário da UF de destino da mercadoria,
-     * quando houver a retenção do ICMS ST para a UF de destino
+     * quando houver a retenção do ICMS ST para a UF de destino.
      * @var string|null
      */
     public $IEST = null;
@@ -62,7 +62,7 @@ class EmitNfe extends \PhpNFe\Builder\Builder
      * Serviço.
      * Informado na emissão de NF-e conjugada, com itens de
      * produtos sujeitos ao ICMS e itens de serviços sujeitos ao
-     * ISSQN
+     * ISSQN.
      * @var string|null
      */
     public $IM = null;
@@ -83,7 +83,7 @@ class EmitNfe extends \PhpNFe\Builder\Builder
      * @var string
      */
     public $CRT = '';
-    
+
     public function __construct()
     {
         $this->enderEmit = new EnderEmitNfe();

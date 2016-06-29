@@ -3,8 +3,7 @@
 /**
  * Grupo Volumes.
  * (NT 2012/003)
- * Class VolNfe
- * @package PhpNFe\Builder
+ * Class VolNfe.
  */
 class VolNfe extends \PhpNFe\Builder\Builder
 {
@@ -51,7 +50,7 @@ class VolNfe extends \PhpNFe\Builder\Builder
      * @var LacresNfe
      */
     public $lacres;
-    
+
     public function __construct()
     {
         $this->lacres = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\Vol\LacresNfe');

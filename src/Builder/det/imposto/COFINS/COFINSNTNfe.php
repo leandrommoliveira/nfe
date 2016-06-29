@@ -9,7 +9,7 @@ class COFINSNTNfe extends \PhpNFe\Builder\Builder
      * 06=Operação Tributável (alíquota zero);
      * 07=Operação Isenta da Contribuição;
      * 08=Operação Sem Incidência da Contribuição;
-     * 09=Operação com Suspensão da Contribuição;
+     * 09=Operação com Suspensão da Contribuição;.
      * @var string
      */
     public $CST = '';

@@ -5,8 +5,7 @@
  * e ST.
  * Informar apenas um dos grupos de tributação do ICMS
  * (ICMS00, ICMS10, ...) (v2.0).
- * Class ICMSNfe
- * @package PhpNFe\Builder
+ * Class ICMSNfe.
  */
 class ICMSNfe extends \PhpNFe\Builder\Builder
 {
@@ -57,7 +56,7 @@ class ICMSNfe extends \PhpNFe\Builder\Builder
     /**
      * Grupo Tributação do ICMS = 60.
      * Tributação ICMS cobrado anteriormente por substituição
-     * tributária
+     * tributária.
      * @var ICMS60Nfe
      */
     public $ICMS60;
@@ -101,7 +100,7 @@ class ICMSNfe extends \PhpNFe\Builder\Builder
     /**
      * Grupo CRT=1 – Simples Nacional e
      * CSOSN=101.
-     * Tributação ICMS pelo Simples Nacional, CSOSN=101 (v2.0)
+     * Tributação ICMS pelo Simples Nacional, CSOSN=101 (v2.0).
      * @var ICMSSN101Nfe
      */
     public $ICMSSN101;
@@ -127,7 +126,7 @@ class ICMSNfe extends \PhpNFe\Builder\Builder
      * Grupo CRT=1 – Simples Nacional e
      * CSOSN=202 ou 203.
      * Tributação ICMS pelo Simples Nacional, CSOSN=202 ou 203
-     * (v2.0)
+     * (v2.0).
      * @var ICMSSN202Nfe
      */
     public $ICMSSN202;
@@ -135,7 +134,7 @@ class ICMSNfe extends \PhpNFe\Builder\Builder
     /**
      * Grupo CRT=1 – Simples Nacional e
      * CSOSN = 500.
-     * Tributação ICMS pelo Simples Nacional, CSOSN=500 (v2.0)
+     * Tributação ICMS pelo Simples Nacional, CSOSN=500 (v2.0).
      * @var ICMSSN500Nfe
      */
     public $ICMSSN500;
@@ -143,7 +142,7 @@ class ICMSNfe extends \PhpNFe\Builder\Builder
     /**
      * Grupo CRT=1 – Simples Nacional e
      * CSOSN=900.
-     * Tributação ICMS pelo Simples Nacional, CSOSN=900 (v2.0)
+     * Tributação ICMS pelo Simples Nacional, CSOSN=900 (v2.0).
      * @var ICMSSN900Nfe
      */
     public $ICMSSN900;

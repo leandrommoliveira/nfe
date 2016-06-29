@@ -2,8 +2,7 @@
 
 /**
  * Grupo Fatura.
- * Class FatNfe
- * @package PhpNFe\Builder
+ * Class FatNfe.
  */
 class FatNfe extends \PhpNFe\Builder\Builder
 {
@@ -14,7 +13,7 @@ class FatNfe extends \PhpNFe\Builder\Builder
     public $nFat = null;
 
     /**
-     * Valor Original da Fatura
+     * Valor Original da Fatura.
      * @var float|null
      * @dec 2
      */

@@ -4,17 +4,16 @@
  * Grupo Totais da NF-e.
  * O grupo de valores totais da NF-e deve ser informado com o
  * somatório do campo correspondente dos itens.
- * Class TotalNfe
- * @package PhpNFe\Builder
+ * Class TotalNfe.
  */
 class TotalNfe extends \PhpNFe\Builder\Builder
 {
     /**
-     * Grupo Totais referentes ao ICMS
+     * Grupo Totais referentes ao ICMS.
      * @var ICMSTotNfe
      */
     public $ICMSTot;
-    
+
     /**
      * Grupo Totais referentes ao ISSQN.
      * @var ISSQNtotNfe

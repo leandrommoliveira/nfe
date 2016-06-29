@@ -1,10 +1,10 @@
 <?php namespace PhpNFe\Builder\Transp;
+
 use PhpNFe\Builder\Transp\Vol\VolNfe;
 
 /**
  * Grupo Informações do Transporte.
- * Class TranspNfe
- * @package PhpNFe\Builder
+ * Class TranspNfe.
  */
 class TranspNfe extends \PhpNFe\Builder\Builder
 {
@@ -13,7 +13,7 @@ class TranspNfe extends \PhpNFe\Builder\Builder
      * 0=Por conta do emitente;
      * 1=Por conta do destinatário/remetente;
      * 2=Por conta de terceiros;
-     * 9=Sem frete. (V2.0)
+     * 9=Sem frete. (V2.0).
      * @var string
      */
     public $modFrete = '';
@@ -26,7 +26,7 @@ class TranspNfe extends \PhpNFe\Builder\Builder
 
     /**
      * Grupo Volumes.
-     * (NT 2012/003)
+     * (NT 2012/003).
      * @var VolNfe
      */
     public $vol;

@@ -8,7 +8,7 @@ class ICMSSN201Nfe extends \PhpNFe\Builder\Builder
      * 1 - Estrangeira - Importação direta, exceto a indicada no código
      * 6;
      * 2 - Estrangeira - Adquirida no mercado interno, exceto a
-     * indicada no código 7;
+     * indicada no código 7;.
      * @var string
      */
     public $orig = '';
@@ -38,7 +38,7 @@ class ICMSSN201Nfe extends \PhpNFe\Builder\Builder
     /**
      * Percentual da margem de valor Adicionado
      * do ICMS ST.
-     * (v2.0)
+     * (v2.0).
      * @var float|null
      * @dec 4
      */

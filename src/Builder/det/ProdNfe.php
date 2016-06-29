@@ -2,8 +2,7 @@
 
 /**
  * Detalhamento de Produtos e Serviços.
- * Class ProdNfe
- * @package PhpNFe\Builder
+ * Class ProdNfe.
  */
 class ProdNfe extends \PhpNFe\Builder\Builder
 {
@@ -33,7 +32,7 @@ class ProdNfe extends \PhpNFe\Builder\Builder
      * Nota: Em caso de item de serviço ou item que não tenham
      * produto (ex. transferência de crédito, crédito do ativo
      * imobilizado, etc.), informar o valor 00 (dois zeros). (NT
-     * 2014/004)
+     * 2014/004).
      * @var string
      */
     public $NCM = '';
@@ -45,7 +44,7 @@ class ProdNfe extends \PhpNFe\Builder\Builder
      * Formato: duas letras maiúsculas e 4 algarismos. Se a
      * mercadoria se enquadrar em mais de uma codificação, informar
      * até 8 codificações principais.
-     * Vide: Anexo XII.03 - Identificador NVE
+     * Vide: Anexo XII.03 - Identificador NVE.
      * @var string|null
      */
     public $NVE = null;
@@ -160,7 +159,7 @@ class ProdNfe extends \PhpNFe\Builder\Builder
 
     /**
      * Outras despesas acessórias.
-     * (v2.0)
+     * (v2.0).
      * @var float|null
      * @dec 2
      */

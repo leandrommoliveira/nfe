@@ -2,14 +2,13 @@
 
 /**
  * Grupo Totais referentes ao ISSQN.
- * Class ISSQNtotNfe
- * @package PhpNFe\Builder
+ * Class ISSQNtotNfe.
  */
 class ISSQNtotNfe extends \PhpNFe\Builder\Builder
 {
     /**
      *Valor total dos Serviços sob não-incidência
-     * ou não tributados pelo ICMS
+     * ou não tributados pelo ICMS.
      * @var float|null
      * @dec 2
      */

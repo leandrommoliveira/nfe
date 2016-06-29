@@ -3,8 +3,7 @@
 /**
  * Grupo Lacres.
  * (NT 2012/003)
- * Class LacresNfe
- * @package PhpNFe\Builder
+ * Class LacresNfe.
  */
 class LacresNfe extends \PhpNFe\Builder\Builder
 {

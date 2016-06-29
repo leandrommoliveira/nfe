@@ -21,7 +21,7 @@ class ICMSSN101Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -38,7 +38,7 @@ class ICMSSN101Nfe extends \PhpNFe\Builder\Builder
     /**
      * Alíquota aplicável de cálculo do crédito
      * (Simples Nacional).
-     * (v2.0)
+     * (v2.0).
      * @var float
      * @dec 4
      */

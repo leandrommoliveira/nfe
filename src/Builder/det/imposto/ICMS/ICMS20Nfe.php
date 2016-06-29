@@ -21,7 +21,7 @@ class ICMS20Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -59,7 +59,7 @@ class ICMS20Nfe extends \PhpNFe\Builder\Builder
     public $vBC = 0.00;
 
     /**
-     * Alíquota do imposto;
+     * Alíquota do imposto.
      * @var float
      * @dec 4
      */

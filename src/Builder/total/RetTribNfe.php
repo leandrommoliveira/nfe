@@ -2,8 +2,7 @@
 
 /**
  * Grupo Informações do Transporte.
- * Class RetTribNfe
- * @package PhpNFe\Builder
+ * Class RetTribNfe.
  */
 class RetTribNfe extends \PhpNFe\Builder\Builder
 {

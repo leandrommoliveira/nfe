@@ -21,7 +21,7 @@ class ICMS30Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -42,7 +42,7 @@ class ICMS30Nfe extends \PhpNFe\Builder\Builder
      * 2=Lista Positiva (valor);
      * 3=Lista Neutra (valor);
      * 4=Margem Valor Agregado (%);
-     * 5=Pauta (valor);
+     * 5=Pauta (valor);.
      * @var string
      */
     public $modBCST = '';
@@ -70,20 +70,20 @@ class ICMS30Nfe extends \PhpNFe\Builder\Builder
     public $vBCST = 0.00;
 
     /**
-     * Alíquota do imposto do ICMS ST
+     * Alíquota do imposto do ICMS ST.
      * @var string
      */
     public $pICMSST = '';
 
     /**
-     * Valor do ICMS ST
+     * Valor do ICMS ST.
      * @var float
      * @dec 2
      */
     public $vICMSST = 0.00;
 
     /**
-     * Valor do ICMS desonerado
+     * Valor do ICMS desonerado.
      * @var float
      * @dec 2
      */
@@ -97,7 +97,7 @@ class ICMS30Nfe extends \PhpNFe\Builder\Builder
      * Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e
      * suas alterações);
      * 7=SUFRAMA;
-     * 9=Outros;
+     * 9=Outros;.
      * @var string
      */
     public $motDesICMS = '';

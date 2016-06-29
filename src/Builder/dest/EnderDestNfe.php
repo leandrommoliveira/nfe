@@ -69,7 +69,7 @@ class EnderDestNfe extends \PhpNFe\Builder\Builder
     /**
      * Preencher com o Código DDD + número do telefone. Nas
      * operações com exterior é permitido informar o código do país +
-     * código da localidade + número do telefone (v2.0)
+     * código da localidade + número do telefone (v2.0).
      * @var string|null
      */
     public $fone = null;

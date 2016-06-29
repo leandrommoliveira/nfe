@@ -4,8 +4,7 @@
  * Grupo CRT=1 – Simples Nacional e
  * CSOSN = 500
  * Tributação ICMS pelo Simples Nacional, CSOSN=500 (v2.0).
- * Class ICMSSN500Nfe
- * @package PhpNFe\Builder
+ * Class ICMSSN500Nfe.
  */
 class ICMSSN500Nfe extends \PhpNFe\Builder\Builder
 {
@@ -28,7 +27,7 @@ class ICMSSN500Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';

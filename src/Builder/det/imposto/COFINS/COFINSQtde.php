@@ -5,7 +5,7 @@ class COFINSQtde extends \PhpNFe\Builder\Builder
     /**
      * Código de Situação Tributária da COFINS.
      * 03=Operação Tributável (base de cálculo = quantidade vendida
-     * x alíquota por unidade de produto);
+     * x alíquota por unidade de produto);.
      * @var string
      */
     public $CST = '';

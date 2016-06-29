@@ -2,8 +2,7 @@
 
 /**
  * Informar apenas quando o item for sujeito ao II.
- * Class II
- * @package PhpNFe\Builder
+ * Class II.
  */
 class II extends \PhpNFe\Builder\Builder
 {

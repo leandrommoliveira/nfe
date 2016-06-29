@@ -3,7 +3,7 @@
 class EnderEmitNfe extends \PhpNFe\Builder\Builder
 {
     /**
-     * Logradouro
+     * Logradouro.
      * @var string
      */
     public $xLgr = '';
@@ -41,14 +41,14 @@ class EnderEmitNfe extends \PhpNFe\Builder\Builder
     public $xMun = '';
 
     /**
-     * Sigla da UF
+     * Sigla da UF.
      * @var string
      */
     public $UF = '';
 
     /**
-     * Código do CEP.
-     * Informar os zeros não significativos. (NT 2011/004)
+     * Código do CEP
+     * Informar os zeros não significativos. (NT 2011/004).
      * @var string
      */
     public $CEP = '';
@@ -71,7 +71,7 @@ class EnderEmitNfe extends \PhpNFe\Builder\Builder
      * Telefone.
      * Preencher com o Código DDD + número do telefone. Nas
      * operações com exterior é permitido informar o código do país +
-     * código da localidade + número do telefone (v2.0)
+     * código da localidade + número do telefone (v2.0).
      * @var string|null
      */
     public $fone = null;

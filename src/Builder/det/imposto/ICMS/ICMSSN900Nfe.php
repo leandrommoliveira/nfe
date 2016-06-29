@@ -4,8 +4,7 @@
  * Grupo CRT=1 – Simples Nacional e
  * CSOSN = 500.
  * Tributação ICMS pelo Simples Nacional, CSOSN=500 (v2.0).
- * Class ICMSSN900Nfe
- * @package PhpNFe\Builder
+ * Class ICMSSN900Nfe.
  */
 class ICMSSN900Nfe extends \PhpNFe\Builder\Builder
 {
@@ -28,7 +27,7 @@ class ICMSSN900Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -74,7 +73,7 @@ class ICMSSN900Nfe extends \PhpNFe\Builder\Builder
     public $pICMS = null;
 
     /**
-     * Valor do ICMS
+     * Valor do ICMS.
      * @var float
      * @dec 2
      */
@@ -88,21 +87,21 @@ class ICMSSN900Nfe extends \PhpNFe\Builder\Builder
      * 2=Lista Positiva (valor);
      * 3=Lista Neutra (valor);
      * 4=Margem Valor Agregado (%);
-     * 5=Pauta (valor); (v2.0)
+     * 5=Pauta (valor); (v2.0).
      * @var string
      */
     public $modBCST = '';
 
     /**
      * Percentual da margem de valor Adicionado
-     * do ICMS ST
+     * do ICMS ST.
      * @var float|null
      * @dec 4
      */
     public $pMVAST = 0.00;
 
     /**
-     * Percentual da Redução de BC do ICMS ST
+     * Percentual da Redução de BC do ICMS ST.
      * @var float|null
      * @dec 4
      */

@@ -21,7 +21,7 @@ class ICMS70Nfe extends \PhpNFe\Builder\Builder
      * 7 - Estrangeira - Adquirida no mercado interno, sem similar
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
-     * superior a 70%;
+     * superior a 70%;.
      * @var string
      */
     public $orig = '';
@@ -46,21 +46,21 @@ class ICMS70Nfe extends \PhpNFe\Builder\Builder
     public $modBC = '';
 
     /**
-     * Percentual da Redução de BC
+     * Percentual da Redução de BC.
      * @var float
      * @dec 4
      */
     public $pRedBC = null;
 
     /**
-     * Valor da BC do ICMS
+     * Valor da BC do ICMS.
      * @dec 2
      * @var float
      */
     public $vBC = 0.00;
 
     /**
-     * Alíquota do imposto
+     * Alíquota do imposto.
      * @var float
      * @dec 4
      */
@@ -81,7 +81,7 @@ class ICMS70Nfe extends \PhpNFe\Builder\Builder
      * 2=Lista Positiva (valor);
      * 3=Lista Neutra (valor);
      * 4=Margem Valor Agregado (%);
-     * 5=Pauta (valor);
+     * 5=Pauta (valor);.
      * @var string
      */
     public $modBCST = '';

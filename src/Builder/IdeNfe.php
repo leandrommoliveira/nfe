@@ -161,7 +161,7 @@ class IdeNfe extends Builder
 
     /**
      * 0=Normal;
-     * 1=Consumidor final;
+     * 1=Consumidor final.
      * @var string
      */
     public $indFinal = '0';

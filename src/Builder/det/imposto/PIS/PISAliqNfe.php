@@ -7,7 +7,7 @@ class PISAliqNfe extends \PhpNFe\Builder\Builder
      * 01=Operação Tributável (base de cálculo = valor da operação
      * alíquota normal (cumulativo/não cumulativo));
      * 02=Operação Tributável (base de cálculo = valor da operação
-     * (alíquota diferenciada));
+     * (alíquota diferenciada));.
      * @var string
      */
     public $CST = '';
