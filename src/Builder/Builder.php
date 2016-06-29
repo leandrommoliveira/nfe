@@ -34,6 +34,7 @@ abstract class Builder
             foreach ($valor->getItems() as $i => $item) {
                 if ($item instanceof self) {
                     $attr = ($attrIndex != '') ? sprintf(' %s="%s"', $attrIndex, ($i + 1)) : '';
+                    
                     $xml .= sprintf('<%s%s>', $nome, $attr);
                     $xml .= $item->geraXmlPropriedades();
                     $xml .= sprintf('</%s>', $nome);
@@ -50,7 +51,6 @@ abstract class Builder
 
         // Se for Builder
         if ($valor instanceof self) {
-
             $xml = sprintf('<%s>', $nome);
             $xml .= $valor->geraXmlPropriedades();
             $xml .= sprintf('</%s>', $nome);
