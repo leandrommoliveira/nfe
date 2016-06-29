@@ -70,11 +70,11 @@ class Nfe extends Builder
     public function __construct()
     {
         $this->ide = new IdeNfe();
-        $this->emit = new Emit\EmitNfe();
-        $this->dest = new Dest\DestNfe();
+        $this->emit = new EmitNfe();
+        $this->dest = new DestNfe();
         $this->det = new Colecoes([], '\PhpNFe\Builder\DetNfe', 'nItem');
-        $this->total = new Total\TotalNfe();
-        $this->transp = new Transp\TranspNfe();
+        $this->total = new TotalNfe();
+        $this->transp = new TranspNfe();
         $this->cobr = new PropriedadeNull('\PhpNFe\Builder\cobr\CobrNfe');
         $this->infAdic = new PropriedadeNull('\PhpNFe\Builder\infAdic\InfAdicNfe');
     }
