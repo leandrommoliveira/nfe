@@ -1,6 +1,6 @@
 <?php
 
-$nfe = new \PhpNFe\Builder\NFe();
+$nfe = new \PhpNFe\Builder\Nfe();
 
 // Ide
 $nfe->ide->cUF = '42';

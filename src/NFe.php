@@ -22,6 +22,8 @@ use PhpNFe\Tools\XML;
 
 class NFe
 {
+    const version = 'NetForce EmiteNF-e Beta';
+
     /**
      * Classe de controle do certificado.
      * @var Certificado

@@ -1,5 +1,7 @@
 <?php namespace PhpNFe\Builder;
 
+use PhpNFe\NFe as BaseNFe;
+
 class IdeNfe extends Builder
 {
     /**
@@ -193,7 +195,7 @@ class IdeNfe extends Builder
      * Informar a versão do aplicativo emissor de NF-e.
      * @var string
      */
-    public $verProc = '';
+    public $verProc = BaseNFe::version;
 
     /**
      * Data e hora no formato UTC (Universal Coordinated Time):
