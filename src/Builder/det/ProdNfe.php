@@ -170,7 +170,7 @@ class ProdNfe extends \PhpNFe\Builder\Builder
      * valor total da NF-e (vProd).
      * 0=Valor do item (vProd) não compõe o valor total da NF-e
      * 1=Valor do item (vProd) compõe o valor total da NF-e (vProd)
-     * (v2.0)
+     * (v2.0).
      * @var string
      */
     public $indTot = '';

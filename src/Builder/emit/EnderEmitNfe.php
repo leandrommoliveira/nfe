@@ -75,5 +75,4 @@ class EnderEmitNfe extends \PhpNFe\Builder\Builder
      * @var string|null
      */
     public $fone = null;
-
 }

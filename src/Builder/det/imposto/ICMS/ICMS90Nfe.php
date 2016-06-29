@@ -3,8 +3,7 @@
 /**
  * Grupo Tributação do ICMS = 90.
  * Tributação ICMS: Outros.
- * Class ICMS90Nfe
- * @package PhpNFe\Builder
+ * Class ICMS90Nfe.
  */
 class ICMS90Nfe extends \PhpNFe\Builder\Builder
 {
