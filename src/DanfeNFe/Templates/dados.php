@@ -12,7 +12,7 @@
                     $linhas[] = '';
                 }
 
-                echo implode("<br>", $linhas);
+                echo implode('<br>', $linhas);
                 ?>
             </p>
         </td>

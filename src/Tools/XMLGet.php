@@ -111,9 +111,9 @@ class XMLGet
      */
     public function format($format)
     {
-        $string = str_replace(" ", "", $this->value());
+        $string = str_replace(' ', '', $this->value());
         for ($i = 0; $i < strlen($string); $i++) {
-            $pos = strpos($format, "#");
+            $pos = strpos($format, '#');
 
             // verificar se string eh maior que a qtdade de #.
             if ($pos === false) {
@@ -189,7 +189,7 @@ class XMLGet
     /**
      * @return string
      */
-    function __toString()
+    public function __toString()
     {
         return $this->value();
     }

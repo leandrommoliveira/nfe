@@ -28,7 +28,9 @@
         <td class="col-7">
             <p>
                 <small>ENDERECO</small>
-                <?php echo $nfe->get('dest.enderDest.xLgr') . ' Nº ' . $nfe->get('dest.enderDest.nro') . ($nfe->get('dest.enderDest.xCpl') != '' ? (' - ' . $nfe->get('dest.enderDest.xCpl')) : '');  //Logradouro, nº, (opcional) complemento ?>
+                <?php
+                echo $nfe->get('dest.enderDest.xLgr') . ' Nº ' . $nfe->get('dest.enderDest.nro') . ($nfe->get('dest.enderDest.xCpl')
+                    != '' ? (' - ' . $nfe->get('dest.enderDest.xCpl')) : ''); ?>
 
             </p>
         </td>

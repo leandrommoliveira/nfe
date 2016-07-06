@@ -1,61 +1,54 @@
 <?php
-/**
- * @package dompdf
- * @link    http://dompdf.github.com/
- * @author  Benj Carson <benjcarson@digitaljunkies.ca>
- * @author  Helmut Tischer <htischer@weihenstephan.org>
- * @author  Fabien Ménager <fabien.menager@gmail.com>
- * @author   Brian Sweeney <eclecticgeek@gmail.com>
- * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
- */
 
-if ( class_exists( 'DOMPDF' , false ) ) { return; }
+if (class_exists('DOMPDF', false)) {
+    return;
+}
 
-PHP_VERSION >= 5.0 or die("DOMPDF requires PHP 5.0+");
+PHP_VERSION >= 5.0 or die('DOMPDF requires PHP 5.0+');
 
-/**
+/*
  * The root of your DOMPDF installation
  */
-//define("DOMPDF_DIR", str_replace(DIRECTORY_SEPARATOR, '/', realpath(dirname(__FILE__))));
+//define('DOMPDF_DIR', str_replace(DIRECTORY_SEPARATOR, '/', realpath(dirname(__FILE__))));
 
-/**
+/*
  * The location of the DOMPDF include directory
  */
-define("DOMPDF_INC_DIR", DOMPDF_DIR . "/include");
+define('DOMPDF_INC_DIR', DOMPDF_DIR . '/include');
 
 /**
  * The location of the DOMPDF lib directory
  */
-define("DOMPDF_LIB_DIR", DOMPDF_DIR . "/lib");
+define('DOMPDF_LIB_DIR', DOMPDF_DIR . '/lib');
 
 /**
  * Some installations don't have $_SERVER['DOCUMENT_ROOT']
  * http://fyneworks.blogspot.com/2007/08/php-documentroot-in-iis-windows-servers.html
  */
-if( !isset($_SERVER['DOCUMENT_ROOT']) ) {
-  $path = "";
-  
-  if ( isset($_SERVER['SCRIPT_FILENAME']) )
-    $path = $_SERVER['SCRIPT_FILENAME'];
-  elseif ( isset($_SERVER['PATH_TRANSLATED']) )
-    $path = str_replace('\\\\', '\\', $_SERVER['PATH_TRANSLATED']);
-    
-  $_SERVER['DOCUMENT_ROOT'] = str_replace( '\\', '/', substr($path, 0, 0-strlen($_SERVER['PHP_SELF'])));
+if (!isset($_SERVER['DOCUMENT_ROOT'])) {
+    $path = '';
+
+    if (isset($_SERVER['SCRIPT_FILENAME']))
+        $path = $_SERVER['SCRIPT_FILENAME'];
+    elseif (isset($_SERVER['PATH_TRANSLATED']))
+        $path = str_replace('\\\\', '\\', $_SERVER['PATH_TRANSLATED']);
+
+    $_SERVER['DOCUMENT_ROOT'] = str_replace('\\', '/', substr($path, 0, 0 - strlen($_SERVER['PHP_SELF'])));
 }
 
 /** Include the custom config file if it exists */
-if ( file_exists(DOMPDF_DIR . "/dompdf_config.custom.inc.php") ){
-  require_once(DOMPDF_DIR . "/dompdf_config.custom.inc.php");
+if (file_exists(DOMPDF_DIR . '/dompdf_config.custom.inc.php')) {
+    require_once(DOMPDF_DIR . '/dompdf_config.custom.inc.php');
 }
 
 //FIXME: Some function definitions rely on the constants defined by DOMPDF. However, might this location prove problematic?
-require_once(DOMPDF_INC_DIR . "/functions.inc.php");
+require_once(DOMPDF_INC_DIR . '/functions.inc.php');
 
 /**
  * Username and password used by the configuration utility in www/
  */
-def("DOMPDF_ADMIN_USERNAME", "user");
-def("DOMPDF_ADMIN_PASSWORD", "password");
+def('DOMPDF_ADMIN_USERNAME', 'user');
+def('DOMPDF_ADMIN_PASSWORD', 'password');
 
 /**
  * The location of the DOMPDF font directory
@@ -67,7 +60,7 @@ def("DOMPDF_ADMIN_PASSWORD", "password");
  * Notes regarding fonts:
  * Additional .afm font metrics can be added by executing load_font.php from command line.
  *
- * Only the original "Base 14 fonts" are present on all pdf viewers. Additional fonts must
+ * Only the original 'Base 14 fonts' are present on all pdf viewers. Additional fonts must
  * be embedded in the pdf file or the PDF may not display correctly. This can significantly
  * increase file size unless font subsetting is enabled. Before embedding a font please
  * review your rights under the font license.
@@ -75,23 +68,23 @@ def("DOMPDF_ADMIN_PASSWORD", "password");
  * Any font specification in the source HTML is translated to the closest font available
  * in the font directory.
  *
- * The pdf standard "Base 14 fonts" are:
+ * The pdf standard 'Base 14 fonts' are:
  * Courier, Courier-Bold, Courier-BoldOblique, Courier-Oblique,
  * Helvetica, Helvetica-Bold, Helvetica-BoldOblique, Helvetica-Oblique,
  * Times-Roman, Times-Bold, Times-BoldItalic, Times-Italic,
  * Symbol, ZapfDingbats.
  */
-def("DOMPDF_FONT_DIR", DOMPDF_DIR . "/lib/fonts/");
+def('DOMPDF_FONT_DIR', DOMPDF_DIR . '/lib/fonts/');
 
 /**
  * The location of the DOMPDF font cache directory
  *
  * This directory contains the cached font metrics for the fonts used by DOMPDF.
  * This directory can be the same as DOMPDF_FONT_DIR
- * 
+ *
  * Note: This directory must exist and be writable by the webserver process.
  */
-def("DOMPDF_FONT_CACHE", DOMPDF_FONT_DIR);
+def('DOMPDF_FONT_CACHE', DOMPDF_FONT_DIR);
 
 /**
  * The location of a temporary directory.
@@ -100,37 +93,37 @@ def("DOMPDF_FONT_CACHE", DOMPDF_FONT_DIR);
  * The temporary directory is required to download remote images and when
  * using the PFDLib back end.
  */
-def("DOMPDF_TEMP_DIR", sys_get_temp_dir());
+def('DOMPDF_TEMP_DIR', sys_get_temp_dir());
 
 /**
  * ==== IMPORTANT ====
  *
- * dompdf's "chroot": Prevents dompdf from accessing system files or other
+ * dompdf's 'chroot': Prevents dompdf from accessing system files or other
  * files on the webserver.  All local files opened by dompdf must be in a
  * subdirectory of this directory.  DO NOT set it to '/' since this could
  * allow an attacker to use dompdf to read any files on the server.  This
  * should be an absolute path.
  * This is only checked on command line call by dompdf.php, but not by
  * direct class use like:
- * $dompdf = new DOMPDF();	$dompdf->load_html($htmldata); $dompdf->render(); $pdfdata = $dompdf->output();
+ * $dompdf = new DOMPDF();    $dompdf->load_html($htmldata); $dompdf->render(); $pdfdata = $dompdf->output();
  */
-def("DOMPDF_CHROOT", realpath(DOMPDF_DIR));
+def('DOMPDF_CHROOT', realpath(DOMPDF_DIR));
 
 /**
  * Whether to use Unicode fonts or not.
  *
- * When set to true the PDF backend must be set to "CPDF" and fonts must be
+ * When set to true the PDF backend must be set to 'CPDF' and fonts must be
  * loaded via load_font.php.
  *
  * When enabled, dompdf can support all Unicode glyphs. Any glyphs used in a
  * document must be present in your fonts, however.
  */
-def("DOMPDF_UNICODE_ENABLED", true);
+def('DOMPDF_UNICODE_ENABLED', true);
 
 /**
  * Whether to enable font subsetting or not.
  */
-def("DOMPDF_ENABLE_FONTSUBSETTING", false);
+def('DOMPDF_ENABLE_FONTSUBSETTING', false);
 
 /**
  * The PDF rendering backend to use
@@ -160,7 +153,7 @@ def("DOMPDF_ENABLE_FONTSUBSETTING", false);
  * @link http://www.ros.co.nz/pdf
  * @link http://www.php.net/image
  */
-def("DOMPDF_PDF_BACKEND", "CPDF");
+def('DOMPDF_PDF_BACKEND', 'CPDF');
 
 /**
  * PDFlib license key
@@ -174,7 +167,7 @@ def("DOMPDF_PDF_BACKEND", "CPDF");
  * If pdflib present in web server and auto or selected explicitely above,
  * a real license code must exist!
  */
-//def("DOMPDF_PDFLIB_LICENSE", "your license key here");
+//def('DOMPDF_PDFLIB_LICENSE', 'your license key here');
 
 /**
  * html target media view which should be rendered into pdf.
@@ -186,16 +179,16 @@ def("DOMPDF_PDF_BACKEND", "CPDF");
  * the desired content might be different (e.g. screen or projection view of html file).
  * Therefore allow specification of content here.
  */
-def("DOMPDF_DEFAULT_MEDIA_TYPE", "screen");
+def('DOMPDF_DEFAULT_MEDIA_TYPE', 'screen');
 
 /**
  * The default paper size.
  *
- * North America standard is "letter"; other countries generally "a4"
+ * North America standard is 'letter'; other countries generally 'a4'
  *
  * @see CPDF_Adapter::PAPER_SIZES for valid sizes
  */
-def("DOMPDF_DEFAULT_PAPER_SIZE", "letter");
+def('DOMPDF_DEFAULT_PAPER_SIZE', 'letter');
 
 /**
  * The default font family
@@ -203,7 +196,7 @@ def("DOMPDF_DEFAULT_PAPER_SIZE", "letter");
  * Used if no suitable fonts can be found. This must exist in the font folder.
  * @var string
  */
-def("DOMPDF_DEFAULT_FONT", "serif");
+def('DOMPDF_DEFAULT_FONT', 'serif');
 
 /**
  * Image DPI setting
@@ -238,13 +231,13 @@ def("DOMPDF_DEFAULT_FONT", "serif");
  *
  * @var int
  */
-def("DOMPDF_DPI", 96);
+def('DOMPDF_DPI', 96);
 
 /**
  * Enable inline PHP
  *
  * If this setting is set to true then DOMPDF will automatically evaluate
- * inline PHP contained within <script type="text/php"> ... </script> tags.
+ * inline PHP contained within <script type='text/php'> ... </script> tags.
  *
  * Attention!
  * Enabling this for documents you do not trust (e.g. arbitrary remote html
@@ -254,17 +247,17 @@ def("DOMPDF_DPI", 96);
  *
  * @var bool
  */
-def("DOMPDF_ENABLE_PHP", false);
+def('DOMPDF_ENABLE_PHP', false);
 
 /**
  * Enable inline Javascript
  *
  * If this setting is set to true then DOMPDF will automatically insert
- * JavaScript code contained within <script type="text/javascript"> ... </script> tags.
+ * JavaScript code contained within <script type='text/javascript'> ... </script> tags.
  *
  * @var bool
  */
-def("DOMPDF_ENABLE_JAVASCRIPT", true);
+def('DOMPDF_ENABLE_JAVASCRIPT', true);
 
 /**
  * Enable remote file access
@@ -283,18 +276,18 @@ def("DOMPDF_ENABLE_JAVASCRIPT", true);
  *
  * @var bool
  */
-def("DOMPDF_ENABLE_REMOTE", false);
+def('DOMPDF_ENABLE_REMOTE', false);
 
 /**
  * The debug output log
  * @var string
  */
-def("DOMPDF_LOG_OUTPUT_FILE", DOMPDF_FONT_DIR."log.htm");
+def('DOMPDF_LOG_OUTPUT_FILE', DOMPDF_FONT_DIR . 'log.htm');
 
 /**
  * A ratio applied to the fonts height to be more like browsers' line height
  */
-def("DOMPDF_FONT_HEIGHT_RATIO", 1.1);
+def('DOMPDF_FONT_HEIGHT_RATIO', 1.1);
 
 /**
  * Enable CSS float
@@ -302,27 +295,27 @@ def("DOMPDF_FONT_HEIGHT_RATIO", 1.1);
  * Allows people to disabled CSS float support
  * @var bool
  */
-def("DOMPDF_ENABLE_CSS_FLOAT", false);
+def('DOMPDF_ENABLE_CSS_FLOAT', false);
 
 /**
  * Enable the built in DOMPDF autoloader
  *
  * @var bool
  */
-def("DOMPDF_ENABLE_AUTOLOAD", true);
+def('DOMPDF_ENABLE_AUTOLOAD', true);
 
 /**
  * Prepend the DOMPDF autoload function to the spl_autoload stack
  *
  * @var bool
  */
-def("DOMPDF_AUTOLOAD_PREPEND", false);
+def('DOMPDF_AUTOLOAD_PREPEND', false);
 
 /**
  * Use the more-than-experimental HTML5 Lib parser
  */
-def("DOMPDF_ENABLE_HTML5PARSER", false);
-require_once(DOMPDF_LIB_DIR . "/html5lib/Parser.php");
+def('DOMPDF_ENABLE_HTML5PARSER', false);
+require_once(DOMPDF_LIB_DIR . '/html5lib/Parser.php');
 
 // ### End of user-configurable options ###
 
@@ -330,8 +323,8 @@ require_once(DOMPDF_LIB_DIR . "/html5lib/Parser.php");
  * Load autoloader
  */
 if (DOMPDF_ENABLE_AUTOLOAD) {
-  require_once(DOMPDF_INC_DIR . "/autoload.inc.php");
-  //require_once(DOMPDF_LIB_DIR . "/php-font-lib/classes/Font.php");
+    require_once(DOMPDF_INC_DIR . '/autoload.inc.php');
+    //require_once(DOMPDF_LIB_DIR . '/php-font-lib/classes/Font.php');
 }
 
 /**
@@ -374,7 +367,7 @@ $_dompdf_debug = false;
  * @var array
  */
 global $_DOMPDF_DEBUG_TYPES;
-$_DOMPDF_DEBUG_TYPES = array(); //array("page-break" => 1);
+$_DOMPDF_DEBUG_TYPES = array(); //array('page-break' => 1);
 
 /* Optionally enable different classes of debug output before the pdf content.
  * Visible if displaying pdf as text,

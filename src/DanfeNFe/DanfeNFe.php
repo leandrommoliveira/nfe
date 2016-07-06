@@ -1,7 +1,5 @@
 <?php namespace PhpNFe\DanfeNFe;
 
-use Dompdf\Dompdf;
-use Dompdf\Options;
 use Illuminate\Filesystem\Filesystem;
 use PhpNFe\Tools\NFeXML;
 use PhpNFe\Tools\XML;
@@ -94,12 +92,13 @@ class DanfeNFe
      * @param $subject
      * @return string
      */
-    protected function convertEntities($subject){
-        $entities = array(
+    protected function convertEntities($subject)
+    {
+        $entities = [
             '€' => '&#0128;',
-        );
+        ];
 
-        foreach($entities as $search => $replace){
+        foreach ($entities as $search => $replace) {
             $subject = str_replace($search, $replace, $subject);
         }
         return $subject;
@@ -115,12 +114,12 @@ class DanfeNFe
     {
         // Verificar se logo foi informada
         if (($this->logo === false) || (is_null($this->logo)) || ($this->logo == '')) {
-            return null;
+            return;
         }
 
         // Verificar se arquivo da logo existe
         if ($this->files->exists($this->logo) != true) {
-            return null;
+            return;
         }
 
         $ext = strtolower($this->files->extension($this->logo));
@@ -145,7 +144,7 @@ class DanfeNFe
 
     /**
      * Retorna a imagem de homologacao em formato image inline.
-     * 
+     *
      * @return null|string
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
@@ -155,7 +154,7 @@ class DanfeNFe
 
         // Verificar se arquivo da logo existe
         if ($this->files->exists($img) != true) {
-            return null;
+            return;
         }
 
         $ext = strtolower($this->files->extension($img));

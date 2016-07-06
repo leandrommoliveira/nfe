@@ -28,7 +28,7 @@ class XML extends \DOMDocument
             $opcoes = explode('|', $key);
             foreach ($opcoes as $op) {
                 $achado = $this->get($op);
-                if (! $achado->isNull()) {
+                if (!$achado->isNull()) {
                     return $achado;
                 }
             }
@@ -51,7 +51,7 @@ class XML extends \DOMDocument
         }
 
         // Retornar o conteúdo do ultimo nível
-        if (! is_null($base)) {
+        if (!is_null($base)) {
             return new XMLGet($base);
         }
 
@@ -64,7 +64,7 @@ class XML extends \DOMDocument
     public function getChNFe()
     {
         $id = str_replace('NFe', '', $this->getElementsByTagName('infNFe')->item(0)->getAttribute('Id'));
-        
+
         return new XMLGet(null, $id);
     }
 
@@ -80,7 +80,7 @@ class XML extends \DOMDocument
      */
     public static function makeFileName($cnpj, $serie, $nnf, $ext, $modelo = '-Nfe')
     {
-        $nome  = $cnpj;
+        $nome = $cnpj;
         $nome .= '_S' . str_pad($serie, 3, '0', STR_PAD_LEFT);
         $nome .= '_N' . str_pad($nnf, 9, '0', STR_PAD_LEFT);
         $nome .= $modelo . '.' . $ext;
