@@ -12,7 +12,7 @@
                 <small>CNPJ/CPF</small>
                 <?php echo $nfe->get('dest.CNPJ') == ''
                     ? $nfe->get('dest.CPF')->format('###.###.###-##')
-                    : $nfe->get('dest.CNPJ')->format('##.###.###/####-##'); //Teste ?>
+                    : $nfe->get('dest.CNPJ')->format('##.###.###/####-##'); ?>
             </p>
         </td>
         <td class="col-1">
