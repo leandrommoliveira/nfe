@@ -25,7 +25,7 @@ define('DOMPDF_LIB_DIR', DOMPDF_DIR . '/lib');
  * Some installations don't have $_SERVER['DOCUMENT_ROOT'].
  * http://fyneworks.blogspot.com/2007/08/php-documentroot-in-iis-windows-servers.html
  */
-if ( !isset($_SERVER['DOCUMENT_ROOT'])) {
+if (! isset($_SERVER['DOCUMENT_ROOT'])) {
     $path = '';
 
     if (isset($_SERVER['SCRIPT_FILENAME'])) {
@@ -52,7 +52,7 @@ def('DOMPDF_ADMIN_USERNAME', 'user');
 def('DOMPDF_ADMIN_PASSWORD', 'password');
 
 /*
- * The location of the DOMPDF font directory
+ * The location of the DOMPDFf font directory
  *
  * The location of the directory where DOMPDF will store fonts and font metrics
  * Note: This directory must exist and be writable by the webserver process.
@@ -77,7 +77,7 @@ def('DOMPDF_ADMIN_PASSWORD', 'password');
  */
 def('DOMPDF_FONT_DIR', DOMPDF_DIR . '/lib/fonts/');
 
-/**
+/*
  * The location of the DOMPDF font cache directory
  *
  * This directory contains the cached font metrics for the fonts used by DOMPDF.
