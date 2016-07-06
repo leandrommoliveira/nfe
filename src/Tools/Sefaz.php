@@ -31,6 +31,171 @@ class Sefaz
      * @var array
      */
     protected static $servers = [
+        // RJ
+        '33' => [
+            self::ambHomologacao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF2',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
+                ],
+            ],
+            self::ambProducao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe.svrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.svrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF2',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
+                ],
+            ],
+        ],
+        // SP
+        '35' => [
+            self::ambHomologacao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => 'https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeautorizacao.asmx',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://homologacao.nfe.fazenda.sp.gov.br/ws/recepcaoevento.asmx',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://homologacao.nfe.fazenda.sp.gov.br/ws/recepcaoevento.asmx',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF2',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://homologacao.nfe.fazenda.sp.gov.br/ws/nfeinutilizacao2.asmx',
+                ],
+            ],
+            self::ambProducao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => '>https://nfe.fazenda.sp.gov.br/ws/nfeautorizacao.asmx',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.fazenda.sp.gov.br/ws/recepcaoevento.asmx',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.fazenda.sp.gov.br/ws/recepcaoevento.asmx',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF2',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe.fazenda.sp.gov.br/ws/nfeinutilizacao2.asmx',
+                ],
+            ],
+        ],
+        // PR
+        '41' => [
+            self::ambHomologacao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => 'https://homologacao.nfe.fazenda.pr.gov.br/nfe/NFeAutorizacao3',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://homologacao.nfe.fazenda.pr.gov.br/nfe/NFeRecepcaoEvento',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://homologacao.nfe.fazenda.pr.gov.br/nfe/NFeRecepcaoEvento',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://homologacao.nfe.fazenda.pr.gov.br/nfe/NFeInutilizacao3',
+                ],
+            ],
+            self::ambProducao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => '>https://nfe.fazenda.pr.gov.br/nfe/NFeAutorizacao3',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.fazenda.pr.gov.br/nfe/NFeRecepcaoEvento',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.fazenda.pr.gov.br/nfe/NFeRecepcaoEvento',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF3',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe.fazenda.pr.gov.br/nfe/NFeInutilizacao3',
+                ],
+            ],
+        ],
         // SC
         '42' => [
             self::ambHomologacao => [
@@ -83,6 +248,61 @@ class Sefaz
                     'op' => 'NfeInutilizacao2',
                     'versao' => '3.10',
                     'url' => 'https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
+                ],
+            ],
+            // RS
+            '43' => [
+                self::ambHomologacao => [
+                    self::mtAutoriza => [
+                        'method' => 'nfeAutorizacaoLote',
+                        'op' => 'NfeAutorizacao',
+                        'versao' => '3.10',
+                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
+                    ],
+                    self::mtCancela => [
+                        'method' => 'nfeRecepcaoEvento',
+                        'op' => 'RecepcaoEvento',
+                        'versao' => '1.00',
+                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                    ],
+                    self::mtCartaCorrecao => [
+                        'method' => 'nfeRecepcaoEvento',
+                        'op' => 'RecepcaoEvento',
+                        'versao' => '1.00',
+                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                    ],
+                    self::mtInutilizacao => [
+                        'method' => 'nfeInutilizacaoNF2',
+                        'op' => 'NfeInutilizacao2',
+                        'versao' => '3.10',
+                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
+                    ],
+                ],
+                self::ambProducao => [
+                    self::mtAutoriza => [
+                        'method' => 'nfeAutorizacaoLote',
+                        'op' => 'NfeAutorizacao',
+                        'versao' => '3.10',
+                        'url' => '>https://nfe.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
+                    ],
+                    self::mtCancela => [
+                        'method' => 'nfeRecepcaoEvento',
+                        'op' => 'RecepcaoEvento',
+                        'versao' => '1.00',
+                        'url' => 'https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                    ],
+                    self::mtCartaCorrecao => [
+                        'method' => 'nfeRecepcaoEvento',
+                        'op' => 'RecepcaoEvento',
+                        'versao' => '1.00',
+                        'url' => 'https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                    ],
+                    self::mtInutilizacao => [
+                        'method' => 'nfeInutilizacaoNF2',
+                        'op' => 'NfeInutilizacao2',
+                        'versao' => '3.10',
+                        'url' => 'https://nfe.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
+                    ],
                 ],
             ],
         ],
