@@ -8,3 +8,6 @@
 [![License](https://poser.pugx.org/phpnfe/nfe/license?format=flat)](https://packagist.org/packages/phpnfe/nfe)
 
 Autorização do NFe
+
+Estados homologados:
+ - SC
