@@ -100,7 +100,7 @@ class DanfeNFe
         foreach ($entities as $search => $replace) {
             $subject = str_replace($search, $replace, $subject);
         }
-        
+
         return $subject;
     }
 

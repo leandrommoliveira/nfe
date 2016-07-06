@@ -21,11 +21,11 @@ define('DOMPDF_INC_DIR', DOMPDF_DIR . '/include');
  */
 define('DOMPDF_LIB_DIR', DOMPDF_DIR . '/lib');
 
-/**
+/*
  * Some installations don't have $_SERVER['DOCUMENT_ROOT'].
  * http://fyneworks.blogspot.com/2007/08/php-documentroot-in-iis-windows-servers.html
  */
-if (!isset($_SERVER['DOCUMENT_ROOT'])) {
+if ( !isset($_SERVER['DOCUMENT_ROOT'])) {
     $path = '';
 
     if (isset($_SERVER['SCRIPT_FILENAME'])) {
@@ -39,11 +39,11 @@ if (!isset($_SERVER['DOCUMENT_ROOT'])) {
 
 /* Include the custom config file if it exists */
 if (file_exists(DOMPDF_DIR . '/dompdf_config.custom.inc.php')) {
-    require_once(DOMPDF_DIR . '/dompdf_config.custom.inc.php');
+    require_once DOMPDF_DIR . '/dompdf_config.custom.inc.php';
 }
 
 //FIXME: Some function definitions rely on the constants defined by DOMPDF. However, might this location prove problematic?
-require_once(DOMPDF_INC_DIR . '/functions.inc.php');
+require_once DOMPDF_INC_DIR . '/functions.inc.php';
 
 /*
  * Username and password used by the configuration utility in www/
@@ -340,7 +340,7 @@ mb_internal_encoding('UTF-8');
  * @var array
  */
 global $_dompdf_warnings;
-$_dompdf_warnings = array();
+$_dompdf_warnings = [];
 
 /*
  * If true, $_dompdf_warnings is dumped on script termination when using

@@ -63,6 +63,7 @@ $detutos = $nfe->get('')->toArray('det');
     ?></td>
                 </tr>
             <?php
+
 }
             ?>
             </tbody>
