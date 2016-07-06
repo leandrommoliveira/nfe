@@ -105,25 +105,4 @@ abstract class Builder
             return true;
         }
     }
-
-    protected function verificaObj($valor)
-    {
-        foreach ($valor as $val) {
-            if (! is_null($val)) {
-                if (is_object($val)) {
-                    if (property_exists($val, $val->__obj)) {
-                        if ($val->__obj != null) {
-                            return false;
-                        }
-                    } else {
-                        return $this->verificaObj($val);
-                    }
-                } else {
-                    return true;
-                }
-            }
-        }
-
-        return true;
-    }
 }

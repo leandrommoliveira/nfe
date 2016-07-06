@@ -1,35 +1,37 @@
 {
-    "name"       : "phpnfe/nfe",
-    "description": "NFe para PHP por NetForce",
-    "keywords"   : ["nfe", "php", "netforce"],
-    "license"    : "MIT",
-    "authors"    : [
-        {
-            "name" : "Bruno Gonçalves",
-            "email": "bugotech@gmail.com"
-        },
-        {
-            "name" : "Johann Lucas Scherer",
-            "email": "johann.lucas@hotmail.com"
-        }
-    ],
-
-    "require": {
-        "nesbot/carbon": "1.*",
-        "illuminate/filesystem": "5.2.*",
-        "phpdocumentor/reflection-docblock": "^3.1"
+  "name": "phpnfe/nfe",
+  "description": "NFe para PHP por NetForce",
+  "keywords": [
+    "nfe",
+    "php",
+    "netforce"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bruno Gonçalves",
+      "email": "bugotech@gmail.com"
     },
-
-    "require-dev": {
-        "phpunit/phpunit": "4.8.*"
-    },
-
-    "autoload": {
-
-        "psr-4": {
-            "PhpNFe\\": "src/"
-        }
-    },
-
-    "minimum-stability": "dev"
+    {
+      "name": "Johann Lucas Scherer",
+      "email": "johann.lucas@hotmail.com"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "1.*",
+    "illuminate/support": "5.2.*",
+    "illuminate/filesystem": "5.2.*",
+    "phpdocumentor/reflection-docblock": "^3.1",
+    "dompdf/dompdf": "0.6.*",
+    "picqer/php-barcode-generator": "^0.2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpNFe\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
 }

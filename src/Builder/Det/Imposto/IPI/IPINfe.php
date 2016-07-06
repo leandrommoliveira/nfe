@@ -47,11 +47,16 @@ class IPINfe extends \PhpNFe\Builder\Builder
     public $cEnq = '';
 
     /**
+     * Grupo do CST 00, 49, 50 e 99
+     * Informar apenas um dos grupos O07 ou O08 com base valor
+     * atribuído ao campo O09 – CST do IPI.
      * @var IPITribNfe
      */
     public $IPITrib;
 
     /**
+     * Grupo CST 01, 02, 03, 04, 51, 52, 53, 54 e
+     * 55.
      * @var IPINTNfe
      */
     public $IPINT;
