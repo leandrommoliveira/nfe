@@ -28,7 +28,7 @@ class XML extends \DOMDocument
             $opcoes = explode('|', $key);
             foreach ($opcoes as $op) {
                 $achado = $this->get($op);
-                if (!$achado->isNull()) {
+                if ( !$achado->isNull()) {
                     return $achado;
                 }
             }
@@ -51,7 +51,7 @@ class XML extends \DOMDocument
         }
 
         // Retornar o conteúdo do ultimo nível
-        if (!is_null($base)) {
+        if ( !is_null($base)) {
             return new XMLGet($base);
         }
 

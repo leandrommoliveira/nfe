@@ -68,7 +68,6 @@ class DanfeNFe
      */
     public function getPDF($encoding = null)
     {
-
         require_once __DIR__ . '/DomPDF/bootstrap.php';
 
         $html = $this->getHTML();
@@ -101,6 +100,7 @@ class DanfeNFe
         foreach ($entities as $search => $replace) {
             $subject = str_replace($search, $replace, $subject);
         }
+        
         return $subject;
     }
 
