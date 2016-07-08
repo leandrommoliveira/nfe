@@ -1,6 +1,6 @@
-<?php namespace PhpNFe\Builder\Transp;
+<?php namespace PhpNFe\NFe\Builder\Transp;
 
-use PhpNFe\Builder\Transp\Vol\VolNfe;
+use PhpNFe\NFe\Builder\Transp\Vol\VolNfe;
 
 /**
  * Grupo Informações do Transporte.

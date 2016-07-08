@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Transp;
+<?php namespace PhpNFe\NFe\Builder\Transp;
 
 /**
  * Grupo Transportador.

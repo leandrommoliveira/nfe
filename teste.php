@@ -18,7 +18,7 @@ $xml = file_get_contents($path);
 
 $xml = $cert->assinarXML($xml, 'infNFe');
 
-$nfe = new \PhpNFe\NFe($cert);
+$nfe = new \PhpNFe\NFe\NFe($cert);
 
 $b = $cert->ehValido();
 

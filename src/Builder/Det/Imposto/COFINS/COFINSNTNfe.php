@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\COFINS;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\COFINS;
 
 class COFINSNTNfe extends \PhpNFe\Tools\Builder\Builder
 {

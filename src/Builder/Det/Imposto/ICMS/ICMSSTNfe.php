@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\ICMS;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\ICMS;
 
 /**
  * Grupo de Repasse de ICMS ST retido

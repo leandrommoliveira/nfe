@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\ICMS;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\ICMS;
 
 class ICMSSN201Nfe extends \PhpNFe\Tools\Builder\Builder
 {

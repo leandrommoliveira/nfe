@@ -1,4 +1,4 @@
-<?php namespace PhpNFe;
+<?php namespace PhpNFe\NFe;
 
 use DOMDocument;
 use PhpNFe\Tools\AjustaXML;

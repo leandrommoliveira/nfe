@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Tools;
+<?php namespace PhpNFe\NFe\Tools;
 
 use Illuminate\Support\Arr;
 

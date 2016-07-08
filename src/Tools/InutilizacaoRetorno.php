@@ -1,4 +1,6 @@
-<?php namespace PhpNFe\Tools;
+<?php namespace PhpNFe\NFe\Tools;
+
+use PhpNFe\Tools\XML;
 
 class InutilizacaoRetorno extends Retorno
 {

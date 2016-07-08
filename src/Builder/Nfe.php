@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder;
+<?php namespace PhpNFe\NFe\Builder;
 
 use Carbon\Carbon;
 use PhpNFe\Tools\Builder\Builder;

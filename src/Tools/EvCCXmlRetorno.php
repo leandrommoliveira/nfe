@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Tools;
+<?php namespace PhpNFe\NFe\Tools;
 
 class EvCCXmlRetorno
 {

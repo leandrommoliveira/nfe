@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Dest;
+<?php namespace PhpNFe\NFe\Builder\Dest;
 
 class EnderDestNfe extends \PhpNFe\Tools\Builder\Builder
 {

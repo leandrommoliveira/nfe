@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\InfAdic;
+<?php namespace PhpNFe\NFe\Builder\InfAdic;
 
 class ObsContNfe extends \PhpNFe\Tools\Builder\Builder
 {

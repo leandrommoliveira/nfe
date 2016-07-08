@@ -1,4 +1,6 @@
-<?php namespace PhpNFe\Builder\Cobr;
+<?php namespace PhpNFe\NFe\Builder\Cobr;
+
+use PhpNFe\Builder\Cobr\FatNfe;
 
 /**
  * Grupo Cobrança.

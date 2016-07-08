@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\InfAdic;
+<?php namespace PhpNFe\NFe\Builder\InfAdic;
 
 class ProcRefNfe extends \PhpNFe\Tools\Builder\Builder
 {

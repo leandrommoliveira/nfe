@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto;
 
 use PhpNFe\Builder\Det\Imposto\COFINS\COFINSNfe;
 use PhpNFe\Builder\Det\Imposto\ICMS\ICMSNfe;

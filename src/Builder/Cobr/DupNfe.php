@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Cobr;
+<?php namespace PhpNFe\NFe\Builder\Cobr;
 
 class DupNfe extends \PhpNFe\Tools\Builder\Builder
 {

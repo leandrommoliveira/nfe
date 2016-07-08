@@ -4,7 +4,7 @@ use Carbon\Carbon;
 
 class CertificadoTeste extends TestCase
 {
-    /*
+
     protected static $pubKey;
     protected static $priKey;
     protected static $certKey;
@@ -16,7 +16,7 @@ class CertificadoTeste extends TestCase
         self::$pubKey = file_get_contents(__DIR__ . '/utils/pub.key');
         self::$priKey = file_get_contents(__DIR__ . '/utils/pri.key');
         self::$certKey = self::$priKey . "\r\n" . self::$pubKey;
-        self::$certTeste = __DIR__ . '/utils/certificado_teste.xml';
+        self::$certTeste = __DIR__ . '/utils/certificado_teste.pfx';
 
         self::$cert = new \PhpNFe\Tools\Certificado\Certificado();
     }
@@ -43,7 +43,7 @@ class CertificadoTeste extends TestCase
     public function testSalvarArquivo()
     {
         // Salvando o certificado e verificando se salvou
-        self::$certTeste = __DIR__ . '/utils/certificado_teste.xml';
+        self::$certTeste = __DIR__ . '/utils/certificado_teste.pfx';
         self::$cert->salvarArquivo(self::$certTeste);
         $this->assertFileExists(self::$certTeste);
     }
@@ -116,7 +116,7 @@ class CertificadoTeste extends TestCase
         $signXmlTeste = trim(preg_replace('/\s\s+/', '', $signXmlTeste));
 
         // Comparando os xmls
-        $this->assertEquals($signXmlTeste, $signXml);
+        $this->assertEquals($signXmlTeste, $signXml);*/
     }
 
     public static function tearDownAfterClass()
@@ -135,5 +135,4 @@ class CertificadoTeste extends TestCase
 
         return $xml;
     }
-*/
 }

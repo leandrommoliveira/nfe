@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Dest;
+<?php namespace PhpNFe\NFe\Builder\Dest;
 
 class DestNfe extends \PhpNFe\Tools\Builder\Builder
 {
@@ -93,6 +93,6 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
 
     public function __construct()
     {
-        $this->enderDest = new EnderDestNfe();
+        $this->enderDest = new \PhpNFe\NFe\Builder\Dest\EnderDestNfe();
     }
 }

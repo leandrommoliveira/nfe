@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\PIS;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\PIS;
 
 class PISNTNfe extends \PhpNFe\Tools\Builder\Builder
 {

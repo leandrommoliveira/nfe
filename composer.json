@@ -31,7 +31,7 @@
   },
   "autoload": {
     "psr-4": {
-      "PhpNFe\\": "src/"
+      "PhpNFe\\NFe\\": "src/"
     }
   },
   "minimum-stability": "dev"

@@ -1,6 +1,6 @@
-<?php namespace PhpNFe\Builder\Det;
+<?php namespace PhpNFe\NFe\Builder\Det;
 
-use PhpNFe\Builder\Det\Imposto\ImpostoNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\ImpostoNfe;
 
 class DetNfe extends \PhpNFe\Tools\Builder\Builder
 {

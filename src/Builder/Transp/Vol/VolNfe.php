@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Transp\Vol;
+<?php namespace PhpNFe\NFe\Builder\Transp\Vol;
 
 /**
  * Grupo Volumes.

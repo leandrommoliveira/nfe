@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\ICMS;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\ICMS;
 
 /**
  * Grupo CRT=1 – Simples Nacional e

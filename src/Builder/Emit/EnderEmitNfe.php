@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Emit;
+<?php namespace PhpNFe\NFe\Builder\Emit;
 
 class EnderEmitNfe extends \PhpNFe\Tools\Builder\Builder
 {

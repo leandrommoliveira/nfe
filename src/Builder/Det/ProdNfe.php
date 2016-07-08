@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det;
+<?php namespace PhpNFe\NFe\Builder\Det;
 
 /**
  * Detalhamento de Produtos e Serviços.

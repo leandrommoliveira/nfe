@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\IPI;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\IPI;
 
 class IPITribNfe extends \PhpNFe\Tools\Builder\Builder
 {

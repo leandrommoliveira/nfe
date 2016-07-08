@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto\IPI;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto\IPI;
 
 /**
  * Informar apenas quando o item for sujeito ao IPI.

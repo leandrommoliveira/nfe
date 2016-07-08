@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Total;
+<?php namespace PhpNFe\NFe\Builder\Total;
 
 class ICMSTotNfe extends \PhpNFe\Tools\Builder\Builder
 {

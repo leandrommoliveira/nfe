@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Total;
+<?php namespace PhpNFe\NFe\Builder\Total;
 
 /**
  * Grupo Totais referentes ao ISSQN.

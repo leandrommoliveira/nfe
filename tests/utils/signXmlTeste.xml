@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe versao="3.10" Id="NFe42160618227795000130550010000000431999859999">
+    <infNFe versao="3.10" Id="NFe42160618227795000130550010000002021662643197">
         <ide>
             <cUF>42</cUF>
-            <cNF>99985999</cNF>
+            <cNF>66264319</cNF>
             <natOp>TESTE</natOp>
             <indPag>0</indPag>
             <mod>55</mod>
             <serie>1</serie>
-            <nNF>43</nNF>
+            <nNF>202</nNF>
             <dhEmi>2016-06-13T14:27:00-03:00</dhEmi>
             <tpNF>1</tpNF>
             <idDest>1</idDest>
             <cMunFG>4202008</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>9</cDV>
+            <cDV>7</cDV>
             <tpAmb>2</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>0</indFinal>
@@ -57,12 +57,6 @@
             <IE>252121120</IE>
             <email>emailteste@HOTMAIL.COM</email>
         </dest>
-        <autXML>
-            <CNPJ>18227795000130</CNPJ>
-        </autXML>
-        <autXML>
-            <CPF>44479085904</CPF>
-        </autXML>
         <det nItem="1">
             <prod>
                 <cProd>000277</cProd>
@@ -101,7 +95,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -145,7 +139,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -189,7 +183,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -233,7 +227,7 @@
                     <COFINSOutr>
                         <CST>99</CST>
                         <vBC>0.00</vBC>
-                        <pCOFINS>0.00</pCOFINS>
+                        <pCOFINS>0.0000</pCOFINS>
                         <vCOFINS>0.00</vCOFINS>
                     </COFINSOutr>
                 </COFINS>
@@ -298,17 +292,17 @@
         <SignedInfo>
             <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
             <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFe42160618227795000130550010000000431999859999">
+            <Reference URI="#NFe42160618227795000130550010000002021662643197">
                 <Transforms>
                     <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
                     <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
                 </Transforms>
                 <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>VTUS1ERTtWwMGrkBiIlCrNy+f8s=</DigestValue>
+                <DigestValue>XNLbZ4hlQ96FaFVeysV66DyWo6I=</DigestValue>
             </Reference>
         </SignedInfo>
         <SignatureValue>
-            AOi3zlXF+m/qIzLqSKJpJj7ahcNQ3oXDXkSp+hZfFJzhqzcq3+BqmYcLwd82mR/Zr6ALFChQBxToFAxaQkWQImdbhdmhLGsThhDKNJASi+/LKSEUwqeDJDNOmsRed3U2VlGUVEcn4IJBQOqWhX7YEa4k7Mf5zzCVvx230iDr/qmFuBCJ7awyQg+SUJ1ClS6Klzg3e/ZKIhmP5EdVuNICL46zHlkE+resLRAoebQ+tDeEeM1nAQwjjMd4oJyFmBkStOlfUxWvFxj334UxmwssdIRsOmpEWZSGB5bqnfcDXcu66sLS21eBkQu9U1fIVsD2+LQQSWqabD9YC1C/oO7n5A==
+            lr8SajK+PxnTq9QwMqBF0ofQPtek0C8bMEbwQH5tnagJiMn8TBCdoQz6R418z2Otigs+5OkNiUB/eajfKMmEllsMYrvrC+IfWwcICnb8hdZdmaDF1bkbrY+Yg+el1LkzaHb4fyFQOVZr0Vv6lktY6bNQkzQMx0gwsjmeT2Tw4ToEOuxmtM/KElwXj3X+4XzXGlEYhKrW1//+0DFgO9BSjZwD4CuDa8KkCIBoSNeyS3qq3LZHK4VfL05AJfkcwM+YnKgjvsO0xNwSxKJg4UzHXyrZOz9CBnrdyuJeG6V6AsKD8YPrGLnTKBxxp8/s/+9L8GBGYq0I4CiM/CIDq/CB6A==
         </SignatureValue>
         <KeyInfo>
             <X509Data>

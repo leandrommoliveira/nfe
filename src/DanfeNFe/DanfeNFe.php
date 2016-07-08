@@ -1,7 +1,7 @@
-<?php namespace PhpNFe\DanfeNFe;
+<?php namespace PhpNFe\NFe\DanfeNFe;
 
 use Illuminate\Filesystem\Filesystem;
-use PhpNFe\Tools\NFeXML;
+use PhpNFe\NFe\Tools\NFeXML;
 use PhpNFe\Tools\XML;
 
 class DanfeNFe

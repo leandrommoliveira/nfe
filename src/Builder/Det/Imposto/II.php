@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\Builder\Det\Imposto;
+<?php namespace PhpNFe\NFe\Builder\Det\Imposto;
 
 /**
  * Informar apenas quando o item for sujeito ao II.
