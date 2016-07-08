@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Det\Imposto\PIS;
 
-class PISSTNfe extends \PhpNFe\Builder\Builder
+class PISSTNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Valor da Base de Cálculo do PIS.

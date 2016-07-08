@@ -6,7 +6,7 @@
  * somatório do campo correspondente dos itens.
  * Class TotalNfe.
  */
-class TotalNfe extends \PhpNFe\Builder\Builder
+class TotalNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Grupo Totais referentes ao ICMS.
@@ -32,7 +32,7 @@ class TotalNfe extends \PhpNFe\Builder\Builder
     public function __construct()
     {
         $this->ICMSTot = new ICMSTotNfe();
-        $this->ISSQNtot = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Total\ISSQNtotNfe');
-        $this->retTrib = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Total\RetTribNfe');
+        $this->ISSQNtot = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Total\ISSQNtotNfe');
+        $this->retTrib = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Total\RetTribNfe');
     }
 }

@@ -6,7 +6,7 @@
  * Tributação ICMS pelo Simples Nacional, CSOSN=500 (v2.0).
  * Class ICMSSN500Nfe.
  */
-class ICMSSN500Nfe extends \PhpNFe\Builder\Builder
+class ICMSSN500Nfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Origem da mercadoria.

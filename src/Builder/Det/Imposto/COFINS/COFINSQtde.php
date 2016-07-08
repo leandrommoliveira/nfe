@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Det\Imposto\COFINS;
 
-class COFINSQtde extends \PhpNFe\Builder\Builder
+class COFINSQtde extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Código de Situação Tributária da COFINS.

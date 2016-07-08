@@ -9,17 +9,20 @@ $path = __DIR__ . '/tests/utils/xmlTeste.xml';
 
 $path = __DIR__ . '/nota.xml';
 
-$cert = new \PhpNFe\Certificado();
+$cert = new \PhpNFe\Tools\Certificado\Certificado();
 $cert->carregarArquivo($path);
 $cert->carregarPfx(__DIR__ . '/../certificado_floripa.pfx', 'BOING');
 
 $xml = file_get_contents($path);
+
 
 $xml = $cert->assinarXML($xml, 'infNFe');
 
 $nfe = new \PhpNFe\NFe($cert);
 
 $b = $cert->ehValido();
+
+$v = \PhpNFe\Tools\Validar::validar($xml, __DIR__ . '/src/schemes/PL_008i2/enviNFe_v3.10.xsd');
 
 $ret = $nfe->autorizar($xml);
 

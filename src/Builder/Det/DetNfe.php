@@ -2,7 +2,7 @@
 
 use PhpNFe\Builder\Det\Imposto\ImpostoNfe;
 
-class DetNfe extends \PhpNFe\Builder\Builder
+class DetNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Detalhamento de Produtos e Serviços.

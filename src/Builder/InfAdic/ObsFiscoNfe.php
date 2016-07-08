@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\InfAdic;
 
-class ObsFiscoNfe extends \PhpNFe\Builder\Builder
+class ObsFiscoNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Identificação do campo.

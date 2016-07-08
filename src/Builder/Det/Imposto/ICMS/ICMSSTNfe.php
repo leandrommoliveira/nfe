@@ -11,7 +11,7 @@
  * Substituto Tributário. (v2.0).
  * Class ICMSSTNfe.
  */
-class ICMSSTNfe extends \PhpNFe\Builder\Builder
+class ICMSSTNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Origem da mercadoria.

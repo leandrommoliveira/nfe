@@ -6,7 +6,7 @@ use PhpNFe\Builder\Transp\Vol\VolNfe;
  * Grupo Informações do Transporte.
  * Class TranspNfe.
  */
-class TranspNfe extends \PhpNFe\Builder\Builder
+class TranspNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Modalidade do frete.
@@ -36,7 +36,7 @@ class TranspNfe extends \PhpNFe\Builder\Builder
      */
     public function __construct()
     {
-        $this->transporta = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\TransportaNfe');
-        $this->vol = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\Vol\VolNfe');
+        $this->transporta = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\TransportaNfe');
+        $this->vol = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\Vol\VolNfe');
     }
 }

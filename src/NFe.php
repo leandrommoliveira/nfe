@@ -3,6 +3,7 @@
 use DOMDocument;
 use PhpNFe\Tools\AjustaXML;
 use PhpNFe\Tools\AutorizaRetorno;
+use PhpNFe\Tools\Certificado\Certificado;
 use PhpNFe\Tools\EvBody;
 use PhpNFe\Tools\EvCancelaDados;
 use PhpNFe\Tools\EvCCDados;

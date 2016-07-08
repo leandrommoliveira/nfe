@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Total;
 
-class ICMSTotNfe extends \PhpNFe\Builder\Builder
+class ICMSTotNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Base de Cálculo do ICMS.

@@ -5,7 +5,7 @@
  * (NT 2012/003)
  * Class LacresNfe.
  */
-class LacresNfe extends \PhpNFe\Builder\Builder
+class LacresNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Número dos Lacres.

@@ -1,6 +1,9 @@
 <?php namespace PhpNFe\Builder;
 
 use Carbon\Carbon;
+use PhpNFe\Tools\Builder\Builder;
+use PhpNFe\Tools\Builder\Colecoes;
+use PhpNFe\Tools\Builder\PropriedadeNull;
 use PhpNFe\Builder\Cobr\CobrNfe;
 use PhpNFe\Builder\Dest\DestNfe;
 use PhpNFe\Builder\Emit\EmitNfe;

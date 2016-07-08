@@ -12,7 +12,7 @@ use PhpNFe\Builder\Det\Imposto\PIS\PISNfe;
  * serão informados e vice-versa.
  * Class ImpostoNfe.
  */
-class ImpostoNfe extends \PhpNFe\Builder\Builder
+class ImpostoNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Valor aproximado total de tributos federais,
@@ -67,9 +67,9 @@ class ImpostoNfe extends \PhpNFe\Builder\Builder
     public function __construct()
     {
         $this->ICMS = new ICMSNfe();
-        $this->IPI = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\IPI\IPINfe');
-        $this->II = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\II');
-        $this->PIS = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISNfe');
-        $this->COFINS = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSNfe');
+        $this->IPI = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\IPI\IPINfe');
+        $this->II = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\II');
+        $this->PIS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISNfe');
+        $this->COFINS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSNfe');
     }
 }

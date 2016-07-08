@@ -1,6 +1,7 @@
 <?php namespace PhpNFe\Builder;
 
 use PhpNFe\NFe as BaseNFe;
+use PhpNFe\Tools\Builder\Builder;
 
 class IdeNfe extends Builder
 {

@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Dest;
 
-class DestNfe extends \PhpNFe\Builder\Builder
+class DestNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Informar o CNPJ ou o CPF do destinatário, preenchendo os

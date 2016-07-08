@@ -4,7 +4,7 @@
  * Grupo Informações do Transporte.
  * Class RetTribNfe.
  */
-class RetTribNfe extends \PhpNFe\Builder\Builder
+class RetTribNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Valor Retido de PIS.

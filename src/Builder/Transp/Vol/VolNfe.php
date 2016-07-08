@@ -5,7 +5,7 @@
  * (NT 2012/003)
  * Class VolNfe.
  */
-class VolNfe extends \PhpNFe\Builder\Builder
+class VolNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Quantidade de volumes transportados.
@@ -53,6 +53,6 @@ class VolNfe extends \PhpNFe\Builder\Builder
 
     public function __construct()
     {
-        $this->lacres = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\Vol\LacresNfe');
+        $this->lacres = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\Vol\LacresNfe');
     }
 }

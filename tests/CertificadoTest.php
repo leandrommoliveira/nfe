@@ -17,13 +17,13 @@ class CertificadoTeste extends TestCase
         self::$certKey = self::$priKey . "\r\n" . self::$pubKey;
         self::$certTeste = __DIR__ . '/utils/certificado_teste.xml';
 
-        self::$cert = new \PhpNFe\Certificado();
+        self::$cert = new \PhpNFe\Tools\Certificado\Certificado();
     }
 
     public function testCarregarPfx()
     {
         // Instanciando, carregando e verificando os dados do certificado
-        self::$cert = new \PhpNFe\Certificado();
+        self::$cert = new \PhpNFe\Tools\Certificado\Certificado();
         self::$cert->carregarPfx(__DIR__ . '/utils/certificado_teste.pfx', '123456');
 
         $this->assertEquals(self::$cert->getChavePub(), self::$pubKey);
@@ -53,7 +53,7 @@ class CertificadoTeste extends TestCase
 
         // Instanciando de novo o certificado, carregando o certificado salvo anteriormente
         // e verificando os dados do certificado
-        self::$cert = new \PhpNFe\Certificado();
+        self::$cert = new \PhpNFe\Tools\Certificado\Certificado();
         self::$cert->carregarArquivo(self::$certTeste);
 
         $this->assertEquals(self::$cert->getChavePub(), self::$pubKey);
@@ -71,7 +71,7 @@ class CertificadoTeste extends TestCase
 
     public function testSalvaChave()
     {
-        self::$cert = new \PhpNFe\Certificado();
+        self::$cert = new \PhpNFe\Tools\Certificado\Certificado();
         self::$cert->carregarArquivo(__DIR__ . '/utils/certificado_teste.xml');
 
         // Criando os caminhos dos arquivos para teste de chave

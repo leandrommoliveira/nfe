@@ -5,7 +5,7 @@
  * Tributação ICMS: Outros.
  * Class ICMS90Nfe.
  */
-class ICMS90Nfe extends \PhpNFe\Builder\Builder
+class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Origem da mercadoria.

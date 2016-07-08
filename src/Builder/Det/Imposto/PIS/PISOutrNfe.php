@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Det\Imposto\PIS;
 
-class PISOutrNfe extends \PhpNFe\Builder\Builder
+class PISOutrNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Código de Situação Tributária do PIS.

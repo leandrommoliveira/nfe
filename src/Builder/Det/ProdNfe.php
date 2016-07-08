@@ -4,7 +4,7 @@
  * Detalhamento de Produtos e Serviços.
  * Class ProdNfe.
  */
-class ProdNfe extends \PhpNFe\Builder\Builder
+class ProdNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Código do produto ou serviço.

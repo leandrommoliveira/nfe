@@ -7,7 +7,7 @@
  * (v2.0).
  * Class ICMSSN202Nfe.
  */
-class ICMSSN202Nfe extends \PhpNFe\Builder\Builder
+class ICMSSN202Nfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Origem da mercadoria.

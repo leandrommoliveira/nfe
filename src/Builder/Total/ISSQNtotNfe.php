@@ -4,7 +4,7 @@
  * Grupo Totais referentes ao ISSQN.
  * Class ISSQNtotNfe.
  */
-class ISSQNtotNfe extends \PhpNFe\Builder\Builder
+class ISSQNtotNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      *Valor total dos Serviços sob não-incidência

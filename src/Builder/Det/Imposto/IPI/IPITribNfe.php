@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Det\Imposto\IPI;
 
-class IPITribNfe extends \PhpNFe\Builder\Builder
+class IPITribNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * @var

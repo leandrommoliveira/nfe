@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\InfAdic;
 
-class InfAdicNfe extends \PhpNFe\Builder\Builder
+class InfAdicNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Informações Adicionais de Interesse do
@@ -38,8 +38,8 @@ class InfAdicNfe extends \PhpNFe\Builder\Builder
 
     public function __construct()
     {
-        $this->obsCont = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\InfAdic\ObsContNfe');
-        $this->obsFisco = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\InfAdic\ObsFiscoNfe');
-        $this->procRef = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\InfAdic\ProcRefNfe');
+        $this->obsCont = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\InfAdic\ObsContNfe');
+        $this->obsFisco = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\InfAdic\ObsFiscoNfe');
+        $this->procRef = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\InfAdic\ProcRefNfe');
     }
 }

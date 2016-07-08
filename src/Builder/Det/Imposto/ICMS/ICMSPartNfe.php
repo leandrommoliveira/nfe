@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Det\Imposto\ICMS;
 
-class ICMSPartNfe extends \PhpNFe\Builder\Builder
+class ICMSPartNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Origem da mercadoria.

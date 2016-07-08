@@ -4,7 +4,7 @@
  * Grupo Transportador.
  * Class TransportaNfe.
  */
-class TransportaNfe extends \PhpNFe\Builder\Builder
+class TransportaNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * CNPJ do Transportador.

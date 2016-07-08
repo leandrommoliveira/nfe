@@ -4,7 +4,7 @@
  * Informar apenas quando o item for sujeito ao IPI.
  * Class IPINfe.
  */
-class IPINfe extends \PhpNFe\Builder\Builder
+class IPINfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Classe de enquadramento do IPI para

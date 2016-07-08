@@ -7,7 +7,7 @@
  * (ICMS00, ICMS10, ...) (v2.0).
  * Class ICMSNfe.
  */
-class ICMSNfe extends \PhpNFe\Builder\Builder
+class ICMSNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Grupo Tributação do ICMS= 00.
@@ -152,22 +152,22 @@ class ICMSNfe extends \PhpNFe\Builder\Builder
      */
     public function __construct()
     {
-        $this->ICMS00 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS00Nfe');
-        $this->ICMS10 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS10Nfe');
-        $this->ICMS20 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS20Nfe');
-        $this->ICMS30 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS30Nfe');
-        $this->ICMS40 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS40Nfe');
-        $this->ICMS51 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS51Nfe');
-        $this->ICMS60 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS60Nfe');
-        $this->ICMS70 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS70Nfe');
-        $this->ICMS90 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS90Nfe');
-        $this->ICMSPart = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSPartNfe');
-        $this->ICMSST = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSTNfe');
-        $this->ICMSSN101 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN101Nfe');
-        $this->ICMSSN102 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN102Nfe');
-        $this->ICMSSN201 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN201Nfe');
-        $this->ICMSSN202 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN202Nfe');
-        $this->ICMSSN500 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN500Nfe');
-        $this->ICMSSN900 = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN900Nfe');
+        $this->ICMS00 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS00Nfe');
+        $this->ICMS10 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS10Nfe');
+        $this->ICMS20 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS20Nfe');
+        $this->ICMS30 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS30Nfe');
+        $this->ICMS40 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS40Nfe');
+        $this->ICMS51 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS51Nfe');
+        $this->ICMS60 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS60Nfe');
+        $this->ICMS70 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS70Nfe');
+        $this->ICMS90 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMS90Nfe');
+        $this->ICMSPart = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSPartNfe');
+        $this->ICMSST = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSTNfe');
+        $this->ICMSSN101 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN101Nfe');
+        $this->ICMSSN102 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN102Nfe');
+        $this->ICMSSN201 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN201Nfe');
+        $this->ICMSSN202 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN202Nfe');
+        $this->ICMSSN500 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN500Nfe');
+        $this->ICMSSN900 = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\ICMS\ICMSSN900Nfe');
     }
 }

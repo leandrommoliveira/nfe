@@ -4,7 +4,7 @@
  * Grupo Cobrança.
  * Class CobrNfe.
  */
-class CobrNfe extends \PhpNFe\Builder\Builder
+class CobrNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Grupo Fatura.
@@ -23,7 +23,7 @@ class CobrNfe extends \PhpNFe\Builder\Builder
      */
     public function __construct()
     {
-        $this->fat = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Cobr\FatNfe');
+        $this->fat = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Cobr\FatNfe');
         $this->dup = [];
     }
 }

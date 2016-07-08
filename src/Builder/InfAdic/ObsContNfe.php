@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\InfAdic;
 
-class ObsContNfe extends \PhpNFe\Builder\Builder
+class ObsContNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Grupo Campo de uso livre do contribuinte.

@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Cobr;
 
-class DupNfe extends \PhpNFe\Builder\Builder
+class DupNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Número da Duplicata.

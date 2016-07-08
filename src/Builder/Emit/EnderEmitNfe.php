@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Emit;
 
-class EnderEmitNfe extends \PhpNFe\Builder\Builder
+class EnderEmitNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Logradouro.

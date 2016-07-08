@@ -4,7 +4,7 @@
  * Grupo Fatura.
  * Class FatNfe.
  */
-class FatNfe extends \PhpNFe\Builder\Builder
+class FatNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Número da Fatura.

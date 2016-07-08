@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Emit;
 
-class EmitNfe extends \PhpNFe\Builder\Builder
+class EmitNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Informar o CNPJ do emitente. Na emissão de NF-e avulsa pelo

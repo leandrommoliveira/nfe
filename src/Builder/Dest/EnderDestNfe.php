@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\Dest;
 
-class EnderDestNfe extends \PhpNFe\Builder\Builder
+class EnderDestNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Logradouro.

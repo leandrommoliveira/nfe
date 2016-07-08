@@ -6,7 +6,7 @@
  * base valor atribuído ao campo de CST da COFINS.
  * Class COFINSNfe.
  */
-class COFINSNfe extends \PhpNFe\Builder\Builder
+class COFINSNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Grupo COFINS tributado pela alíquota.
@@ -39,9 +39,9 @@ class COFINSNfe extends \PhpNFe\Builder\Builder
      */
     public function __construct()
     {
-        $this->COFINSAliq = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSAliqNfe');
-        $this->COFINSQtde = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSQtde');
-        $this->COFINSNT = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSNTNfe');
-        $this->COFINSOutr = new \PhpNFe\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSOutrNfe');
+        $this->COFINSAliq = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSAliqNfe');
+        $this->COFINSQtde = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSQtde');
+        $this->COFINSNT = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSNTNfe');
+        $this->COFINSOutr = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSOutrNfe');
     }
 }

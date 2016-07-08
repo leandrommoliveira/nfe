@@ -4,7 +4,7 @@
  * Informar apenas quando o item for sujeito ao II.
  * Class II.
  */
-class II extends \PhpNFe\Builder\Builder
+class II extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Valor BC do Imposto de Importação.

@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\Builder\InfAdic;
 
-class ProcRefNfe extends \PhpNFe\Builder\Builder
+class ProcRefNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
      * Identificador do processo ou ato
