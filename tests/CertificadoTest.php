@@ -4,7 +4,6 @@ use Carbon\Carbon;
 
 class CertificadoTeste extends TestCase
 {
-
     protected static $pubKey;
     protected static $priKey;
     protected static $certKey;
