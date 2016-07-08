@@ -4,12 +4,12 @@ use Carbon\Carbon;
 use PhpNFe\Tools\Builder\Builder;
 use PhpNFe\Tools\Builder\Colecoes;
 use PhpNFe\Tools\Builder\PropriedadeNull;
-use PhpNFe\Builder\Cobr\CobrNfe;
-use PhpNFe\Builder\Dest\DestNfe;
-use PhpNFe\Builder\Emit\EmitNfe;
-use PhpNFe\Builder\Total\TotalNfe;
-use PhpNFe\Builder\Transp\TranspNfe;
-use PhpNFe\Tools\Modulo11;
+use PhpNFe\NFe\Builder\Cobr\CobrNfe;
+use PhpNFe\NFe\Builder\Dest\DestNfe;
+use PhpNFe\NFe\Builder\Emit\EmitNfe;
+use PhpNFe\NFe\Builder\Total\TotalNfe;
+use PhpNFe\NFe\Builder\Transp\TranspNfe;
+use PhpNFe\NFe\Tools\Modulo11;
 
 class Nfe extends Builder
 {
@@ -75,11 +75,11 @@ class Nfe extends Builder
         $this->ide = new IdeNfe();
         $this->emit = new EmitNfe();
         $this->dest = new DestNfe();
-        $this->det = new Colecoes([], '\PhpNFe\Builder\DetNfe', 'nItem');
+        $this->det = new Colecoes([], '\PhpNFe\NFe\Builder\DetNfe', 'nItem');
         $this->total = new TotalNfe();
         $this->transp = new TranspNfe();
-        $this->cobr = new PropriedadeNull('\PhpNFe\Builder\Cobr\CobrNfe');
-        $this->infAdic = new PropriedadeNull('\PhpNFe\Builder\InfAdic\InfAdicNfe');
+        $this->cobr = new PropriedadeNull('\PhpNFe\NFe\Builder\Cobr\CobrNfe');
+        $this->infAdic = new PropriedadeNull('\PhpNFe\NFe\Builder\InfAdic\InfAdicNfe');
     }
 
     /**

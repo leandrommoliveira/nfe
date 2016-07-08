@@ -28,9 +28,9 @@ class PISNfe extends \PhpNFe\Tools\Builder\Builder
 
     public function __construct()
     {
-        $this->PISAliq = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISAliqNfe');
-        $this->PISQtde = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISQtdeNfe');
-        $this->PISNT = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISNTNfe');
-        $this->PISOutr = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISOutrNfe');
+        $this->PISAliq = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\PIS\PISAliqNfe');
+        $this->PISQtde = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\PIS\PISQtdeNfe');
+        $this->PISNT = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNTNfe');
+        $this->PISOutr = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\PIS\PISOutrNfe');
     }
 }

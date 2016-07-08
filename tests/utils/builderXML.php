@@ -1,6 +1,6 @@
 <?php
 
-$nfe = new \PhpNFe\Builder\Nfe();
+$nfe = new \PhpNFe\NFe\Builder\Nfe();
 
 // Ide
 $nfe->ide->cUF = '42';
@@ -55,7 +55,7 @@ $nfe->dest->IE = '252121120';
 $nfe->dest->email = 'emailteste@HOTMAIL.COM';
 
 // Prod 1
-$nfe->det->add($item = new \PhpNFe\Builder\Det\DetNfe());
+$nfe->det->add($item = new \PhpNFe\NFe\Builder\Det\DetNfe());
 $item->prod->cProd = '000277';
 $item->prod->xProd = 'PRODUTO TESTE 60CM';
 $item->prod->NCM = '06031100';
@@ -82,7 +82,7 @@ $item->imposto->COFINS->COFINSOutr->pCOFINS = 0.00;
 $item->imposto->COFINS->COFINSOutr->vCOFINS = 0.00;
 
 // Prod 2
-$nfe->det->add($item = new \PhpNFe\Builder\Det\DetNfe());
+$nfe->det->add($item = new \PhpNFe\NFe\Builder\Det\DetNfe());
 $item->prod->cProd = '003811';
 $item->prod->xProd = 'PRODUTO TESTE';
 $item->prod->NCM = '06031100';
@@ -109,7 +109,7 @@ $item->imposto->COFINS->COFINSOutr->pCOFINS = 0.00;
 $item->imposto->COFINS->COFINSOutr->vCOFINS = 0.00;
 
 // Prod 3
-$nfe->det->add($item = new \PhpNFe\Builder\Det\DetNfe());
+$nfe->det->add($item = new \PhpNFe\NFe\Builder\Det\DetNfe());
 $item->prod->cProd = '005207';
 $item->prod->xProd = 'TESTE PRODUTO - 224';
 $item->prod->NCM = '06031100';
@@ -136,7 +136,7 @@ $item->imposto->COFINS->COFINSOutr->pCOFINS = 0.00;
 $item->imposto->COFINS->COFINSOutr->vCOFINS = 0.00;
 
 // Prod 4
-$nfe->det->add($item = new \PhpNFe\Builder\Det\DetNfe());
+$nfe->det->add($item = new \PhpNFe\NFe\Builder\Det\DetNfe());
 $item->prod->cProd = '000679';
 $item->prod->xProd = 'TESTE PRODUTO 123';
 $item->prod->NCM = '06031100';
@@ -199,7 +199,7 @@ $nfe->transp->vol->pesoB = 1.000;
 $nfe->cobr->fat->nFat = '000003';
 $nfe->cobr->fat->vOrig = 133.20;
 $nfe->cobr->fat->vLiq = 133.20;
-$nfe->cobr->dup[] = $dup = new \PhpNFe\Builder\Cobr\DupNfe();
+$nfe->cobr->dup[] = $dup = new \PhpNFe\NFe\Builder\Cobr\DupNfe();
 $dup->nDup = '000003A';
 $dup->dVenc = '2016-10-09';
 $dup->vDup = 133.20;

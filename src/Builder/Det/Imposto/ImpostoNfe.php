@@ -1,9 +1,9 @@
 <?php namespace PhpNFe\NFe\Builder\Det\Imposto;
 
-use PhpNFe\Builder\Det\Imposto\COFINS\COFINSNfe;
-use PhpNFe\Builder\Det\Imposto\ICMS\ICMSNfe;
-use PhpNFe\Builder\Det\Imposto\IPI\IPINfe;
-use PhpNFe\Builder\Det\Imposto\PIS\PISNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\ICMS\ICMSNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\IPI\IPINfe;
+use PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNfe;
 
 /**
  * Tributos incidentes no Produto ou Serviço.
@@ -67,9 +67,9 @@ class ImpostoNfe extends \PhpNFe\Tools\Builder\Builder
     public function __construct()
     {
         $this->ICMS = new ICMSNfe();
-        $this->IPI = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\IPI\IPINfe');
-        $this->II = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\II');
-        $this->PIS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\PIS\PISNfe');
-        $this->COFINS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSNfe');
+        $this->IPI = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\IPI\IPINfe');
+        $this->II = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\II');
+        $this->PIS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNfe');
+        $this->COFINS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe');
     }
 }

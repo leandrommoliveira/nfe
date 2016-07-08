@@ -36,7 +36,7 @@ class TranspNfe extends \PhpNFe\Tools\Builder\Builder
      */
     public function __construct()
     {
-        $this->transporta = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\TransportaNfe');
-        $this->vol = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Transp\Vol\VolNfe');
+        $this->transporta = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Transp\TransportaNfe');
+        $this->vol = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Transp\Vol\VolNfe');
     }
 }

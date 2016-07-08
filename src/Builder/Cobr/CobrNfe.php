@@ -1,6 +1,6 @@
 <?php namespace PhpNFe\NFe\Builder\Cobr;
 
-use PhpNFe\Builder\Cobr\FatNfe;
+use PhpNFe\NFe\Builder\Cobr\FatNfe;
 
 /**
  * Grupo Cobrança.
@@ -25,7 +25,7 @@ class CobrNfe extends \PhpNFe\Tools\Builder\Builder
      */
     public function __construct()
     {
-        $this->fat = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Cobr\FatNfe');
+        $this->fat = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Cobr\FatNfe');
         $this->dup = [];
     }
 }

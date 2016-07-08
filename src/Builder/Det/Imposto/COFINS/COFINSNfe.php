@@ -39,9 +39,9 @@ class COFINSNfe extends \PhpNFe\Tools\Builder\Builder
      */
     public function __construct()
     {
-        $this->COFINSAliq = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSAliqNfe');
-        $this->COFINSQtde = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSQtde');
-        $this->COFINSNT = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSNTNfe');
-        $this->COFINSOutr = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\Builder\Det\Imposto\COFINS\COFINSOutrNfe');
+        $this->COFINSAliq = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSAliqNfe');
+        $this->COFINSQtde = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSQtde');
+        $this->COFINSNT = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNTNfe');
+        $this->COFINSOutr = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSOutrNfe');
     }
 }
