@@ -19,6 +19,7 @@ use PhpNFe\NFe\Tools\NFeXML;
 use PhpNFe\NFe\Tools\Sefaz;
 use PhpNFe\Tools\Soap;
 use Illuminate\Filesystem\Filesystem;
+use PhpNFe\Tools\Validar;
 use PhpNFe\Tools\XML;
 
 class NFe
@@ -132,6 +133,14 @@ class NFe
         return new InutilizacaoRetorno($this->soap($method, $header, $body));
     }
 
+    public function validar($xml, $versao)
+    {
+        $nome = $this->identificaXML($xml);
+        $path = __DIR__ . '/schemes/PL_008i2/' . $nome . '_v' . $versao . '.xsd';
+        
+        return Validar::validar($xml, $path);
+    }
+
     /**
      * Fazer requisição SOAP.
      *
@@ -163,6 +172,18 @@ class NFe
             $this->file->deleteDirectory($dir);
 
             throw $e;
+        }
+    }
+    
+    private function identificaXML($xml)
+    {
+        switch (true) {
+            case stristr($xml, 'infNFe'):
+                return 'enviNFe';
+            case stristr($xml, 'infInut'):
+                return 'inutNFe';
+            default:
+                return '';
         }
     }
 }
