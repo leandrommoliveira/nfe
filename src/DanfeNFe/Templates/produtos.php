@@ -28,39 +28,23 @@ $detutos = $nfe->get('')->toArray('det');
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($detutos as $det) {
-    ?>
+            <?php foreach ($detutos as $det) { ?>
                 <tr>
-                    <td class="col-1 al-right"><?php echo $det->get('prod.cProd');
-    ?></td>
-                    <td class="col-3"><?php echo $det->get('prod.xProd');
-    ?></td>
-                    <td class="col-min al-center"><?php echo $det->get('prod.NCM');
-    ?></td>
-                    <td class="col-min al-center"><?php echo $det->get('imposto.ICMS')->first()->get('CST|CSOSN');
-    ?></td>
-                    <td class="col-min al-center"><?php echo $det->get('prod.CFOP');
-    ?></td>
-                    <td class="col-min al-center"><?php echo $det->get('prod.uCom');
-    ?></td>
-                    <td class="col al-right"><?php echo $det->get('prod.qCom')->number(0);
-    ?></td>
-                    <td class="col al-right"><?php echo $det->get('prod.vUnCom')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('prod.vProd')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('imposto.ICMS')->first()->get('vBC')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('imposto.ICMS')->first()->get('vICMS')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('imposto.IPI.IPITrib.vIPI')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('imposto.ICMS')->first()->get('pICMS')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('imposto.IPI.IPITrib.pIPI')->number(2);
-    ?></td>
-                    <td class="col-min al-right"><?php echo $det->get('imposto.vTotTrib')->number(2);
-    ?></td>
+                    <td class="col-1 al-right"><?php echo $det->get('prod.cProd'); ?></td>
+                    <td class="col-3"><?php echo $det->get('prod.xProd'); ?></td>
+                    <td class="col-min al-center"><?php echo $det->get('prod.NCM'); ?></td>
+                    <td class="col-min al-center"><?php echo $det->get('imposto.ICMS')->first()->get('CST|CSOSN'); ?></td>
+                    <td class="col-min al-center"><?php echo $det->get('prod.CFOP'); ?></td>
+                    <td class="col-min al-center"><?php echo $det->get('prod.uCom'); ?></td>
+                    <td class="col al-right"><?php echo $det->get('prod.qCom')->number(0); ?></td>
+                    <td class="col al-right"><?php echo $det->get('prod.vUnCom')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('prod.vProd')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('imposto.ICMS')->first()->get('vBC')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('imposto.ICMS')->first()->get('vICMS')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('imposto.IPI.IPITrib.vIPI')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('imposto.ICMS')->first()->get('pICMS')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('imposto.IPI.IPITrib.pIPI')->number(2); ?></td>
+                    <td class="col-min al-right"><?php echo $det->get('imposto.vTotTrib')->number(2); ?></td>
                 </tr>
             <?php
 

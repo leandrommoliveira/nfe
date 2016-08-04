@@ -137,7 +137,7 @@ class NFe
     {
         $nome = $this->identificaXML($xml);
         $path = __DIR__ . '/schemes/PL_008i2/' . $nome . '_v' . $versao . '.xsd';
-        
+
         return Validar::validar($xml, $path);
     }
 
@@ -174,7 +174,7 @@ class NFe
             throw $e;
         }
     }
-    
+
     private function identificaXML($xml)
     {
         switch (true) {

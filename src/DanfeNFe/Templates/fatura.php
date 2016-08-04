@@ -8,22 +8,19 @@
                     <td>
                         <p class="al-center">
                             <small>NÚMERO</small>
-                            <?php echo $nfe->get('cobr.dup.nDup');
-    ?>
+                            <?php echo $nfe->get('cobr.dup.nDup'); ?>
                         </p>
                     </td>
                     <td>
                         <p class="al-center">
                             <small>VENCIMENTO</small>
-                            <?php echo str_replace('-', '/', $nfe->get('cobr.dup.dVenc'));
-    ?>
+                            <?php echo str_replace('-', '/', $nfe->get('cobr.dup.dVenc')); ?>
                         </p>
                     </td>
                     <td class="al-right">
                         <p>
                             <small>VALOR</small>
-                            <?php echo $nfe->get('cobr.dup.vDup');
-    ?>
+                            <?php echo $nfe->get('cobr.dup.vDup'); ?>
                         </p>
                     </td>
                 </tr>
