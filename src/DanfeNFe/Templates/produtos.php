@@ -27,7 +27,8 @@ $detutos = $nfe->get('')->toArray('det'); ?>
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($detutos as $det) { ?>
+            <?php foreach ($detutos as $det) {
+    ?>
                 <tr>
                     <td class="col-1 al-right"><?php echo $det->get('prod.cProd'); ?></td>
                     <td class="col-3"><?php echo $det->get('prod.xProd'); ?></td>
