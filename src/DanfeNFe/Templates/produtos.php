@@ -1,7 +1,6 @@
 <h5>DADOS DO PRODUTO/SERVIÇOS</h5>
 <?php
-$detutos = $nfe->get('')->toArray('det');
-?>
+$detutos = $nfe->get('')->toArray('det'); ?>
 <div class="produtos">
     <div>
         <table border="cols" rules="cols" class="table">
