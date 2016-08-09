@@ -68,7 +68,7 @@ class IdeNfe extends Builder
     /**
      * Data e hora no formato UTC (Universal Coordinated Time):
      * AAAA-MM-DDThh:mm:ssTZD.
-     * @var string
+     * @var \DateTime
      */
     public $dhEmi = '';
 
@@ -76,7 +76,7 @@ class IdeNfe extends Builder
      * Data e hora no formato UTC (Universal Coordinated Time):
      * AAAA-MM-DDThh:mm:ssTZD.
      * Não informar este campo para a NFC-e.
-     * @var string|null
+     * @var \DateTime|null
      */
     public $dhSaiEnt = null;
 
@@ -201,7 +201,7 @@ class IdeNfe extends Builder
     /**
      * Data e hora no formato UTC (Universal Coordinated Time):
      * AAAA-MM-DDThh:mm:ssTZD.
-     * @var string
+     * @var \DateTime
      */
     public $dhCont;
 

@@ -73,8 +73,6 @@ class DanfeNFe
         $html = $this->getHTML();
         $html = $this->convertEntities($html);
 
-        //$this->files->put(__DIR__ . '/../../danfe.html', $html);
-
         $pdf = new \DOMPDF();
         $pdf->set_base_path(__DIR__);
         $pdf->load_html($html);
