@@ -115,7 +115,7 @@ class IdeNfe extends Builder
      * forma de disponibilização do DANFE).
      * @var string
      */
-    public $tpImp = '';
+    public $tpImp = '1';
 
     /**
      * 1=Emissão normal (não em contingência);
