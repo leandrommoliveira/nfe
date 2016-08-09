@@ -10,7 +10,7 @@ class DupNfe extends \PhpNFe\Tools\Builder\Builder
 
     /**
      * Data de vencimento.
-     * @var \DateTime|null
+     * @var date|null
      */
     public $dVenc = null;
 
