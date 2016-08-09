@@ -114,6 +114,11 @@ class Nfe extends Builder
      */
     public function getXML()
     {
+        // Se for HOMOLOGACAO, forçar razão social padrão
+        if ($this->ide->tpAmb == '2') {
+            $this->dest->xNome = 'NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL';
+        }
+
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
         $xml .= '<NFe xmlns="http://www.portalfiscal.inf.br/nfe">';
         $xml .= '<infNFe versao="' . self::Versao . '" Id="' . $this->getID() . '">';
