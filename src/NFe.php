@@ -179,7 +179,7 @@ class NFe
     {
         switch (true) {
             case stristr($xml, 'infNFe'):
-                return 'enviNFe';
+                return 'nfe';
             case stristr($xml, 'infInut'):
                 return 'inutNFe';
             default:
