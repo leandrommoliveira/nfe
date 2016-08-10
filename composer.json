@@ -32,6 +32,10 @@
     "autoload"         : {
         "psr-4": {
             "PhpNFe\\NFe\\": "src/"
-        }
+        },
+
+        "files": [
+            "src/DanfeNfe/bootstrap.php"
+        ]
     }
 }
