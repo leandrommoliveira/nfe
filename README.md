@@ -7,7 +7,10 @@
 [![Latest Unstable Version](https://poser.pugx.org/phpnfe/nfe/v/unstable?format=flat)](https://packagist.org/packages/phpnfe/nfe)
 [![License](https://poser.pugx.org/phpnfe/nfe/license?format=flat)](https://packagist.org/packages/phpnfe/nfe)
 
-Autorização do NFe
+- Autorização
+- Cancelamento
+- Carta Correção
+- Inutilização
 
 Estados homologados:
  - SC
