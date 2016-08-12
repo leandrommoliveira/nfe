@@ -1,0 +1,331 @@
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="3.10">
+    <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+        <infNFe Id="NFe42160618227795000130550010000002011576168233" versao="3.10">
+            <ide>
+                <cUF>42</cUF>
+                <cNF>57616823</cNF>
+                <natOp>TESTE</natOp>
+                <indPag>0</indPag>
+                <mod>55</mod>
+                <serie>1</serie>
+                <nNF>201</nNF>
+                <dhEmi>2016-06-13T14:27:00-03:00</dhEmi>
+                <tpNF>1</tpNF>
+                <idDest>1</idDest>
+                <cMunFG>4202008</cMunFG>
+                <tpImp>1</tpImp>
+                <tpEmis>1</tpEmis>
+                <cDV>3</cDV>
+                <tpAmb>2</tpAmb>
+                <finNFe>1</finNFe>
+                <indFinal>0</indFinal>
+                <indPres>1</indPres>
+                <procEmi>0</procEmi>
+                <verProc>EmiteNF-e 3.1.17.38</verProc>
+            </ide>
+            <emit>
+                <CNPJ>18227795000130</CNPJ>
+                <xNome>NOME TESTE SOBRENOME ME</xNome>
+                <xFant>MINHA EMPRESA FANTASIA TESTE</xFant>
+                <enderEmit>
+                    <xLgr>ROD BR 101</xLgr>
+                    <nro>3662</nro>
+                    <xBairro>ESTADO</xBairro>
+                    <cMun>4202008</cMun>
+                    <xMun>BALNEARIO CAMBORIU</xMun>
+                    <UF>SC</UF>
+                    <CEP>88330331</CEP>
+                    <fone>(47) 3237-5085</fone>
+                </enderEmit>
+                <IE>257048863</IE>
+                <CRT>1</CRT>
+            </emit>
+            <dest>
+                <CNPJ>82185059000166</CNPJ>
+                <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
+                <enderDest>
+                    <xLgr>ROD SC 408</xLgr>
+                    <nro>S/N</nro>
+                    <xCpl>KM 0,7</xCpl>
+                    <xBairro>VENDAVAL</xBairro>
+                    <cMun>4202305</cMun>
+                    <xMun>BIGUACU</xMun>
+                    <UF>SC</UF>
+                    <CEP>88160000</CEP>
+                    <fone>4732485754</fone>
+                </enderDest>
+                <indIEDest>1</indIEDest>
+                <IE>252121120</IE>
+                <email>emailteste@HOTMAIL.COM</email>
+            </dest>
+            <det nItem="1">
+                <prod>
+                    <cProd>000277</cProd>
+                    <cEAN></cEAN>
+                    <xProd>PRODUTO TESTE 60CM</xProd>
+                    <NCM>06031100</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>UND</uCom>
+                    <qCom>1.0000</qCom>
+                    <vUnCom>20.0000000000</vUnCom>
+                    <vProd>20.00</vProd>
+                    <cEANTrib></cEANTrib>
+                    <uTrib>UND</uTrib>
+                    <qTrib>1.0000</qTrib>
+                    <vUnTrib>20.0000000000</vUnTrib>
+                    <indTot>1</indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMSSN101>
+                            <orig>0</orig>
+                            <CSOSN>101</CSOSN>
+                            <pCredSN>3.5000</pCredSN>
+                            <vCredICMSSN>0.70</vCredICMSSN>
+                        </ICMSSN101>
+                    </ICMS>
+                    <PIS>
+                        <PISOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0.00</vPIS>
+                        </PISOutr>
+                    </PIS>
+                    <COFINS>
+                        <COFINSOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0.00</vCOFINS>
+                        </COFINSOutr>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det nItem="2">
+                <prod>
+                    <cProd>003811</cProd>
+                    <cEAN></cEAN>
+                    <xProd>PRODUTO TESTE</xProd>
+                    <NCM>06031100</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>UND</uCom>
+                    <qCom>3.0000</qCom>
+                    <vUnCom>14.4000000000</vUnCom>
+                    <vProd>43.20</vProd>
+                    <cEANTrib></cEANTrib>
+                    <uTrib>UND</uTrib>
+                    <qTrib>3.0000</qTrib>
+                    <vUnTrib>14.4000000000</vUnTrib>
+                    <indTot>1</indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMSSN101>
+                            <orig>0</orig>
+                            <CSOSN>101</CSOSN>
+                            <pCredSN>3.5000</pCredSN>
+                            <vCredICMSSN>1.51</vCredICMSSN>
+                        </ICMSSN101>
+                    </ICMS>
+                    <PIS>
+                        <PISOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0.00</vPIS>
+                        </PISOutr>
+                    </PIS>
+                    <COFINS>
+                        <COFINSOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0.00</vCOFINS>
+                        </COFINSOutr>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det nItem="3">
+                <prod>
+                    <cProd>005207</cProd>
+                    <cEAN></cEAN>
+                    <xProd>TESTE PRODUTO - 224</xProd>
+                    <NCM>06031100</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>UND</uCom>
+                    <qCom>10.0000</qCom>
+                    <vUnCom>4.0000000000</vUnCom>
+                    <vProd>40.00</vProd>
+                    <cEANTrib></cEANTrib>
+                    <uTrib>UND</uTrib>
+                    <qTrib>10.0000</qTrib>
+                    <vUnTrib>4.0000000000</vUnTrib>
+                    <indTot>1</indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMSSN101>
+                            <orig>0</orig>
+                            <CSOSN>101</CSOSN>
+                            <pCredSN>3.5000</pCredSN>
+                            <vCredICMSSN>1.40</vCredICMSSN>
+                        </ICMSSN101>
+                    </ICMS>
+                    <PIS>
+                        <PISOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0.00</vPIS>
+                        </PISOutr>
+                    </PIS>
+                    <COFINS>
+                        <COFINSOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0.00</vCOFINS>
+                        </COFINSOutr>
+                    </COFINS>
+                </imposto>
+            </det>
+            <det nItem="4">
+                <prod>
+                    <cProd>000679</cProd>
+                    <cEAN></cEAN>
+                    <xProd>TESTE PRODUTO 123</xProd>
+                    <NCM>06031100</NCM>
+                    <CFOP>5102</CFOP>
+                    <uCom>UND</uCom>
+                    <qCom>2.0000</qCom>
+                    <vUnCom>15.0000000000</vUnCom>
+                    <vProd>30.00</vProd>
+                    <cEANTrib></cEANTrib>
+                    <uTrib>UND</uTrib>
+                    <qTrib>2.0000</qTrib>
+                    <vUnTrib>15.0000000000</vUnTrib>
+                    <indTot>1</indTot>
+                </prod>
+                <imposto>
+                    <ICMS>
+                        <ICMSSN101>
+                            <orig>0</orig>
+                            <CSOSN>101</CSOSN>
+                            <pCredSN>3.5000</pCredSN>
+                            <vCredICMSSN>1.05</vCredICMSSN>
+                        </ICMSSN101>
+                    </ICMS>
+                    <PIS>
+                        <PISOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pPIS>0.0000</pPIS>
+                            <vPIS>0.00</vPIS>
+                        </PISOutr>
+                    </PIS>
+                    <COFINS>
+                        <COFINSOutr>
+                            <CST>99</CST>
+                            <vBC>0.00</vBC>
+                            <pCOFINS>0.0000</pCOFINS>
+                            <vCOFINS>0.00</vCOFINS>
+                        </COFINSOutr>
+                    </COFINS>
+                </imposto>
+            </det>
+            <total>
+                <ICMSTot>
+                    <vBC>0.00</vBC>
+                    <vICMS>0.00</vICMS>
+                    <vICMSDeson>0.00</vICMSDeson>
+                    <vBCST>0.00</vBCST>
+                    <vST>0.00</vST>
+                    <vProd>133.20</vProd>
+                    <vFrete>0.00</vFrete>
+                    <vSeg>0.00</vSeg>
+                    <vDesc>0.00</vDesc>
+                    <vII>0.00</vII>
+                    <vIPI>0.00</vIPI>
+                    <vPIS>0.00</vPIS>
+                    <vCOFINS>0.00</vCOFINS>
+                    <vOutro>0.00</vOutro>
+                    <vNF>133.20</vNF>
+                    <vTotTrib>0.00</vTotTrib>
+                </ICMSTot>
+            </total>
+            <transp>
+                <modFrete>0</modFrete>
+                <transporta>
+                    <CPF>44479085904</CPF>
+                    <xNome>NOME SOBRENOME</xNome>
+                    <IE>ISENTO</IE>
+                    <xEnder>RUA TESTE, 278, 278 - BAIRRO TESTE</xEnder>
+                    <xMun>GOVERNADOR CELSO RAMOS</xMun>
+                    <UF>SC</UF>
+                </transporta>
+                <vol>
+                    <qVol>1</qVol>
+                    <esp>UNIDADE</esp>
+                    <marca>-</marca>
+                    <nVol>000003</nVol>
+                    <pesoL>1.000</pesoL>
+                    <pesoB>1.000</pesoB>
+                </vol>
+            </transp>
+            <cobr>
+                <fat>
+                    <nFat>000003</nFat>
+                    <vOrig>133.20</vOrig>
+                    <vLiq>133.20</vLiq>
+                </fat>
+                <dup>
+                    <nDup>000003A</nDup>
+                    <dVenc>2016-10-09</dVenc>
+                    <vDup>133.20</vDup>
+                </dup>
+            </cobr>
+            <infAdic>
+                <infCpl>xxxx</infCpl>
+            </infAdic>
+        </infNFe>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod
+                        Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+                </CanonicalizationMethod>
+                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+                <Reference URI="#NFe42160618227795000130550010000002011576168233">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+                        <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+                    <DigestValue>ixwqUjsZ3nQhPEldq3PcgP+a454=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>
+                nIB/aDx7dLLCFDQz3hUznd6CxCMAj+n2Q5HfiAwBEf65mxuqLqLP3AybA0SByPMDNkMHFySPX6MKm8W29Jn/JGIi8xrHXrn2BoTvDKu3isAuoxtio8zYNI3kcv+22zYlB8ZlBpuM7VzlFX8O/2sQ+9pBe/WH+LLdJ3auI+tnzuAmRZLFrb2vxaLMtdInrl0mF6L3SfabXaWEG76zuGtb9wHhzYUbAi5s7grOvsTsUiaV9B96k/sv5eQ27JDv1tdyWU464w8K/d832IkTP2OqOO1+DP9LIcstov8uC21L6apWa98Ygxm+0+AsRyAHda/XsbDMKT17/klmqANn4cd6XQ==
+            </SignatureValue>
+            <KeyInfo>
+                <X509Data>
+                    <X509Certificate>
+                        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
+                    </X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </Signature>
+    </NFe>
+    <protNFe xmlns="http://www.portalfiscal.inf.br/nfe" versao="3.10">
+        <infProt>
+            <tpAmb>2</tpAmb>
+            <verAplic>SVRS201603081012</verAplic>
+            <chNFe>42160618227795000130550010000002011576168233</chNFe>
+            <dhRecbto>2016-07-04T15:10:42-03:00</dhRecbto>
+            <nProt>342160000336327</nProt>
+            <digVal>ixwqUjsZ3nQhPEldq3PcgP+a454=</digVal>
+            <cStat>100</cStat>
+            <xMotivo>Autorizado o uso da NF-e</xMotivo>
+        </infProt>
+    </protNFe>
+</nfeProc>

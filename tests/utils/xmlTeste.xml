@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-    <infNFe versao="3.10" Id="NFe42160618227795000130550010000000441999859996">
+    <infNFe versao="3.10" Id="NFe42160718227795000130550010000002011576168237">
         <ide>
             <cUF>42</cUF>
-            <cNF>99985999</cNF>
+            <cNF>57616823</cNF>
             <natOp>TESTE</natOp>
             <indPag>0</indPag>
             <mod>55</mod>
             <serie>1</serie>
-            <nNF>44</nNF>
-            <dhEmi>2016-06-13T14:27:00-03:00</dhEmi>
+            <nNF>201</nNF>
+            <dhEmi>2016-07-26T14:27:00-03:00</dhEmi>
             <tpNF>1</tpNF>
             <idDest>1</idDest>
             <cMunFG>4202008</cMunFG>
             <tpImp>1</tpImp>
             <tpEmis>1</tpEmis>
-            <cDV>6</cDV>
+            <cDV>7</cDV>
             <tpAmb>2</tpAmb>
             <finNFe>1</finNFe>
             <indFinal>0</indFinal>
@@ -44,7 +44,7 @@
             <xNome>NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL</xNome>
             <enderDest>
                 <xLgr>ROD SC 408</xLgr>
-                <nro>S/N</nro>
+                <nro>92</nro>
                 <xCpl>KM 0,7</xCpl>
                 <xBairro>VENDAVAL</xBairro>
                 <cMun>4202305</cMun>
