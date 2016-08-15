@@ -5,7 +5,7 @@
             if (is_null($logo)) {
                 include __DIR__ . '/logo.php';
             } else {
-                echo '<img src="' . $logo . '">';
+                echo '<img src="' . $logo . '" width="265px">';
             }
             ?>
         </td>
