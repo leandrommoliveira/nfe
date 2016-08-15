@@ -211,7 +211,7 @@ $nfe->infAdic->infCpl = 'xxxx';
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
 
-$cert->carregarPfx(__DIR__ . '/../2016-2017_certificado vetiver.pfx', '1234');
+$cert->carregarPfx(__DIR__ . '/seuCertificado', 'suaSenha');
 
 $nfe = $nfe->getXML();
 
@@ -224,9 +224,7 @@ $val = $autorizar->validar($xml, '3.10');
 $ret = $autorizar->autorizar($xml);
 
 $ehErro = $ret->isError();
-
 $message = $ret->getMessage();
-
 $codigo = $ret->getCode();
 
 echo 'Foi!';
