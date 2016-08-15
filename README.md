@@ -14,6 +14,12 @@
 
 Estados homologados:
  - SC
+ 
+### Composer
+
+```json
+ "phpnfe/nfe": "1.0.*"
+```
 
 
 ### Uso - Autorização
@@ -55,3 +61,7 @@ echo 'foi';
 - [Autorizacao](/Exemplos/autorizar.php)
 - [Builder](/Exemplos/gerar.php)
 - [Danfe](/Exemplos/danfe.php)
+
+## License
+
+[The MIT License](/LICENSE)
