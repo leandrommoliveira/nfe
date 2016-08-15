@@ -43,11 +43,8 @@ $v = $nfe->validar($xml, '3.10');
 $ret = $nfe->autorizar($xml);
 
 $code = $ret->getCode();
-
 $chave = $ret->getChNFe();
-
 $retXml = $ret->getXML();
-
 $message = $ret->getMessage();
 
 echo 'foi';
