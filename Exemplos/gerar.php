@@ -211,7 +211,7 @@ $nfe->infAdic->infCpl = 'xxxx';
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
 
-$cert->carregarPfx(__DIR__ . '/seuCertificado', 'suaSenha');
+$cert->carregarPfx(__DIR__ . '/seuCertificado.pfx', 'suaSenha');
 
 $nfe = $nfe->getXML();
 
