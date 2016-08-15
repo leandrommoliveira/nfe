@@ -8,7 +8,7 @@ $path = __DIR__ . '/nota.xml';
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
 $cert->carregarArquivo($path);
-//$cert->carregarPfx(__DIR__ . 'seu_certificado.pfx', 'suaSenha');
+$cert->carregarPfx(__DIR__ . 'seu_certificado.pfx', 'suaSenha');
 
 $xml = file_get_contents($path);
 
@@ -23,11 +23,8 @@ $v = $nfe->validar($xml, '3.10');
 $ret = $nfe->autorizar($xml);
 
 $code = $ret->getCode();
-
 $chave = $ret->getChNFe();
-
 $retXml = $ret->getXML();
-
 $message = $ret->getMessage();
 
 echo 'foi';
