@@ -250,59 +250,59 @@ class Sefaz
                     'url' => 'https://nfe.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
                 ],
             ],
-            // RS
-            '43' => [
-                self::ambHomologacao => [
-                    self::mtAutoriza => [
-                        'method' => 'nfeAutorizacaoLote',
-                        'op' => 'NfeAutorizacao',
-                        'versao' => '3.10',
-                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
-                    ],
-                    self::mtCancela => [
-                        'method' => 'nfeRecepcaoEvento',
-                        'op' => 'RecepcaoEvento',
-                        'versao' => '1.00',
-                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
-                    ],
-                    self::mtCartaCorrecao => [
-                        'method' => 'nfeRecepcaoEvento',
-                        'op' => 'RecepcaoEvento',
-                        'versao' => '1.00',
-                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
-                    ],
-                    self::mtInutilizacao => [
-                        'method' => 'nfeInutilizacaoNF2',
-                        'op' => 'NfeInutilizacao2',
-                        'versao' => '3.10',
-                        'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
-                    ],
+        ],
+        // RS
+        '43' => [
+            self::ambHomologacao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
                 ],
-                self::ambProducao => [
-                    self::mtAutoriza => [
-                        'method' => 'nfeAutorizacaoLote',
-                        'op' => 'NfeAutorizacao',
-                        'versao' => '3.10',
-                        'url' => '>https://nfe.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
-                    ],
-                    self::mtCancela => [
-                        'method' => 'nfeRecepcaoEvento',
-                        'op' => 'RecepcaoEvento',
-                        'versao' => '1.00',
-                        'url' => 'https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
-                    ],
-                    self::mtCartaCorrecao => [
-                        'method' => 'nfeRecepcaoEvento',
-                        'op' => 'RecepcaoEvento',
-                        'versao' => '1.00',
-                        'url' => 'https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
-                    ],
-                    self::mtInutilizacao => [
-                        'method' => 'nfeInutilizacaoNF2',
-                        'op' => 'NfeInutilizacao2',
-                        'versao' => '3.10',
-                        'url' => 'https://nfe.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
-                    ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF2',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe-homologacao.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
+                ],
+            ],
+            self::ambProducao => [
+                self::mtAutoriza => [
+                    'method' => 'nfeAutorizacaoLote',
+                    'op' => 'NfeAutorizacao',
+                    'versao' => '3.10',
+                    'url' => '>https://nfe.sefazrs.rs.gov.br/ws/NfeAutorizacao/NFeAutorizacao.asmx',
+                ],
+                self::mtCancela => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtCartaCorrecao => [
+                    'method' => 'nfeRecepcaoEvento',
+                    'op' => 'RecepcaoEvento',
+                    'versao' => '1.00',
+                    'url' => 'https://nfe.sefazrs.rs.gov.br/ws/recepcaoevento/recepcaoevento.asmx',
+                ],
+                self::mtInutilizacao => [
+                    'method' => 'nfeInutilizacaoNF2',
+                    'op' => 'NfeInutilizacao2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe.sefazrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
                 ],
             ],
         ],
