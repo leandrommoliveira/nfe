@@ -62,6 +62,15 @@ class InutilizacaoRetorno extends Retorno
         return ''; // Inutilização não tem o codigo da cnfe
     }
 
+    /**
+     * Retorna o protocolo da mensagem.
+     * @return mixed
+     */
+    public function getProt()
+    {
+        return $this->retInutNFe->getElementsByTagName('nProt')->item(0)->textContent;
+    }
+
     public function getXML()
     {
         return $this->retInutNFe->C14N();

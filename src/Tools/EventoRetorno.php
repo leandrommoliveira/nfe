@@ -60,6 +60,10 @@ class EventoRetorno extends Retorno
         return $this->getCode() != '135';
     }
 
+    /**
+     * Retorna o protocolo da mensagem.
+     * @return mixed
+     */
     public function getProt()
     {
         return $this->infEvento->getElementsByTagName('nProt')->item(0)->textContent;
