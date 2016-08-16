@@ -42,4 +42,9 @@ class NFeXML extends XML
                 throw new \Exception(sprintf('Ambiente %s incorreto', $amb));
         }
     }
+
+    public function __toString()
+    {
+        return $this->saveXML();
+    }
 }

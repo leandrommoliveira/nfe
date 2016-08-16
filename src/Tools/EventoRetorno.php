@@ -60,6 +60,11 @@ class EventoRetorno extends Retorno
         return $this->getCode() != '135';
     }
 
+    public function getProt()
+    {
+        return $this->infEvento->getElementsByTagName('nProt')->item(0)->textContent;
+    }
+
     /**
      * Retorna a chave de 44 caracteres da nfe.
      *
