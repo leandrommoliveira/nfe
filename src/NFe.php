@@ -130,6 +130,9 @@ class NFe
         $header = InutHeader::loadDOM($cUF, $method->version);
         $body = NFeInutBody::loadDOM(XML::createByXml($signedMsg));
 
+        // Validar schema XML
+        $this->validar($signedMsg, $method->version);
+
         return new InutilizacaoRetorno($this->soap($method, $header, $body));
     }
 
