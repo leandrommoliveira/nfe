@@ -1,6 +1,7 @@
 <?php namespace PhpNFe\NFe\Builder;
 
 use Carbon\Carbon;
+use PhpNFe\NFe\Tools\InfoChNFe;
 use PhpNFe\Tools\Builder\Builder;
 use PhpNFe\Tools\Builder\Colecoes;
 use PhpNFe\Tools\Builder\PropriedadeNull;
@@ -88,25 +89,23 @@ class Nfe extends Builder
      */
     protected function getID()
     {
-        // Gerar número aleatorio
-        if ($this->ide->cNF == '') {
-            $this->ide->cNF = mt_rand(10000000, 99999999);
-        }
+        $chave = new InfoChNFe();
+        $chave->cUF = $this->ide->cUF;
+        $chave->dhEmi = $this->ide->dhEmi;
+        $chave->cnpj = $this->emit->CNPJ;
+        $chave->mod = $this->ide->mod;
+        $chave->serie = $this->ide->serie;
+        $chave->nNF = $this->ide->nNF;
+        $chave->tpEmis = $this->ide->tpEmis;
+        $chave->cNF = $this->ide->cNF;
 
-        $dt = Carbon::createFromFormat(Carbon::ATOM, $this->ide->dhEmi, 'America/Sao_Paulo')->format('ym');
+        $chNFe = $chave->montarChNFe();
 
-        $nNF = str_pad($this->ide->nNF, 9, '0', STR_PAD_LEFT);
+        // Setando o numero gerado e o codigo verificador gerado.
+        $this->ide->cNF = $chave->cNF;
+        $this->ide->cDV = $chave->cDV;
 
-        $serie = str_pad($this->ide->serie, 3, '0', STR_PAD_LEFT);
-
-        // Montar os primeiros 43 caracteres
-        $cNfe = $this->ide->cUF . $dt . $this->emit->CNPJ . $this->ide->mod . $serie . $nNF
-            . $this->ide->tpEmis . $this->ide->cNF;
-
-        // Calcular digito verificar
-        $this->ide->cDV = Modulo11::nfeCalculaDV($cNfe);
-
-        return ('NFe' . $cNfe) . $this->ide->cDV;
+        return $chNFe;
     }
 
     /**
