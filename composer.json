@@ -35,7 +35,7 @@
         },
 
         "files": [
-            "src/DanfeNfe/bootstrap.php"
+            "src/DanfeNFe/bootstrap.php"
         ]
     }
 }
