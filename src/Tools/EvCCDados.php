@@ -97,7 +97,7 @@ class EvCCDados
 
         $eventId = 'ID' . $tpEvento . $chNFe . $sSeqEvento;
 
-        $xCondUso = file_get_contents(__DIR__ . '/../Templates/xcondicaoUso');
+        $xCondUso = file_get_contents(__DIR__ . '/../Templates/condicaoUso');
 
         $tagAdic = "<xCorrecao>$xCorrecao</xCorrecao><xCondUso>$xCondUso</xCondUso>";
 
