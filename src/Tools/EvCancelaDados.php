@@ -103,8 +103,8 @@ class EvCancelaDados
 
         $descEvento = 'Cancelamento';
 
-        $cOrgao = '42';
-        $tpAmb = '2';
+        $cOrgao = $xml->getElementsByTagName('cUF')->item(0)->textContent;
+        $tpAmb = $xml->getElementsByTagName('tpAmb')->item(0)->textContent;
 
         return new self($cOrgao, $tpAmb, $cnpj, $chNFe, $dhEvento, $tpEvento,
                         $nSeqEvento, $versao, $descEvento, $tagAdic, $xJust, $nProt, $eventId);
