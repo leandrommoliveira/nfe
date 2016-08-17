@@ -97,7 +97,7 @@ class EvCCDados
 
         $eventId = 'ID' . $tpEvento . $chNFe . $sSeqEvento;
 
-        $xCondUso = file_get_contents(__DIR__ . '/../Templates/condicaoUso');
+        $xCondUso = file_get_contents(__DIR__ . '/../Templates/xcondicaoUso');
 
         $tagAdic = "<xCorrecao>$xCorrecao</xCorrecao><xCondUso>$xCondUso</xCondUso>";
 
@@ -112,7 +112,7 @@ class EvCCDados
 
     public function __toString()
     {
-        $xml = file_get_contents(__DIR__ . '/../Templates/EvCancelaMsg.xml');
+        $xml = file_get_contents(__DIR__ . '/../Templates/evCancelaMsg.xml');
         $xml = str_replace('$cOrgao', $this->cOrgao, $xml);
         $xml = str_replace('$tpAmb', $this->tpAmb, $xml);
         $xml = str_replace('$cnpj', $this->cnpj, $xml);
