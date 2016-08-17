@@ -112,7 +112,7 @@ class EvCancelaDados
 
     public function __toString()
     {
-        $xml = file_get_contents(__DIR__ . '/../Templates/EvCancelaMsg.xml');
+        $xml = file_get_contents(__DIR__ . '/../Templates/evCancelaMsg.xml');
         $xml = str_replace('$cOrgao', $this->cOrgao, $xml);
         $xml = str_replace('$tpAmb', $this->tpAmb, $xml);
         $xml = str_replace('$cnpj', $this->cnpj, $xml);

@@ -2,12 +2,10 @@
 
 include __DIR__ . '/../vendor/autoload.php';
 
-$path = __DIR__ . '/tests/utils/xmlTeste.xml';
-
-$path = __DIR__ . '/nota.xml';
+$path = __DIR__ . '/../tests/utils/xmlTeste.xml';
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
-$cert->carregarArquivo($path);
+
 $cert->carregarPfx(__DIR__ . 'seu_certificado.pfx', 'suaSenha');
 
 $xml = file_get_contents($path);

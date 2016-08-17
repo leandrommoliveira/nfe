@@ -79,6 +79,13 @@ class InfoChNFe
         return $obj;
     }
 
+    public static function getTipoEmissao($infoChave)
+    {
+        switch ($this->tpEmis) {
+
+        }
+    }
+
     /**
      * Montar chave da nota fiscal.
      * @return string
