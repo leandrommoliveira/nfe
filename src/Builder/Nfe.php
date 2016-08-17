@@ -1,6 +1,5 @@
 <?php namespace PhpNFe\NFe\Builder;
 
-use Carbon\Carbon;
 use PhpNFe\NFe\Tools\InfoChNFe;
 use PhpNFe\Tools\Builder\Builder;
 use PhpNFe\Tools\Builder\Colecoes;
@@ -10,7 +9,6 @@ use PhpNFe\NFe\Builder\Dest\DestNfe;
 use PhpNFe\NFe\Builder\Emit\EmitNfe;
 use PhpNFe\NFe\Builder\Total\TotalNfe;
 use PhpNFe\NFe\Builder\Transp\TranspNfe;
-use PhpNFe\NFe\Tools\Modulo11;
 
 class Nfe extends Builder
 {
