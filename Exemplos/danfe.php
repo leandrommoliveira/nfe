@@ -1,5 +1,7 @@
 <?php
 
+$_ENV['APP_ENV'] = 'local';
+
 include __DIR__ . '/../vendor/autoload.php';
 
 date_default_timezone_set('America/Sao_Paulo'); // Necessário para não sair Warning no pdf da Danfe.
