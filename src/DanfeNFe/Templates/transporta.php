@@ -10,7 +10,7 @@
         <td class="col-1">
             <p>
                 <small>FRETE POR CONTA</small>
-                <?php echo $nfe->get('transp.modFrete')->frete(); ?>
+                <nobr><?php echo $nfe->get('transp.modFrete')->frete(); ?></nobr>
             </p>
         </td>
         <td class="col-2">
