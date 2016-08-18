@@ -77,6 +77,9 @@ class InfoChNFe
         $obj->cNF = substr($chNFe, 35, 8);
         $obj->cDV = substr($chNFe, 43, 1);
 
+        // Tratar para ATOM
+        $obj->dhEmi = Carbon::createFromFormat('ymd', $obj->dhEmi . '01', 'America/Sao_Paulo')->format(Carbon::ATOM);
+
         return $obj;
     }
 
@@ -108,7 +111,7 @@ class InfoChNFe
             $this->cNF = mt_rand(10000000, 99999999);
         }
 
-        $dt = Carbon::createFromFormat('ymd', $this->dhEmi . '01', 'America/Sao_Paulo')->format('ymd');
+        $dt = Carbon::createFromFormat(Carbon::ATOM, $this->dhEmi, 'America/Sao_Paulo')->format('ymd');
 
         $nNF = str_pad($this->nNF, 9, '0', STR_PAD_LEFT);
 
