@@ -25,6 +25,14 @@ class NFeXML extends XML
     }
 
     /**
+     * @return InfoChNFe
+     */
+    public function getChaveInfo($tag, $prefixo)
+    {
+        return InfoChNFe::getIDInfo($this->getChNFeTag($tag, $prefixo));
+    }
+
+    /**
      * Retorna o ambiente da NFe.
      *
      * @return string
