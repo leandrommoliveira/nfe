@@ -66,6 +66,7 @@ class InfoChNFe
     public static function getChNFeInfo($chNFe)
     {
         $obj = new self();
+
         $obj->cUF = substr($chNFe, 0, 2);
         $obj->dhEmi = substr($chNFe, 2, 4);
         $obj->cnpj = substr($chNFe, 6, 14);
@@ -79,25 +80,35 @@ class InfoChNFe
         return $obj;
     }
 
-    public static function getTipoEmissao($infoChave)
+    /**
+     * Monta a Info com as informacoes do ID do Evento.
+     * @param $id
+     * @return InfoChNFe
+     */
+    public static function getIDInfo($id)
     {
-        switch ($this->tpEmis) {
+        // Composicao ID: "ID" + tpEvento + chave da NF-e + nSeqEvento
 
-        }
+        // Tirar o tpEvento
+        $id = substr($id, 6);
+        // Pegar as primeiras 44 posicoes
+        $id = substr($id, 0, 44);
+
+        return self::getChNFeInfo($id);
     }
 
     /**
      * Montar chave da nota fiscal.
      * @return string
      */
-    public function montarChNFe()
+    public function montarChNFe($botarPrefixo = true)
     {
         // Gerar número aleatorio
         if ($this->cNF == '') {
             $this->cNF = mt_rand(10000000, 99999999);
         }
 
-        $dt = Carbon::createFromFormat(Carbon::ATOM, $this->dhEmi, 'America/Sao_Paulo')->format('ym');
+        $dt = Carbon::createFromFormat('ymd', $this->dhEmi . '01', 'America/Sao_Paulo')->format('ymd');
 
         $nNF = str_pad($this->nNF, 9, '0', STR_PAD_LEFT);
 
@@ -109,6 +120,10 @@ class InfoChNFe
 
         // Calcular digito verificar
         $this->cDV = Modulo11::nfeCalculaDV($cNfe);
+
+        if (! $botarPrefixo) {
+            return $cNfe . $this->cDV;
+        }
 
         return ('NFe' . $cNfe) . $this->cDV;
     }

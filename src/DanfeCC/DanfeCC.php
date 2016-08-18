@@ -12,6 +12,7 @@ class DanfeCC
     protected $nfeXml;
 
     /**
+     * Usar uma imagem retangular.
      * @var
      */
     protected $logo;
@@ -43,14 +44,12 @@ class DanfeCC
     {
         ob_start();
         try {
-            $evento = XML::createByXml($this->nfeXml->getElementsByTagName('infEvento')->item(1)->C14N());
-            $nfe = XML::createByXml($this->nfeXml->getElementsByTagName('')->item(0)->C14N());
-            //$prot = XML::createByXml($this->nfeXml->getElementsByTagName('protNFe')->item(0)->C14N());
+            $evento = XML::createByXml($this->nfeXml->getElementsByTagName('infEvento')->item(0)->C14N());
+            $retEvento = XML::createByXml($this->nfeXml->getElementsByTagName('infEvento')->item(1)->C14N());
+            $info = $this->nfeXml->getChaveInfo('infEvento', 'ID');
             $logo = $this->getLogo();
-            //$barcode = $this->getBarCode($nfe);
-            //$homolog = $this->getImageHomolog();
-            //$style = $this->files->get(__DIR__ . '/Templates/pdf.css');
-            //$style = str_replace('{{homolog}}', $homolog, $style);
+            $barcode = $this->getBarCode($evento);
+            $style = $this->files->get(__DIR__ . '/Templates/pdf.css');
 
             require __DIR__ . '/Templates/danfe.php';
 
@@ -136,29 +135,8 @@ class DanfeCC
     protected function getBarCode(XML $nfe)
     {
         $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
-        $buffer = $generator->getBarcode($nfe->getChNFe()->value(), $generator::TYPE_CODE_128_C, 1, 40);
+        $buffer = $generator->getBarcode($nfe->getChNFeTag('infEvento', 'ID')->value(), $generator::TYPE_CODE_128_C, 1, 40);
 
         return 'data:image/png;base64,' . base64_encode($buffer);
-    }
-
-    /**
-     * Retorna a imagem de homologacao em formato image inline.
-     *
-     * @return null|string
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
-     */
-    protected function getImageHomolog()
-    {
-        $img = __DIR__ . '/Templates/homologacao.png';
-
-        // Verificar se arquivo da logo existe
-        if ($this->files->exists($img) != true) {
-            return;
-        }
-
-        $ext = strtolower($this->files->extension($img));
-        $buffer = $this->files->get($img);
-
-        return 'data:image/' . $ext . ';base64,' . base64_encode($buffer);
     }
 }
