@@ -115,6 +115,11 @@ class DanfeCC
             return;
         }
 
+        // Verificar se foi informado direto o buffer
+        if (@is_file($this->logo) != true) {
+            return 'data:image/png;base64,' . base64_encode($this->logo);
+        }
+
         // Verificar se arquivo da logo existe
         if ($this->files->exists($this->logo) != true) {
             return;
