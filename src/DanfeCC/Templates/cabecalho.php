@@ -3,7 +3,6 @@
         <td id="logo" rowspan="3" class="col-3 al-center val-center">
             <?php
             if (is_null($logo)) {
-
             } else {
                 echo '<img src="' . $logo . '" width="265px">';
             }
