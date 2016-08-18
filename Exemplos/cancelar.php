@@ -3,7 +3,7 @@
 include __DIR__ . '/../vendor/autoload.php';
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
-$cert->carregarPfx(__DIR__ . '/seuCertificado', 'suaSenha');
+$cert->carregarPfx(__DIR__ . '/seuCertificado.pfx', 'suaSenha');
 
 $nfe = new \PhpNFe\NFe\NFe($cert);
 
