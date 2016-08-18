@@ -12,6 +12,10 @@
 - Carta Correção
 - Inutilização
 
+- Builder para NF-e
+- Danfe
+- Danfe Carta Correção
+
 Estados homologados:
  - SC
  
@@ -59,8 +63,10 @@ echo 'foi';
 ## Exemplos
 
 - [Autorizacao](/Exemplos/autorizar.php)
+- [Cancelamento](/Exemplos/cancelar.php)
 - [Builder](/Exemplos/gerar.php)
 - [Danfe](/Exemplos/danfe.php)
+- [DanfeCC](/Exemplos/danfeCC.php)
 
 ## License
 
