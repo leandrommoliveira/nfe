@@ -211,8 +211,7 @@ $nfe->infAdic->infCpl = 'xxxx';
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
 
-//$cert->carregarPfx(__DIR__ . '/seuCertificado.pfx', 'suaSenha');
-$cert->carregarPfx(__DIR__ . '/../../certificado_floripa.pfx', 'BOING');
+$cert->carregarPfx(__DIR__ . '/seuCertificado.pfx', 'suaSenha');
 
 $nfe = $nfe->getXML();
 
