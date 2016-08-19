@@ -97,7 +97,7 @@ class Nfe extends Builder
         $chave->tpEmis = $this->ide->tpEmis;
         $chave->cNF = $this->ide->cNF;
 
-        $chNFe = $chave->montarChNFe(false);
+        $chNFe = $chave->montarChNFe();
 
         // Setando o numero gerado e o codigo verificador gerado.
         $this->ide->cNF = $chave->cNF;

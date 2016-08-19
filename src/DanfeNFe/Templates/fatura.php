@@ -1,33 +1,31 @@
 <h5>FATURA/DUPLICATA</h5>
 <div class="row">
-    <?php for ($i = 1; $i <= 1; $i++) {
+    <?php for ($i = 0; $i <= ($nfe->getDups() - 1); $i++) {
+        $dup = $nfe->getDup($i);
     ?>
-        <div class="col-3">
+        <div class="col-3" style="float: left;">
             <table class="table fatura">
                 <tr>
                     <td>
                         <p class="al-center">
                             <small>NÚMERO</small>
-                            <?php echo $nfe->get('cobr.dup.nDup'); ?>
+                            <?php echo $dup->get('nDup'); ?>
                         </p>
                     </td>
                     <td>
                         <p class="al-center">
                             <small>VENCIMENTO</small>
-                            <?php echo str_replace('-', '/', $nfe->get('cobr.dup.dVenc')); ?>
+                            <?php echo $dup->get('dVenc')->datetime('d/m/Y', 'Y-m-d'); ?>
                         </p>
                     </td>
                     <td class="al-right">
                         <p>
                             <small>VALOR</small>
-                            <?php echo $nfe->get('cobr.dup.vDup'); ?>
+                            <?php echo $dup->get('vDup')->number(2); ?>
                         </p>
                     </td>
                 </tr>
             </table>
         </div>
-    <?php
-
-}
-    ?>
+    <?php } ?>
 </div>

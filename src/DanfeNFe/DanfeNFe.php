@@ -71,6 +71,7 @@ class DanfeNFe
         require_once __DIR__ . '/DomPDF/bootstrap.php';
 
         $html = $this->getHTML();
+
         $html = $this->convertEntities($html);
 
         $pdf = new \DOMPDF();

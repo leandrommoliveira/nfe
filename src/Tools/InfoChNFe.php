@@ -111,7 +111,7 @@ class InfoChNFe
             $this->cNF = mt_rand(10000000, 99999999);
         }
 
-        $dt = Carbon::createFromFormat(Carbon::ATOM, $this->dhEmi, 'America/Sao_Paulo')->format('ymd');
+        $dt = Carbon::createFromFormat(Carbon::ATOM, $this->dhEmi, 'America/Sao_Paulo')->format('ym');
 
         $nNF = str_pad($this->nNF, 9, '0', STR_PAD_LEFT);
 

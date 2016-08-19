@@ -18,7 +18,7 @@
         <td class="col-1">
             <p class="al-center">
                 <small>DATA DE EMISSÃO</small>
-                <?php echo $nfe->get('ide.dhEmi')->datetime('Y/m/d'); ?>
+                <?php echo $nfe->get('ide.dhEmi')->datetime('d/m/Y'); ?>
             </p>
         </td>
     </tr>
@@ -43,7 +43,7 @@
         <td class="col-1">
             <p class="al-center">
                 <small>DATA DE SAÍDA</small>
-                <?php echo $nfe->get('ide.dhSaiEnt')->datetime('Y/m/d'); ?>
+                <?php echo $nfe->get('ide.dhSaiEnt')->datetime('d/m/Y'); ?>
             </p>
         </td>
     </tr>
