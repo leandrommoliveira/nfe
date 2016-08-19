@@ -40,6 +40,7 @@ class TransportaNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Endereço Completo.
      * @var string|null
+     * @max 60
      */
     public $xEnder = null;
 
