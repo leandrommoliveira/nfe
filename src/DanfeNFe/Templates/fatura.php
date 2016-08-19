@@ -1,8 +1,7 @@
 <h5>FATURA/DUPLICATA</h5>
 <div class="row">
     <?php for ($i = 0; $i <= ($nfe->getDups() - 1); $i++) {
-        $dup = $nfe->getDup($i);
-    ?>
+        $dup = $nfe->getDup($i); ?>
         <div class="col-3" style="float: left;">
             <table class="table fatura">
                 <tr>
@@ -27,5 +26,6 @@
                 </tr>
             </table>
         </div>
-    <?php } ?>
+    <?php
+} ?>
 </div>
