@@ -71,6 +71,6 @@ if ((count($linhas) == 1) && (count($linhas[0]) < 4)) {
     } ?>
     </tr>
     <?php
-        
+
 } ?>
 </table>
