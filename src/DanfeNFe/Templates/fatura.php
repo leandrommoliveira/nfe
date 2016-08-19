@@ -1,8 +1,22 @@
-<h5>FATURA/DUPLICATA</h5>
-<div class="row">
-    <?php for ($i = 0; $i <= ($nfe->getDups() - 1); $i++) {
-    $dup = $nfe->getDup($i); ?>
-        <div class="col-3" style="float: left;">
+<?php
+
+echo('<h5>FATURA/DUPLICATA</h5>');
+echo('<table class="table">');
+
+    $c = 0;
+    for ($i = 0; $i <= ($nfe->getDups() - 1); $i++) {
+        $dup = $nfe->getDup($i);
+
+    if (($c % 4) == 0) {
+        if ($c > 0) {
+            echo('</tr>');
+        }
+        echo('<tr>');
+    }
+    $c += 1;
+
+?>
+        <td class="col-3">
             <table class="table fatura">
                 <tr>
                     <td>
@@ -25,8 +39,13 @@
                     </td>
                 </tr>
             </table>
-        </div>
-    <?php
 
-} ?>
-</div>
+        </td>
+
+<?php
+        if (($c-1) % 4) != 0) {
+            echo('</tr>');
+        }
+    }
+?>
+</table>
