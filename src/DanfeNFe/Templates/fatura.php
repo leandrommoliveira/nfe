@@ -29,10 +29,14 @@ if ((count($linhas) == 1) && (count($linhas[0]) < 4)) {
 <table class="table">
     <?php foreach ($linhas as $linha) { ?>
     <tr>
-        <?php foreach ($linha as $dup) { ?>
-        <?php if (is_null($dup)) {?>
+        <?php foreach ($linha as $dup) {
+        ?>
+        <?php if (is_null($dup)) {
+            ?>
         <td class="col-3 no-border no-pad"></td>
-        <?php } else {?>
+        <?php
+        } else {
+            ?>
         <td class="col-3 no-border no-pad">
             <table class="table fatura">
                 <tr>
@@ -57,8 +61,11 @@ if ((count($linhas) == 1) && (count($linhas[0]) < 4)) {
                 </tr>
             </table>
         </td>
-        <?php } ?>
-        <?php } ?>
+        <?php
+        } ?>
+        <?php
+    } ?>
     </tr>
-    <?php } ?>
+    <?php
+} ?>
 </table>

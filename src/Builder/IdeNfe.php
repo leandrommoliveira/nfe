@@ -29,6 +29,7 @@ class IdeNfe extends Builder
      * inciso I, art. 19 do CONVÊNIO S/Nº, de 15 de dezembro de
      * 1970.
      * @var string
+     * @max 60
      */
     public $natOp = '';
 
@@ -195,6 +196,7 @@ class IdeNfe extends Builder
     /**
      * Informar a versão do aplicativo emissor de NF-e.
      * @var string
+     * @max 20
      */
     public $verProc = BaseNFe::version;
 
@@ -209,6 +211,7 @@ class IdeNfe extends Builder
      * Justificativa da entrada em contingência.
      * (v2.0).
      * @var
+     * @max 256
      */
     public $xJust;
 }
