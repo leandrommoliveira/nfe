@@ -57,6 +57,9 @@ table {
 .table td.no-border {
     border: none !important;
 }
+.no-pad {
+    padding: 0px !important;
+}
 
 .table td > p {
     display: block;

@@ -1,22 +1,39 @@
 <?php
 
-echo('<h5>FATURA/DUPLICATA</h5>');
-echo('<table class="table">');
+// Gerar linhas
+$count = $nfe->getDups();
+$linhas = [];
+$linha = [];
 
-    $c = 0;
-    for ($i = 0; $i <= ($nfe->getDups() - 1); $i++) {
-        $dup = $nfe->getDup($i);
-
-    if (($c % 4) == 0) {
-        if ($c > 0) {
-            echo('</tr>');
-        }
-        echo('<tr>');
+for ($i = 0; $i <= ($nfe->getDups() - 1); $i++) {
+    if (count($linha) == 4) {
+        $linhas[] = $linha;
+        $linha = [];
     }
-    $c += 1;
+    $linha[] = $nfe->getDup($i);
+}
+
+if (count($linha) > 0) {
+    $linhas[] = $linha;
+}
+
+if ((count($linhas) == 1) && (count($linhas[0]) < 4)) {
+    while (count($linhas[0]) < 4) {
+        $linhas[0][] = null;
+    }
+}
 
 ?>
-        <td class="col-3">
+
+<h5>FATURA/DUPLICATA</h5>
+<table class="table">
+    <?php foreach ($linhas as $linha) { ?>
+    <tr>
+        <?php foreach ($linha as $dup) { ?>
+        <?php if (is_null($dup)) {?>
+        <td class="col-3 no-border no-pad"></td>
+        <?php } else {?>
+        <td class="col-3 no-border no-pad">
             <table class="table fatura">
                 <tr>
                     <td>
@@ -39,13 +56,9 @@ echo('<table class="table">');
                     </td>
                 </tr>
             </table>
-
         </td>
-
-<?php
-        if (($c-1) % 4) != 0) {
-            echo('</tr>');
-        }
-    }
-?>
+        <?php } ?>
+        <?php } ?>
+    </tr>
+    <?php } ?>
 </table>
