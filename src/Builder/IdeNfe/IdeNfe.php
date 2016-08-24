@@ -2,6 +2,7 @@
 
 use PhpNFe\NFe\NFe as BaseNFe;
 use PhpNFe\Tools\Builder\Builder;
+use PhpNFe\Tools\Builder\PropriedadeNull;
 
 class IdeNfe extends Builder
 {
@@ -225,9 +226,12 @@ class IdeNfe extends Builder
      * @var NFref
      */
     public $NFref;
-    
+
+    /**
+     * IdeNfe constructor.
+     */
     public function __construct()
     {
-        
+        $this->NFref = new PropriedadeNull('\PhpNFe\NFe\Builder\IdeNfe\NFref');
     }
 }
