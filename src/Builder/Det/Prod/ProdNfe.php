@@ -1,4 +1,5 @@
 <?php namespace PhpNFe\NFe\Builder\Det\Prod;
+
 use PhpNFe\NFe\Builder\Det\Prod\Comb\Comb;
 
 /**
