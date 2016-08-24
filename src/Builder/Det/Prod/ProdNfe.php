@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\NFe\Builder\Det;
+<?php namespace PhpNFe\NFe\Builder\Det\Prod;
 
 /**
  * Detalhamento de Produtos e Serviços.
@@ -174,4 +174,11 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * @var string
      */
     public $indTot = '';
+
+    /**
+     * Informações específicas para combustíveis
+     * líquidos e lubrificantes.
+     * @var Comb
+     */
+    public $comb;
 }
