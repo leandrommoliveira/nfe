@@ -7,7 +7,7 @@
  * Informação utilizada nas hipóteses previstas na legislação. (Ex.:
  * Devolução de mercadorias, Substituição de NF cancelada,
  * Complementação de NF, etc.).
- * Class NFref
+ * Class NFref.
  */
 class NFref
 {
