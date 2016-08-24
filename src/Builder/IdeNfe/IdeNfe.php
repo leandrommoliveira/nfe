@@ -1,4 +1,4 @@
-<?php namespace PhpNFe\NFe\Builder;
+<?php namespace PhpNFe\NFe\Builder\IdeNfe;
 
 use PhpNFe\NFe\NFe as BaseNFe;
 use PhpNFe\Tools\Builder\Builder;
@@ -214,4 +214,20 @@ class IdeNfe extends Builder
      * @max 256
      */
     public $xJust;
+
+    /**
+     * Informação de Documentos Fiscais
+     * referenciados.
+     * Grupo com informações de Documentos Fiscais referenciados.
+     * Informação utilizada nas hipóteses previstas na legislação. (Ex.:
+     * Devolução de mercadorias, Substituição de NF cancelada,
+     * Complementação de NF, etc.).
+     * @var NFref
+     */
+    public $NFref;
+    
+    public function __construct()
+    {
+        
+    }
 }
