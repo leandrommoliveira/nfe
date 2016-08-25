@@ -34,7 +34,7 @@ class NFEConsultaMsg
     }
 
     /**
-     * Carregar o DOM;
+     * Carregar o DOM.
      * @param $tpAmb
      * @param $xServ
      * @param $chNFe

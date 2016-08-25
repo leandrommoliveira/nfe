@@ -85,8 +85,7 @@ class ConsultaRetorno
     {
         return $this->retorno->getElementsByTagName('nProt')->item(0)->textContent;
     }
-
-
+    
     /**
      * Retorna a chave da NF-e.
      * @return string

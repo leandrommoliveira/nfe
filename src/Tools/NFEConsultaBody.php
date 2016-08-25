@@ -2,7 +2,6 @@
 
 class NFEConsultaBody
 {
-
     /**
      * Mensagem do Consulta.
      * @var
