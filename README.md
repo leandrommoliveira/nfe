@@ -25,7 +25,7 @@ Estados homologados:
 ### Composer
 
 ```json
- "phpnfe/nfe": "1.0.*"
+ "phpnfe/nfe": "1.2.*"
 ```
 
 
