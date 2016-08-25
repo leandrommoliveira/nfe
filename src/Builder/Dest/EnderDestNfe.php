@@ -5,6 +5,7 @@ class EnderDestNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Logradouro.
      * @var string
+     * @max 60
      */
     public $xLgr = '';
 
