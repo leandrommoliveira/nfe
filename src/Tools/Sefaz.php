@@ -228,7 +228,7 @@ class Sefaz
                     'method' => 'nfeConsultaNF2',
                     'op' => 'NfeConsulta2',
                     'versao' => '3.10',
-                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx'
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx',
                 ],
             ],
             self::ambProducao => [
