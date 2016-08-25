@@ -28,7 +28,7 @@ use PhpNFe\Tools\XML;
 
 class NFe
 {
-    const version = 'NetForce NF-e Beta';
+    const version = 'NetForce NF-e 1.2';
 
     /**
      * Classe de controle do certificado.
