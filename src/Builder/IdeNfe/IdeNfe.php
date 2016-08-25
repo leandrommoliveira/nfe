@@ -11,6 +11,7 @@ class IdeNfe extends Builder
      * Tabela do IBGE de código de unidades da federação (Anexo IX
      * - Tabela de UF, Município e País).
      * @var string
+     * @max 2
      */
     public $cUF = '';
 
@@ -18,7 +19,8 @@ class IdeNfe extends Builder
      * Código numérico que compõe a Chave de Acesso. Número
      * aleatório gerado pelo emitente para cada NF-e para evitar
      * acessos indevidos da NF-e. (v2.0).
-     * @var string
+     * @var
+     * @max 8
      */
     public $cNF = '';
 
@@ -39,6 +41,7 @@ class IdeNfe extends Builder
      * 1=Pagamento a prazo;
      * 2=Outros.
      * @var string
+     * @max 1
      */
     public $indPag = '';
 
@@ -47,6 +50,7 @@ class IdeNfe extends Builder
      * 65=NFC-e, utilizada nas operações de venda no varejo (a
      * critério da UF aceitar este modelo de documento).
      * @var string
+     * @max 2
      */
     public $mod = '55';
 
@@ -58,12 +62,14 @@ class IdeNfe extends Builder
      * (procEmi=2). (v2.0)
      * Serie 900-999: uso exclusivo de NF-e emitidas no SCAN. (v2.0).
      * @var string
+     * @max 3
      */
     public $serie = '';
 
     /**
      * Número do Documento Fiscal.
      * @var string
+     * @max 9
      */
     public $nNF = '';
 
@@ -94,6 +100,7 @@ class IdeNfe extends Builder
      * 2=Operação interestadual;
      * 3=Operação com exterior.
      * @var string
+     * @max 1
      */
     public $idDest = '1';
 
@@ -102,6 +109,7 @@ class IdeNfe extends Builder
      * Utilizar a Tabela do IBGE (Anexo IX - Tabela de UF, Município e
      * País).
      * @var string
+     * @max 7
      */
     public $cMunFG = '';
 
@@ -116,6 +124,7 @@ class IdeNfe extends Builder
      * impressão do DANFE; usar o tpImp=5 quando esta for a única
      * forma de disponibilização do DANFE).
      * @var string
+     * @max 1
      */
     public $tpImp = '1';
 
@@ -146,12 +155,14 @@ class IdeNfe extends Builder
      * calculado com a aplicação do algoritmo módulo 11 (base 2,9) da
      * Chave de Acesso. (vide item 5 do Manual de Orientação).
      * @var string
+     * @max 1
      */
     public $cDV = '';
 
     /**
      * 1=Produção/2=Homologação.
      * @var string
+     * @max 1
      */
     public $tpAmb = '';
 
@@ -161,6 +172,7 @@ class IdeNfe extends Builder
      * 3=NF-e de ajuste;
      * 4=Devolução de mercadoria.
      * @var string
+     * @max 1
      */
     public $finNFe = '1';
 
@@ -168,6 +180,7 @@ class IdeNfe extends Builder
      * 0=Normal;
      * 1=Consumidor final.
      * @var string
+     * @max 1
      */
     public $indFinal = '0';
 
@@ -180,6 +193,7 @@ class IdeNfe extends Builder
      * 4=NFC-e em operação com entrega a domicílio;
      * 9=Operação não presencial, outros.
      * @var string
+     * @max 1
      */
     public $indPres = '';
 
@@ -191,6 +205,7 @@ class IdeNfe extends Builder
      * 3=Emissão NF-e pelo contribuinte com aplicativo fornecido pelo
      * Fisco.
      * @var string
+     * @max 1
      */
     public $procEmi = '0';
 

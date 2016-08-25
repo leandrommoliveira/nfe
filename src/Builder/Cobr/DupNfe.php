@@ -5,6 +5,7 @@ class DupNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Número da Duplicata.
      * @var string|null
+     * @max 60
      */
     public $nDup = null;
 

@@ -12,7 +12,8 @@ class CIDE extends Builder
     /**
      * BC da CIDE
      * Informar a BC da CIDE em quantidade.
-     * @var string
+     * @var float
+     * @dec 4
      */
     public $qBCProd = '';
 
@@ -20,6 +21,7 @@ class CIDE extends Builder
      * Valor da alíquota da CIDE.
      * Informar o valor da alíquota em reais da CIDE.
      * @var float
+     * @dec 4
      */
     public $vAliqProd = 0.00;
 
@@ -27,6 +29,7 @@ class CIDE extends Builder
      * Valor da CIDE.
      * Informar o valor da CIDE.
      * @var float
+     * @dec 2
      */
     public $vCIDE = 0.00;
 }

@@ -15,6 +15,7 @@ class TranspNfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Por conta de terceiros;
      * 9=Sem frete. (V2.0).
      * @var string
+     * @max 1
      */
     public $modFrete = '';
 

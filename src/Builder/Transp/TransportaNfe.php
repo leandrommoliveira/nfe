@@ -9,18 +9,21 @@ class TransportaNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * CNPJ do Transportador.
      * @var string|null
+     * @max 14
      */
     public $CNPJ = null;
 
     /**
      * CPF do Transportador.
      * @var string|null
+     * @max 11
      */
     public $CPF = null;
 
     /**
      * Razão Social ou nome.
      * @var string|null
+     * @max 60
      */
     public $xNome = null;
 
@@ -34,6 +37,7 @@ class TransportaNfe extends \PhpNFe\Tools\Builder\Builder
      * - Não informar a tag para não contribuinte do ICMS,
      * A UF deve ser informada se informado uma IE. (v2.0).
      * @var string|null
+     * @max 14
      */
     public $IE = null;
 
@@ -47,12 +51,14 @@ class TransportaNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Nome do município.
      * @var string|null
+     * @max 60
      */
     public $xMun = null;
 
     /**
      * Sigla da UF.
      * @var string|null
+     * @max 2
      */
     public $UF = null;
 }

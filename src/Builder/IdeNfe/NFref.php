@@ -16,6 +16,7 @@ class NFref
      * Referencia uma NF-e (modelo 55) emitida anteriormente,
      * vinculada a NF-e atual, ou uma NFC-e (modelo 65).
      * @var string
+     * @max 44
      */
     protected $refNFe = '';
 }

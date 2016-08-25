@@ -6,6 +6,7 @@ class ProcRefNfe extends \PhpNFe\Tools\Builder\Builder
      * Identificador do processo ou ato
      * concessório.
      * @var string
+     * @max 60
      */
     public $nProc = '';
 
@@ -17,6 +18,7 @@ class ProcRefNfe extends \PhpNFe\Tools\Builder\Builder
      * 3=Secex/RFB;
      * 9=Outros.
      * @var string
+     * @max 1
      */
     public $indProc = '';
 }

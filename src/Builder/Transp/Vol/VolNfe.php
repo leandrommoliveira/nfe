@@ -10,24 +10,28 @@ class VolNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Quantidade de volumes transportados.
      * @var string|null
+     * @max 15
      */
     public $qVol = null;
 
     /**
      * Espécie dos volumes transportados.
      * @var string|null
+     * @max 60
      */
     public $esp = null;
 
     /**
      * Marca dos volumes transportados.
      * @var string|null
+     * @max 60
      */
     public $marca = null;
 
     /**
      * Numeração dos volumes transportados.
      * @var string|null
+     * @max 60
      */
     public $nVol = null;
 

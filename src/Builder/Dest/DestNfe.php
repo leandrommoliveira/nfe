@@ -9,6 +9,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * com o número do passaporte ou outro documento legal para
      * identificar pessoa estrangeira (campo aceita valor nulo).
      * @var string|null
+     * @max 14
      */
     public $CNPJ = null;
 
@@ -19,12 +20,14 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * com o número do passaporte ou outro documento legal para
      * identificar pessoa estrangeira (campo aceita valor nulo).
      * @var string|null
+     * @max 14
      */
     public $CPF = null;
 
     /**
      * Tag obrigatória para a NF-e (modelo 55) e opcional para a NFCe.
      * @var string|null
+     * @max 20
      */
     public $idEstrangeiro = null;
 
@@ -32,6 +35,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * Razão Social ou nome do destinatário.
      * Tag obrigatória para a NF-e (modelo 55) e opcional para a NFCe.
      * @var string
+     * @max 60
      */
     public $xNome = '';
 
@@ -54,6 +58,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * Nota 3: No caso de Contribuinte Isento de Inscrição
      * (indIEDest=2), não informar a tag IE do destinatário.
      * @var string
+     * @max 1
      */
     public $indIEDest = '';
 
@@ -61,6 +66,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * Campo opcional. Informar somente os algarismos, sem os
      * caracteres de formatação (ponto, barra, hífen, etc.).
      * @var string|null
+     * @max 14
      */
     public $IE = null;
 
@@ -73,6 +79,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * comprovação do ingresso / internamento da mercadoria nestas
      * áreas. (v2.0).
      * @var string|null
+     * @max 9
      */
     public $ISUF = null;
 
@@ -81,6 +88,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * itens de produtos sujeitos ao ICMS e itens de serviços sujeitos
      * ao ISSQN.
      * @var string|null
+     * @max 15
      */
     public $IM = null;
 
@@ -88,6 +96,7 @@ class DestNfe extends \PhpNFe\Tools\Builder\Builder
      * Campo pode ser utilizado para informar o e-mail de recepção da
      * NF-e indicada pelo destinatário (v2.0).
      * @var string|null
+     * @max 60
      */
     public $email = null;
 

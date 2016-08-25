@@ -8,6 +8,7 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * grupo. O CNPJ ou CPF deverão ser informados com os zeros
      * não significativos.
      * @var string|null
+     * @max 14
      */
     public $CNPJ = null;
 
@@ -17,18 +18,21 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * grupo. O CNPJ ou CPF deverão ser informados com os zeros
      * não significativos.
      * @var string|null
+     * @max 11
      */
     public $CPF = null;
 
     /**
      * Razão Social ou Nome do emitente.
      * @var string
+     * @max 60
      */
     public $xNome = '';
 
     /**
      * Nome fantasia.
      * @var string|null
+     * @max 60
      */
     public $xFant = null;
 
@@ -46,6 +50,7 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * “ISENTO” para os contribuintes do ICMS isentos de inscrição no
      * Cadastro de Contribuintes de ICMS.
      * @var string
+     * @max 14
      */
     public $IE = '';
 
@@ -54,6 +59,7 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * IE do Substituto Tributário da UF de destino da mercadoria,
      * quando houver a retenção do ICMS ST para a UF de destino.
      * @var string|null
+     * @max 14
      */
     public $IEST = null;
 
@@ -64,6 +70,7 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * produtos sujeitos ao ICMS e itens de serviços sujeitos ao
      * ISSQN.
      * @var string|null
+     * @max 15
      */
     public $IM = null;
 
@@ -72,6 +79,7 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * Campo Opcional. Pode ser informado quando a Inscrição
      * Municipal (id:C19) for informada.
      * @var string|null
+     * @max 7
      */
     public $CNAE = null;
 
@@ -81,6 +89,7 @@ class EmitNfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Simples Nacional, excesso sublimite de receita bruta;
      * 3=Regime Normal. (v2.0).
      * @var string
+     * @max 1
      */
     public $CRT = '';
 

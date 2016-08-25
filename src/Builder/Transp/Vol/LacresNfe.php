@@ -10,6 +10,7 @@ class LacresNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Número dos Lacres.
      * @var string
+     * @max 60
      */
     public $nLacre = '';
 }

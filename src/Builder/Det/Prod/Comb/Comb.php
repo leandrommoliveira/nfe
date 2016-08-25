@@ -18,6 +18,7 @@ class Comb extends Builder
      * Movimentação de Produtos - SIMP
      * (http://www.anp.gov.br/simp/). (NT 2012/003).
      * @var string
+     * @max 9
      */
     public $cProdANP = '';
 
@@ -26,7 +27,8 @@ class Comb extends Builder
      * GLP (cProdANP=210203001);
      * O campo é opcional, portanto no caso não haver mistura o
      * campo de percentual não deve ser informado.
-     * @var string|null
+     * @var float|null
+     * @dec 4
      */
     public $pMixGN = null;
 
@@ -36,6 +38,7 @@ class Comb extends Builder
      * Controle do Diferimento do Imposto nas Operações com AEAC -
      * Álcool Etílico Anidro Combustível).
      * @var string|null
+     * @max 21
      */
     public $CODIF = null;
 
@@ -45,7 +48,8 @@ class Comb extends Builder
      * Informar quando a quantidade faturada informada no campo
      * "prod/qCom" (id:I10) tiver sido ajustada para uma temperatura
      * diferente da ambiente.
-     * @var string|null
+     * @var float|null
+     * @dec 4
      */
     public $qTemp = null;
 
@@ -53,6 +57,7 @@ class Comb extends Builder
      * Sigla da UF de consumo.
      * Informar a UF de consumo. Informar "EX" para Exterior.
      * @var string
+     * @max 2
      */
     public $UFCons = '';
 

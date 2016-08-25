@@ -6,6 +6,7 @@ class InfAdicNfe extends \PhpNFe\Tools\Builder\Builder
      * Informações Adicionais de Interesse do
      * Fisco.
      * @var string|null
+     * @max 2000
      */
     public $infAdFisco = null;
 
@@ -13,6 +14,7 @@ class InfAdicNfe extends \PhpNFe\Tools\Builder\Builder
      * Informações Complementares de interesse
      * do Contribuinte.
      * @var string|null
+     * @max 5000
      */
     public $infCpl = null;
 

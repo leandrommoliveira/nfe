@@ -11,6 +11,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Código do produto ou serviço.
      * @var string
+     * @max 60
      */
     public $cProd = '';
 
@@ -19,12 +20,14 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * produto, antigo código EAN ou código de
      * barras.
      * @var string
+     * @max 14
      */
     public $cEAN = '';
 
     /**
      * Descrição do produto ou serviço.
      * @var string
+     * @max 120
      */
     public $xProd = '';
 
@@ -36,6 +39,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * imobilizado, etc.), informar o valor 00 (dois zeros). (NT
      * 2014/004).
      * @var string
+     * @max 8
      */
     public $NCM = '';
 
@@ -48,6 +52,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * até 8 codificações principais.
      * Vide: Anexo XII.03 - Identificador NVE.
      * @var string|null
+     * @max 6
      */
     public $NVE = null;
 
@@ -56,6 +61,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * Preencher de acordo com o código EX da TIPI. Em caso de
      * serviço, não incluir a TAG.
      * @var string|null
+     * @max 3
      */
     public $EXTIPI = null;
 
@@ -63,6 +69,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * Código Fiscal de Operações e Prestações.
      * Utilizar Tabela de CFOP.
      * @var string
+     * @max 4
      */
     public $CFOP = '';
 
@@ -70,6 +77,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * Unidade Comercial.
      * Informar a unidade de comercialização do produto.
      * @var string
+     * @max 6
      */
     public $uCom = '';
 
@@ -109,12 +117,14 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * do produto, não informar o conteúdo da TAG em caso de o
      * produto não possuir este código.
      * @var string
+     * @max 14
      */
     public $cEANTrib = '';
 
     /**
      * Unidade Tributável.
      * @var string
+     * @max 6
      */
     public $uTrib = '';
 
@@ -174,6 +184,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * 1=Valor do item (vProd) compõe o valor total da NF-e (vProd)
      * (v2.0).
      * @var string
+     * @max 1
      */
     public $indTot = '';
 
