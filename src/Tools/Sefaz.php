@@ -20,6 +20,7 @@ class Sefaz
     const mtCancela = 'cancela';
     const mtCartaCorrecao = 'cartacorrecao';
     const mtInutilizacao = 'inutilizacao';
+    const mtConsulta = 'consultar';
 
     /**
      * Portal.
@@ -223,6 +224,12 @@ class Sefaz
                     'versao' => '3.10',
                     'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/nfeinutilizacao/nfeinutilizacao2.asmx',
                 ],
+                self::mtConsulta => [
+                    'method' => 'nfeConsultaNF2',
+                    'op' => 'NfeConsulta2',
+                    'versao' => '3.10',
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeConsulta/NfeConsulta2.asmx'
+                ]
             ],
             self::ambProducao => [
                 self::mtAutoriza => [
@@ -307,6 +314,23 @@ class Sefaz
             ],
         ],
     ];
+
+    /**
+     * Retorna a string ambiente pelo número do ambiente.
+     * @param $tpAmb
+     * @return \Exception|string
+     */
+    public static function getAmbiente($tpAmb)
+    {
+        switch ($tpAmb) {
+            case '1':
+                return self::ambProducao;
+            case '2':
+                return self::ambHomologacao;
+            default:
+                return new \Exception('Ambiente incorreto!');
+        }
+    }
 
     /**
      * Retorna configurações do metodo.

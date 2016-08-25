@@ -3,6 +3,10 @@
 use DOMDocument;
 use PhpNFe\NFe\Tools\AjustaXML;
 use PhpNFe\NFe\Tools\AutorizaRetorno;
+use PhpNFe\NFe\Tools\ConsultaRetorno;
+use PhpNFe\NFe\Tools\NFEConsultaBody;
+use PhpNFe\NFe\Tools\NFEConsultaHeader;
+use PhpNFe\NFe\Tools\NFEConsultaMsg;
 use PhpNFe\Tools\Certificado\Certificado;
 use PhpNFe\NFe\Tools\EvBody;
 use PhpNFe\NFe\Tools\EvCancelaDados;
@@ -136,6 +140,18 @@ class NFe
         return new InutilizacaoRetorno($this->soap($method, $header, $body));
     }
 
+    public function consulta($chNFe, $tpAmb, $cUF)
+    {
+        $method = Sefaz::getMethodInfo(Sefaz::getAmbiente($tpAmb), $cUF, Sefaz::mtConsulta);
+        $mensagem = NFEConsultaMsg::loadDOM($tpAmb, $chNFe);
+        $header = NFEConsultaHeader::loadDOM($cUF, $method->version);
+        $body = NFEConsultaBody::loadDOM($mensagem);
+
+        $this->validar($mensagem, $method->version);
+
+        return new ConsultaRetorno($this->soap($method, $header, $body));
+    }
+
     public function validar($xml, $versao)
     {
         $nome = $this->identificaXML($xml);
@@ -185,6 +201,8 @@ class NFe
                 return 'nfe';
             case stristr($xml, 'infInut'):
                 return 'inutNFe';
+            case stristr($xml, 'consSitNFe'):
+                return 'consSitNFe';
             default:
                 return '';
         }
