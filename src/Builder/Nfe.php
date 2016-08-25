@@ -1,5 +1,6 @@
 <?php namespace PhpNFe\NFe\Builder;
 
+use PhpNFe\NFe\Builder\IdeNfe\IdeNfe;
 use PhpNFe\NFe\Tools\InfoChNFe;
 use PhpNFe\Tools\Builder\Builder;
 use PhpNFe\Tools\Builder\Colecoes;
