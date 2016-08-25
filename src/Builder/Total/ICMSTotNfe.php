@@ -24,6 +24,28 @@ class ICMSTotNfe extends \PhpNFe\Tools\Builder\Builder
     public $vICMSDeson = 0.00;
 
     /**
+     * Valor total do ICMS relativo ao Fundo de Combate à Pobreza (FCP) para a UF de destino.
+     * @var float|null
+     * @dec 2
+     */
+    public $vFCPUFDest = null;
+
+    /**
+     * Valor total do ICMS Interestadual para a UF de destino, já considerando o valor do ICMS relativo
+     * ao Fundo de Combate à Pobreza naquela UF.
+     * @var float|null
+     * @dec 2
+     */
+    public $vICMSUFDest = null;
+
+    /**
+     * Valor total do ICMS Interestadual para a UF do remetente.
+     * @var float|null
+     * @dec 2
+     */
+    public $vICMSUFRemet = null;
+
+    /**
      * Base de Cálculo do ICMS ST.
      * @var float
      * @dec 2

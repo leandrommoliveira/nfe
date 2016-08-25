@@ -4,6 +4,7 @@ use PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe;
 use PhpNFe\NFe\Builder\Det\Imposto\ICMS\ICMSNfe;
 use PhpNFe\NFe\Builder\Det\Imposto\IPI\IPINfe;
 use PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\ICMSUFDest;
 
 /**
  * Tributos incidentes no Produto ou Serviço.
@@ -62,6 +63,13 @@ class ImpostoNfe extends \PhpNFe\Tools\Builder\Builder
     public $COFINS;
 
     /**
+     * Grupo a ser informado nas vendas interestaduais para consumidor
+     * final, não contribuinte do ICMS.
+     * @var ICMSUFDest
+     */
+    public $ICMSUFDest;
+
+    /**
      * ImpostoNfe constructor.
      */
     public function __construct()
@@ -71,5 +79,6 @@ class ImpostoNfe extends \PhpNFe\Tools\Builder\Builder
         $this->II = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\II');
         $this->PIS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNfe');
         $this->COFINS = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe');
+        $this->ICMSUFDest = new \PhpNFe\Tools\Builder\PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\ICMSUFDest');
     }
 }
