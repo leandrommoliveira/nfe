@@ -12,6 +12,7 @@
 - Cancelamento
 - Carta Correção
 - Inutilização
+- Consulta
 
 ### Ferramentas
 - Builder para NF-e
@@ -66,6 +67,7 @@ echo 'foi';
 
 - [Autorizacao](/Exemplos/autorizar.php)
 - [Cancelamento](/Exemplos/cancelar.php)
+- [Consulta](/Exemplos/consulta.php)
 - [Builder](/Exemplos/gerar.php)
 - [Danfe](/Exemplos/danfe.php)
 - [DanfeCC](/Exemplos/danfeCC.php)
