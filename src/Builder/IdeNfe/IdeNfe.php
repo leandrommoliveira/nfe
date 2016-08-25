@@ -19,7 +19,7 @@ class IdeNfe extends Builder
      * Código numérico que compõe a Chave de Acesso. Número
      * aleatório gerado pelo emitente para cada NF-e para evitar
      * acessos indevidos da NF-e. (v2.0).
-     * @var
+     * @var string
      * @max 8
      */
     public $cNF = '';
