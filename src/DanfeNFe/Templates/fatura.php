@@ -39,22 +39,22 @@ if ((count($linhas) == 1) && (count($linhas[0]) < 4)) {
 
         } else {
             ?>
-        <td class="col-3 no-border no-pad">
+        <td class="col-3 no-pad">
             <table class="table fatura">
                 <tr>
-                    <td>
+                    <td class="no-border">
                         <p class="al-center">
                             <small>NÚMERO</small>
                             <?php echo $dup->get('nDup'); ?>
                         </p>
                     </td>
-                    <td>
+                    <td class="no-border">
                         <p class="al-center">
                             <small>VENCIMENTO</small>
                             <?php echo $dup->get('dVenc')->datetime('d/m/Y', 'Y-m-d'); ?>
                         </p>
                     </td>
-                    <td class="al-right">
+                    <td class="al-right no-border">
                         <p>
                             <small>VALOR</small>
                             <?php echo $dup->get('vDup')->number(2); ?>
