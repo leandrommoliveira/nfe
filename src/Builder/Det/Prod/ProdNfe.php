@@ -203,7 +203,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
     /**
      * Informações específicas para combustíveis
      * líquidos e lubrificantes.
-     * @var Comb
+     * @var PropriedadeNull
      */
     public $comb;
 
