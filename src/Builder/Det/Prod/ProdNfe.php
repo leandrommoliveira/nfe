@@ -1,6 +1,7 @@
 <?php namespace PhpNFe\NFe\Builder\Det\Prod;
 
 use PhpNFe\NFe\Builder\Det\Prod\Comb\Comb;
+use PhpNFe\Tools\Builder\PropriedadeNull;
 
 /**
  * Detalhamento de Produtos e Serviços.
@@ -208,6 +209,6 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
 
     public function __construct()
     {
-        $this->comb = new Comb();
+        $this->comb = new PropriedadeNull('\PhpNFe\Builder\Det\Prod\Comb\Comb');
     }
 }
