@@ -107,7 +107,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * sistemática de uniformização e identificação das mercadorias e bens passíveis de
      * sujeição aos regimes de substituição tributária e de antecipação de recolhimento
      * do ICMS.
-     * @var null
+     * @var string|null
      * @max 7
      */
     public $CEST = null;
