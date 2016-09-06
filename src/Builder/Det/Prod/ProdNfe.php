@@ -205,4 +205,9 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * @var Comb
      */
     public $comb;
+
+    public function __construct()
+    {
+        $this->comb = new Comb();
+    }
 }

@@ -209,11 +209,12 @@ $dup->vDup = 133.20;
 // infAdic
 $nfe->infAdic->infCpl = 'xxxx';
 
+$nfe = $nfe->getXML();
+
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
 
 $cert->carregarPfx(__DIR__ . '/seuCertificado.pfx', 'suaSenha');
 
-$nfe = $nfe->getXML();
 
 $xml = $cert->assinarXML($nfe, 'infNFe');
 
