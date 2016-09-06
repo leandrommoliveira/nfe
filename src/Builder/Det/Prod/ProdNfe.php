@@ -209,6 +209,6 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
 
     public function __construct()
     {
-        $this->comb = new PropriedadeNull('\PhpNFe\Builder\Det\Prod\Comb\Comb');
+        $this->comb = new PropriedadeNull('\PhpNFe\NFe\Builder\Det\Prod\Comb');
     }
 }
