@@ -11,38 +11,43 @@ class IPINfe extends \PhpNFe\Tools\Builder\Builder
      * Cigarros e Bebidas.
      * Preenchimento conforme Atos Normativos editados pela
      * Receita Federal (Observação 2).
-     * @var string
+     * @var null
+     * @max 5
      */
-    public $clEnq = '';
+    public $clEnq;
 
     /**
      * CNPJ do produtor da mercadoria, quando
      * diferente do emitente. Somente para os
      * casos de exportação direta ou indireta.
      * Informar os zeros não significativos.
-     * @var string
+     * @var null
+     * @max 14
      */
-    public $CNPJProd = '';
+    public $CNPJProd;
 
     /**
      * Código do selo de controle IPI.
      * Preenchimento conforme Atos Normativos editados pela
      * Receita Federal (Observação 3).
-     * @var string
+     * @var null
+     * @max 60
      */
-    public $cSelo = '';
+    public $cSelo;
 
     /**
      * Quantidade de selo de controle.
-     * @var string
+     * @var null
+     * @max 12
      */
-    public $qSelo = '';
+    public $qSelo;
 
     /**
      * Código de Enquadramento Legal do IPI.
      * Tabela a ser criada pela RFB, informar 999 enquanto a tabela
      * não for criada.
      * @var string
+     * @max 3
      */
     public $cEnq = '';
 
