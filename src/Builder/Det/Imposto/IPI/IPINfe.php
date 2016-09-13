@@ -1,5 +1,7 @@
 <?php namespace PhpNFe\NFe\Builder\Det\Imposto\IPI;
 
+use PhpNFe\Tools\Builder\PropriedadeNull;
+
 /**
  * Informar apenas quando o item for sujeito ao IPI.
  * Class IPINfe.
@@ -68,7 +70,7 @@ class IPINfe extends \PhpNFe\Tools\Builder\Builder
 
     public function __construct()
     {
-        $this->IPITrib = new IPITribNfe();
-        $this->IPINT = new IPINTNfe();
+        $this->IPITrib = new PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\IPI\IPITribNfe');
+        $this->IPINT = new PropriedadeNull('\PhpNFe\NFe\Builder\Det\Imposto\IPI\IPINTNfe');
     }
 }

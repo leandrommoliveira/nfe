@@ -12,14 +12,14 @@ class IPITribNfe extends \PhpNFe\Tools\Builder\Builder
      * @var float
      * @dec 2
      */
-    public $vBC = 0.00;
+    public $vBC;
 
     /**
      * Alíquota do IPI.
      * @var float
      * @dec 4
      */
-    public $pIPI = 0.00;
+    public $pIPI;
 
     /**
      * Quantidade total na unidade padrão para
@@ -29,19 +29,19 @@ class IPITribNfe extends \PhpNFe\Tools\Builder\Builder
      * @var float
      * @dec 4
      */
-    public $qUnid = 0.00;
+    public $qUnid;
 
     /**
      * Valor por Unidade Tributável.
      * @var float
      * @dec 4
      */
-    public $vUnid = 0.00;
+    public $vUnid;
 
     /**
      * Valor do IPI.
      * @var float
      * @dec 2
      */
-    public $vIPI = 0.00;
+    public $vIPI;
 }
