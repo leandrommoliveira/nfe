@@ -208,7 +208,7 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
     public $comb;
 
     /**
-     * Construtor da classe
+     * Construtor da classe.
      */
     public function __construct()
     {
