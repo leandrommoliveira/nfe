@@ -22,6 +22,7 @@ class ICMS51Nfe extends \PhpNFe\Tools\Builder\Builder
      * nacional, constante lista CAMEX e gás natural.
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -29,6 +30,7 @@ class ICMS51Nfe extends \PhpNFe\Tools\Builder\Builder
      * Tributação do ICMS = 51.
      * 51=Diferimento.
      * @var string
+     * @max 2
      */
     public $CST = '';
 
@@ -40,6 +42,7 @@ class ICMS51Nfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Preço Tabelado Máx. (valor);
      * 3=Valor da operação.
      * @var string|null
+     * @max 1
      */
     public $modBC = null;
 

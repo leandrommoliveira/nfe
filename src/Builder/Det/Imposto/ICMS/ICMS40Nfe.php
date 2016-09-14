@@ -23,6 +23,7 @@ class ICMS40Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -32,6 +33,7 @@ class ICMS40Nfe extends \PhpNFe\Tools\Builder\Builder
      * 41=Não tributada;
      * 50=Suspensão.
      * @var string
+     * @max 2
      */
     public $CST = '';
 
@@ -68,6 +70,7 @@ class ICMS40Nfe extends \PhpNFe\Tools\Builder\Builder
      * Revogada a partir da versão 3.01 a possibilidade de usar o
      * motivo 2=Deficiente Físico.
      * @var string
+     * @max 2
      */
     public $motDesICMS = '';
 }

@@ -23,6 +23,7 @@ class ICMSSN102Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -36,6 +37,7 @@ class ICMSSN102Nfe extends \PhpNFe\Tools\Builder\Builder
      * 300=Imune.
      * 400=Não tributada pelo Simples Nacional (v2.0).
      * @var string
+     * @max 3
      */
     public $CSOSN = '';
 }

@@ -45,6 +45,7 @@ class PISOutrNfe extends \PhpNFe\Tools\Builder\Builder
      * 98=Outras Operações de Entrada;
      * 99=Outras Operações;.
      * @var string
+     * @max 2
      */
     public $CST = '';
 

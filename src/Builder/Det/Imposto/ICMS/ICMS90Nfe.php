@@ -28,6 +28,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -35,6 +36,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * Tributação do ICMS = 90.
      * 90=Outros.
      * @var string
+     * @max 2
      */
     public $CST = '';
 
@@ -46,6 +48,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Preço Tabelado Máx. (valor);
      * 3=Valor da operação.
      * @var string
+     * @max 1
      */
     public $modBC = '';
 
@@ -87,6 +90,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * 4=Margem Valor Agregado (%);
      * 5=Pauta (valor);.
      * @var string
+     * @max 1
      */
     public $modBCST = '';
 
@@ -144,6 +148,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * 9=Outros;
      * 12=Órgão de fomento e desenvolvimento agropecuário.
      * @var string
+     * @max 2
      */
     public $motDesICMS = '';
 }

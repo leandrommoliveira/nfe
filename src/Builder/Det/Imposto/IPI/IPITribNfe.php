@@ -3,7 +3,13 @@
 class IPITribNfe extends \PhpNFe\Tools\Builder\Builder
 {
     /**
-     * @var
+     * Código da situação tributária do IPI.
+     * 00=Entrada com recuperação de crédito
+     * 49=Outras entradas
+     * 50=Saída tributada
+     * 99=Outras saídas.
+     * @var string
+     * @max 2
      */
     public $CST;
 

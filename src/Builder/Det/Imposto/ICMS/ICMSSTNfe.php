@@ -34,6 +34,7 @@ class ICMSSTNfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -41,6 +42,7 @@ class ICMSSTNfe extends \PhpNFe\Tools\Builder\Builder
      * Tributação do ICMS.
      * 41=Não Tributado (v2.0).
      * @var string
+     * @max 2
      */
     public $CST = '';
 

@@ -30,6 +30,7 @@ class ICMSSN202Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -42,6 +43,7 @@ class ICMSSN202Nfe extends \PhpNFe\Tools\Builder\Builder
      * receita bruta e com cobrança do ICMS por Substituição
      * Tributária (v2.0).
      * @var string
+     * @max 3
      */
     public $CSOSN = '';
 
@@ -55,6 +57,7 @@ class ICMSSN202Nfe extends \PhpNFe\Tools\Builder\Builder
      * 4=Margem Valor Agregado (%);
      * 5=Pauta (valor); (v2.0).
      * @var string
+     * @max 1
      */
     public $modBCST = '';
 

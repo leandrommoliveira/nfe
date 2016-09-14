@@ -29,6 +29,7 @@ class ICMSSN500Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -38,6 +39,7 @@ class ICMSSN500Nfe extends \PhpNFe\Tools\Builder\Builder
      * 500=ICMS cobrado anteriormente por substituição tributária
      * (substituído) ou por antecipação. (v2.0).
      * @var string
+     * @max 3
      */
     public $CSOSN = '';
 

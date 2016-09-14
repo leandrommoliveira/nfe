@@ -23,6 +23,7 @@ class ICMSSN101Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -32,6 +33,7 @@ class ICMSSN101Nfe extends \PhpNFe\Tools\Builder\Builder
      * 101=Tributada pelo Simples Nacional com permissão de
      * crédito. (v2.0).
      * @var string
+     * @max 3
      */
     public $CSOSN = '';
 

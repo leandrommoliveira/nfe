@@ -11,13 +11,15 @@ class PISSTNfe extends \PhpNFe\Tools\Builder\Builder
 
     /**
      * Alíquota do PIS (em percentual).
-     * @var string
+     * @var float
+     * @dec 4
      */
     public $pPIS = '';
 
     /**
      * Quantidade Vendida.
-     * @var string
+     * @var float
+     * @dec 4
      */
     public $qBCProd = '';
 
