@@ -25,7 +25,9 @@ if ((count($linhas) == 1) && (count($linhas[0]) < 4)) {
 
 ?>
 
+<?php if (!empty($linhas)) { ?>
 <h5>FATURA/DUPLICATA</h5>
+<?php } ?>
 <table class="table">
     <?php foreach ($linhas as $linha) {
     ?>
