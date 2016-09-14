@@ -23,6 +23,7 @@ class ICMS20Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -30,6 +31,7 @@ class ICMS20Nfe extends \PhpNFe\Tools\Builder\Builder
      * Tributação do ICMS = 20.
      * 20=Com redução de base de cálculo.
      * @var string
+     * @max 2
      */
     public $CST = '';
 
@@ -41,6 +43,7 @@ class ICMS20Nfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Preço Tabelado Máx. (valor);
      * 3=Valor da operação.
      * @var string
+     * @max 1
      */
     public $modBC = '';
 
@@ -89,6 +92,7 @@ class ICMS20Nfe extends \PhpNFe\Tools\Builder\Builder
      * 9=Outros;
      * 12=Órgão de fomento e desenvolvimento agropecuário.
      * @var string
+     * @max 2
      */
     public $motDesICMS = '';
 }

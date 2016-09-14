@@ -1,5 +1,7 @@
 <?php namespace PhpNFe\NFe\Builder\IdeNfe;
 
+use PhpNFe\Tools\Builder\Builder;
+
 /**
  * Informação de Documentos Fiscais
  * referenciados.
@@ -9,7 +11,7 @@
  * Complementação de NF, etc.).
  * Class NFref.
  */
-class NFref
+class NFref extends Builder
 {
     /**
      * Chave de acesso da NF-e referenciada.

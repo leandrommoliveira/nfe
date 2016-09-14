@@ -11,6 +11,7 @@ class COFINSNTNfe extends \PhpNFe\Tools\Builder\Builder
      * 08=Operação Sem Incidência da Contribuição;
      * 09=Operação com Suspensão da Contribuição;.
      * @var string
+     * @max 2
      */
     public $CST = '';
 }

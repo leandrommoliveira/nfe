@@ -7,6 +7,7 @@ class COFINSQtde extends \PhpNFe\Tools\Builder\Builder
      * 03=Operação Tributável (base de cálculo = quantidade vendida
      * x alíquota por unidade de produto);.
      * @var string
+     * @max 2
      */
     public $CST = '';
 

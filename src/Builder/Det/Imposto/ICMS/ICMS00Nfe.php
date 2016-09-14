@@ -23,6 +23,7 @@ class ICMS00Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -30,6 +31,7 @@ class ICMS00Nfe extends \PhpNFe\Tools\Builder\Builder
      * Tributação do ICMS = 00.
      * 00=Tributada integralmente.
      * @var string
+     * @max 2
      */
     public $CST = '';
 
@@ -41,6 +43,7 @@ class ICMS00Nfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Preço Tabelado Máx. (valor);
      * 3=Valor da operação.
      * @var string
+     * @max 1
      */
     public $modBC = '';
 

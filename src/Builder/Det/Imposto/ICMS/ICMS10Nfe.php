@@ -23,6 +23,7 @@ class ICMS10Nfe extends \PhpNFe\Tools\Builder\Builder
      * 8 - Nacional, mercadoria ou bem com Conteúdo de Importação
      * superior a 70%;.
      * @var string
+     * @max 1
      */
     public $orig = '';
 
@@ -31,6 +32,7 @@ class ICMS10Nfe extends \PhpNFe\Tools\Builder\Builder
      * 10=Tributada e com cobrança do ICMS por substituição
      * tributária.
      * @var string
+     * @max 2
      */
     public $CST = '';
 
@@ -42,6 +44,7 @@ class ICMS10Nfe extends \PhpNFe\Tools\Builder\Builder
      * 2=Preço Tabelado Máx. (valor);
      * 3=Valor da operação.
      * @var string
+     * @max 1
      */
     public $modBC = '';
 
@@ -76,6 +79,7 @@ class ICMS10Nfe extends \PhpNFe\Tools\Builder\Builder
      * 4=Margem Valor Agregado (%);
      * 5=Pauta (valor);.
      * @var string
+     * @max 1
      */
     public $modBCST = '';
 
