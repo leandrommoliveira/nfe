@@ -18,5 +18,5 @@ class NFref
      * @var string
      * @max 44
      */
-    protected $refNFe = '';
+    public $refNFe = '';
 }
