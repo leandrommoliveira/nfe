@@ -50,14 +50,14 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var string
      * @max 1
      */
-    public $modBC = '';
+    public $modBC = null;
 
     /**
      * Valor da BC do ICMS.
      * @dec 2
      * @var float
      */
-    public $vBC = 0.00;
+    public $vBC = null;
 
     /**
      * Percentual da Redução de BC.
@@ -71,14 +71,14 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var float
      * @dec 4
      */
-    public $pICMS = 0.00;
+    public $pICMS = null;
 
     /**
      * Valor do ICMS.
      * @var float
      * @dec 2
      */
-    public $vICMS = 0.00;
+    public $vICMS = null;
 
     /**
      * Modalidade de determinação da BC do
@@ -92,7 +92,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var string
      * @max 1
      */
-    public $modBCST = '';
+    public $modBCST = null;
 
     /**
      * Percentual da margem de valor Adicionado
@@ -114,14 +114,14 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * Valor da BC do ICMS ST.
      * @dec 2
      */
-    public $vBCST = 0.00;
+    public $vBCST = null;
 
     /**
      * Alíquota do imposto do ICMS ST.
      * @var float
      * @dec 4
      */
-    public $pICMSST = 0.00;
+    public $pICMSST = null;
 
     /**
      * Valor do ICMS ST.
@@ -129,7 +129,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var float
      * @dec 2
      */
-    public $vICMSST = 0.00;
+    public $vICMSST = null;
 
     /**
      * Valor do ICMS desonerado.
@@ -138,7 +138,7 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var float
      * @dec 2
      */
-    public $vICMSDeson = 0.00;
+    public $vICMSDeson = null;
 
     /**
      * Motivo da desoneração do ICMS.
@@ -150,5 +150,5 @@ class ICMS90Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var string
      * @max 2
      */
-    public $motDesICMS = '';
+    public $motDesICMS = null;
 }
