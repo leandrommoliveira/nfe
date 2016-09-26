@@ -201,10 +201,10 @@ $nfe->transp->vol->pesoB = 1.000;
 $nfe->cobr->fat->nFat = '000003';
 $nfe->cobr->fat->vOrig = 133.20;
 $nfe->cobr->fat->vLiq = 133.20;
-$nfe->cobr->dup[] = $dup = new \PhpNFe\NFe\Builder\Cobr\DupNfe();
-$dup->nDup = '000003A';
-$dup->dVenc = '2016-10-09';
-$dup->vDup = 133.20;
+$nfe->cobr->dup->add($item = new \PhpNFe\NFe\Builder\Cobr\DupNfe());
+$item->nDup = '000003A';
+$item->dVenc = '2016-10-09';
+$item->vDup = 133.20;
 
 // infAdic
 $nfe->infAdic->infCpl = 'xxxx';
@@ -213,7 +213,7 @@ $nfe = $nfe->getXML();
 
 $cert = new \PhpNFe\Tools\Certificado\Certificado();
 
-$cert->carregarPfx(__DIR__ . '/seuCertificado.pfx', 'suaSenha');
+$cert->carregarPfx(__DIR__ . '/SeuCertificado.pfx', 'suaSenha');
 
 
 $xml = $cert->assinarXML($nfe, 'infNFe');
