@@ -1,4 +1,5 @@
 <?php namespace PhpNFe\NFe\Builder\Cobr;
+
 use PhpNFe\Tools\Builder\Colecoes;
 
 /**
