@@ -75,7 +75,7 @@ class Nfe extends Builder
         $this->ide = new IdeNfe();
         $this->emit = new EmitNfe();
         $this->dest = new DestNfe();
-        $this->det = new Colecoes([], '\PhpNFe\NFe\Builder\DetNfe', 'nItem');
+        $this->det = new Colecoes([], 'nItem');
         $this->total = new TotalNfe();
         $this->transp = new TranspNfe();
         $this->cobr = new PropriedadeNull('\PhpNFe\NFe\Builder\Cobr\CobrNfe');
