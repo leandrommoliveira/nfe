@@ -16,9 +16,9 @@ class CobrNfe extends \PhpNFe\Tools\Builder\Builder
 
     /**
      * Grupo Duplicata.
-     * @var array
+     * @var Colecoes
      */
-    public $dup = [];
+    public $dup;
 
     /**
      * CobrNfe constructor.

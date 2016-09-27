@@ -401,7 +401,7 @@ class Sefaz
         if (array_key_exists($cuf, self::$servers) != true) {
             throw new \Exception(sprintf('Código do estado %s não foi encontrado na difinição de servidores' . $cuf));
         }
-
+        
         // Verificar se ambiente foi definido no estado
         if (array_key_exists($ambiente, self::$servers[$cuf]) != true) {
             throw new \Exception(sprintf('Ambiente %s não foi definido nas configurações do estado ' . $ambiente));

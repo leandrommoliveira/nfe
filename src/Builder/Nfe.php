@@ -39,7 +39,7 @@ class Nfe extends Builder
      * Múltiplas ocorrências (máximo = 990).
      * @var Colecoes
      */
-    public $det = [];
+    public $det;
 
     /**
      * Grupo Totais da NF-e.
