@@ -58,7 +58,7 @@ class ConsultaRetorno
 
     /**
      * ConsultaRetorno constructor.
-     * @param $xml
+     * @param XML $retorno
      */
     public function __construct(XML $retorno)
     {

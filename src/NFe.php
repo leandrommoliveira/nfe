@@ -4,6 +4,7 @@ use DOMDocument;
 use PhpNFe\NFe\Tools\AjustaXML;
 use PhpNFe\NFe\Tools\AutorizaRetorno;
 use PhpNFe\NFe\Tools\ConsultaRetorno;
+use PhpNFe\NFe\Tools\InfoChNFe;
 use PhpNFe\NFe\Tools\NFEConsultaBody;
 use PhpNFe\NFe\Tools\NFEConsultaHeader;
 use PhpNFe\NFe\Tools\NFEConsultaMsg;
@@ -140,11 +141,12 @@ class NFe
         return new InutilizacaoRetorno($this->soap($method, $header, $body));
     }
 
-    public function consulta($chNFe, $tpAmb, $cUF)
+    public function consulta($chNFe, $tpAmb)
     {
-        $method = Sefaz::getMethodInfo(Sefaz::getAmbiente($tpAmb), $cUF, Sefaz::mtConsulta);
+        $info = InfoChNFe::getChNFeInfo($chNFe);
+        $method = Sefaz::getMethodInfo(Sefaz::getAmbiente($tpAmb), $info->cUF, Sefaz::mtConsulta);
         $mensagem = NFEConsultaMsg::loadDOM($tpAmb, $chNFe);
-        $header = NFEConsultaHeader::loadDOM($cUF, $method->version);
+        $header = NFEConsultaHeader::loadDOM($info->cUF, $method->version);
         $body = NFEConsultaBody::loadDOM($mensagem);
 
         $this->validar($mensagem, $method->version);
