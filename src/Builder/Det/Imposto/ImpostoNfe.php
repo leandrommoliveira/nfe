@@ -2,8 +2,8 @@
 
 use PhpNFe\NFe\Builder\Det\Imposto\IPI\IPINfe;
 use PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNfe;
-use PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe;
 use PhpNFe\NFe\Builder\Det\Imposto\ICMS\ICMSNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe;
 
 /**
  * Tributos incidentes no Produto ou Serviço.

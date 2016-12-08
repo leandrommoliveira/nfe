@@ -1,8 +1,8 @@
 <?php namespace PhpNFe\NFe\DanfeCC;
 
 use PhpNFe\Tools\XML;
-use Illuminate\Filesystem\Filesystem;
 use PhpNFe\NFe\Tools\NFeXML;
+use Illuminate\Filesystem\Filesystem;
 
 class DanfeCC
 {

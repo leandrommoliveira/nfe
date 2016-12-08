@@ -1,35 +1,35 @@
 <?php namespace PhpNFe\NFe;
 
 use PhpNFe\Tools\Validar;
+use DOMDocument;
 use PhpNFe\Tools\XML;
+use PhpNFe\Tools\Soap;
+use PhpNFe\NFe\Tools\Sefaz;
 use PhpNFe\NFe\Tools\EvBody;
+use PhpNFe\NFe\Tools\NFeXML;
+use PhpNFe\NFe\Tools\NFEBody;
+use PhpNFe\NFe\Tools\AjustaXML;
 use PhpNFe\NFe\Tools\EvCCDados;
+use PhpNFe\NFe\Tools\InfoChNFe;
+use PhpNFe\NFe\Tools\NFEHeader;
 use PhpNFe\NFe\Tools\InutHeader;
 use PhpNFe\NFe\Tools\InutilizacaoRetorno;
 use PhpNFe\NFe\Tools\MethodSefaz;
-use PhpNFe\NFe\Tools\NFEBody;
-use PhpNFe\NFe\Tools\NFEHeader;
 use PhpNFe\NFe\Tools\NFeInutBody;
 use PhpNFe\NFe\Tools\NFeInutDados;
-use PhpNFe\NFe\Tools\NFeXML;
-use PhpNFe\NFe\Tools\Sefaz;
-use PhpNFe\Tools\Soap;
 use PhpNFe\NFe\Tools\EventoRetorno;
 use PhpNFe\NFe\Tools\EvCancelaDados;
 use PhpNFe\NFe\Tools\NFEConsultaMsg;
 use Illuminate\Filesystem\Filesystem;
-use DOMDocument;
-use PhpNFe\NFe\Tools\AjustaXML;
 use PhpNFe\NFe\Tools\AutorizaRetorno;
 use PhpNFe\NFe\Tools\ConsultaRetorno;
-use PhpNFe\NFe\Tools\InfoChNFe;
 use PhpNFe\NFe\Tools\NFEConsultaBody;
 use PhpNFe\NFe\Tools\NFEConsultaHeader;
 use PhpNFe\Tools\Certificado\Certificado;
 
 class NFe
 {
-    const version = 'NetForce NF-e 1.2';
+    const version = 'NetForce NFe 1.2';
 
     /**
      * Classe de controle do certificado.
