@@ -45,6 +45,17 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
     public $NCM = '';
 
     /**
+     * Código CEST.
+     * Código Especificador da Substituição Tributária – CEST, que estabelece a
+     * sistemática de uniformização e identificação das mercadorias e bens passíveis de
+     * sujeição aos regimes de substituição tributária e de antecipação de recolhimento
+     * do ICMS.
+     * @var string|null
+     * @max 7
+     */
+    public $CEST = null;
+
+    /**
      * Codificação NVE - Nomenclatura de Valor
      * Aduaneiro e Estatística.
      * Codificação opcional que detalha alguns NCM.
@@ -101,17 +112,6 @@ class ProdNfe extends \PhpNFe\Tools\Builder\Builder
      * @dec 10
      */
     public $vUnCom = 0.00;
-
-    /**
-     * Código CEST.
-     * Código Especificador da Substituição Tributária – CEST, que estabelece a
-     * sistemática de uniformização e identificação das mercadorias e bens passíveis de
-     * sujeição aos regimes de substituição tributária e de antecipação de recolhimento
-     * do ICMS.
-     * @var string|null
-     * @max 7
-     */
-    public $CEST = null;
 
     /**
      * Valor Total Bruto dos Produtos ou Serviços.
