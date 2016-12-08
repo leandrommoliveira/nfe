@@ -215,7 +215,6 @@ $cert = new \PhpNFe\Tools\Certificado\Certificado();
 
 $cert->carregarPfx(__DIR__ . '/SeuCertificado.pfx', 'suaSenha');
 
-
 $xml = $cert->assinarXML($nfe, 'infNFe');
 
 $autorizar = new \PhpNFe\NFe\NFe($cert);

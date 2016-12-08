@@ -1,9 +1,9 @@
 <?php namespace PhpNFe\NFe\Builder\Det\Imposto;
 
-use PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe;
-use PhpNFe\NFe\Builder\Det\Imposto\ICMS\ICMSNfe;
 use PhpNFe\NFe\Builder\Det\Imposto\IPI\IPINfe;
 use PhpNFe\NFe\Builder\Det\Imposto\PIS\PISNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\COFINS\COFINSNfe;
+use PhpNFe\NFe\Builder\Det\Imposto\ICMS\ICMSNfe;
 
 /**
  * Tributos incidentes no Produto ou Serviço.

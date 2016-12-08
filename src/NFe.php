@@ -1,18 +1,9 @@
 <?php namespace PhpNFe\NFe;
 
-use DOMDocument;
-use PhpNFe\NFe\Tools\AjustaXML;
-use PhpNFe\NFe\Tools\AutorizaRetorno;
-use PhpNFe\NFe\Tools\ConsultaRetorno;
-use PhpNFe\NFe\Tools\InfoChNFe;
-use PhpNFe\NFe\Tools\NFEConsultaBody;
-use PhpNFe\NFe\Tools\NFEConsultaHeader;
-use PhpNFe\NFe\Tools\NFEConsultaMsg;
-use PhpNFe\Tools\Certificado\Certificado;
+use PhpNFe\Tools\Validar;
+use PhpNFe\Tools\XML;
 use PhpNFe\NFe\Tools\EvBody;
-use PhpNFe\NFe\Tools\EvCancelaDados;
 use PhpNFe\NFe\Tools\EvCCDados;
-use PhpNFe\NFe\Tools\EventoRetorno;
 use PhpNFe\NFe\Tools\InutHeader;
 use PhpNFe\NFe\Tools\InutilizacaoRetorno;
 use PhpNFe\NFe\Tools\MethodSefaz;
@@ -23,9 +14,18 @@ use PhpNFe\NFe\Tools\NFeInutDados;
 use PhpNFe\NFe\Tools\NFeXML;
 use PhpNFe\NFe\Tools\Sefaz;
 use PhpNFe\Tools\Soap;
+use PhpNFe\NFe\Tools\EventoRetorno;
+use PhpNFe\NFe\Tools\EvCancelaDados;
+use PhpNFe\NFe\Tools\NFEConsultaMsg;
 use Illuminate\Filesystem\Filesystem;
-use PhpNFe\Tools\Validar;
-use PhpNFe\Tools\XML;
+use DOMDocument;
+use PhpNFe\NFe\Tools\AjustaXML;
+use PhpNFe\NFe\Tools\AutorizaRetorno;
+use PhpNFe\NFe\Tools\ConsultaRetorno;
+use PhpNFe\NFe\Tools\InfoChNFe;
+use PhpNFe\NFe\Tools\NFEConsultaBody;
+use PhpNFe\NFe\Tools\NFEConsultaHeader;
+use PhpNFe\Tools\Certificado\Certificado;
 
 class NFe
 {

@@ -1,15 +1,15 @@
 <?php namespace PhpNFe\NFe\Builder;
 
-use PhpNFe\NFe\Builder\IdeNfe\IdeNfe;
 use PhpNFe\NFe\Tools\InfoChNFe;
 use PhpNFe\Tools\Builder\Builder;
 use PhpNFe\Tools\Builder\Colecoes;
-use PhpNFe\Tools\Builder\PropriedadeNull;
 use PhpNFe\NFe\Builder\Cobr\CobrNfe;
 use PhpNFe\NFe\Builder\Dest\DestNfe;
 use PhpNFe\NFe\Builder\Emit\EmitNfe;
+use PhpNFe\NFe\Builder\IdeNfe\IdeNfe;
 use PhpNFe\NFe\Builder\Total\TotalNfe;
 use PhpNFe\NFe\Builder\Transp\TranspNfe;
+use PhpNFe\Tools\Builder\PropriedadeNull;
 
 class Nfe extends Builder
 {
