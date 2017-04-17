@@ -49,7 +49,7 @@ class ICMS40Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var float
      * @dec 2
      */
-    public $vICMSDeson = 0.00;
+    public $vICMSDeson = null;
 
     /**
      * Motivo da desoneração do ICMS.
@@ -72,5 +72,5 @@ class ICMS40Nfe extends \PhpNFe\Tools\Builder\Builder
      * @var string
      * @max 2
      */
-    public $motDesICMS = '';
+    public $motDesICMS = null;
 }
