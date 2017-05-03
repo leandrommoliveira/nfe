@@ -1,18 +1,14 @@
 {
-    "name"             : "phpnfe/nfe",
-    "description"      : "NFe para PHP por NetForce",
+    "name"             : "leandro/nfe",
+    "description"      : "NFe para PHP por Leandro",
     "keywords"         : [
-        "nfe", "php", "netforce"
+        "nfe", "php"
     ],
     "license"          : "MIT",
     "authors"          : [
         {
-            "name" : "Bruno Gonçalves",
-            "email": "bugotech@gmail.com"
-        },
-        {
-            "name" : "Johann Lucas Scherer",
-            "email": "johann.lucas@hotmail.com"
+            "name" : "Leandro Motta",
+            "email": "leandrommoliveira@gmail.com"
         }
     ],
     "require"          : {
