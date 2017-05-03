@@ -1,34 +1,34 @@
 <?php namespace PhpNFe\NFe;
 
 use DOMDocument;
-use Illuminate\Filesystem\Filesystem;
-use PhpNFe\NFe\Tools\AjustaXML;
-use PhpNFe\NFe\Tools\AutorizaRetorno;
-use PhpNFe\NFe\Tools\ConsultaRetorno;
-use PhpNFe\NFe\Tools\EvBody;
-use PhpNFe\NFe\Tools\EvCancelaDados;
-use PhpNFe\NFe\Tools\EvCCDados;
-use PhpNFe\NFe\Tools\EventoRetorno;
-use PhpNFe\NFe\Tools\InfoChNFe;
-use PhpNFe\NFe\Tools\InutHeader;
-use PhpNFe\NFe\Tools\InutilizacaoRetorno;
-use PhpNFe\NFe\Tools\MethodSefaz;
-use PhpNFe\NFe\Tools\NFEBody;
-use PhpNFe\NFe\Tools\NFEConsultaBody;
-use PhpNFe\NFe\Tools\NFEConsultaHeader;
-use PhpNFe\NFe\Tools\NFEConsultaMsg;
-use PhpNFe\NFe\Tools\NFEHeader;
-use PhpNFe\NFe\Tools\NFeInutBody;
-use PhpNFe\NFe\Tools\NFeInutDados;
-use PhpNFe\NFe\Tools\NFERetAutBody;
-use PhpNFe\NFe\Tools\NFERetHeader;
-use PhpNFe\NFe\Tools\NFeXML;
-use PhpNFe\NFe\Tools\RetAutorizaRetorno;
-use PhpNFe\NFe\Tools\Sefaz;
-use PhpNFe\Tools\Certificado\Certificado;
+use PhpNFe\Tools\XML;
 use PhpNFe\Tools\Soap;
 use PhpNFe\Tools\Validar;
-use PhpNFe\Tools\XML;
+use PhpNFe\NFe\Tools\Sefaz;
+use PhpNFe\NFe\Tools\EvBody;
+use PhpNFe\NFe\Tools\NFeXML;
+use PhpNFe\NFe\Tools\NFEBody;
+use PhpNFe\NFe\Tools\AjustaXML;
+use PhpNFe\NFe\Tools\EvCCDados;
+use PhpNFe\NFe\Tools\InfoChNFe;
+use PhpNFe\NFe\Tools\NFEHeader;
+use PhpNFe\NFe\Tools\InutHeader;
+use PhpNFe\NFe\Tools\MethodSefaz;
+use PhpNFe\NFe\Tools\NFeInutBody;
+use PhpNFe\NFe\Tools\NFeInutDados;
+use PhpNFe\NFe\Tools\NFERetHeader;
+use PhpNFe\NFe\Tools\EventoRetorno;
+use PhpNFe\NFe\Tools\NFERetAutBody;
+use PhpNFe\NFe\Tools\EvCancelaDados;
+use PhpNFe\NFe\Tools\NFEConsultaMsg;
+use Illuminate\Filesystem\Filesystem;
+use PhpNFe\NFe\Tools\AutorizaRetorno;
+use PhpNFe\NFe\Tools\ConsultaRetorno;
+use PhpNFe\NFe\Tools\NFEConsultaBody;
+use PhpNFe\NFe\Tools\NFEConsultaHeader;
+use PhpNFe\NFe\Tools\RetAutorizaRetorno;
+use PhpNFe\NFe\Tools\InutilizacaoRetorno;
+use PhpNFe\Tools\Certificado\Certificado;
 
 class NFe
 {
@@ -110,6 +110,7 @@ class NFe
 
         $header = NFERetHeader::loadDOM($xml, $method->operation, $method->version, 'consReciNFe', $codEstado);
         $body = NFERetAutBody::loadDOM($xml);
+
         return new RetAutorizaRetorno($this->soap($method, $header, $body), $xml);
 
     }

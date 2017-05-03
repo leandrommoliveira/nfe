@@ -15,10 +15,9 @@ $b = $cert->ehValido();
 
 try {
     $v = $nfe->validar($xml, '3.10');
-} catch(\Exception $e) {
+} catch (\Exception $e) {
     echo $e->getMessage();
 }
-
 
 $ret = $nfe->retAutorizar($xml, '35');
 

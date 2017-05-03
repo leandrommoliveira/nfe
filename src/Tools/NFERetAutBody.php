@@ -47,6 +47,7 @@ class NFERetAutBody
         $xml = file_get_contents(__DIR__ . '/../Templates/nfeRetAutorizacao.xml');
         $xml = str_replace('{{xml}}', $this->xml, $xml);
         $xml = AjustaXML::limpaXml($xml);
+
         return $xml;
     }
 }

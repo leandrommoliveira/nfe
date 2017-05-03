@@ -163,7 +163,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://nfe.fazenda.sp.gov.br/ws/nferetautorizacao.asmx'
+                    'url' => 'https://nfe.fazenda.sp.gov.br/ws/nferetautorizacao.asmx',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
@@ -204,7 +204,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://homologacao.nfe.fazenda.pr.gov.br/nfe/NFeRetAutorizacao3'
+                    'url' => 'https://homologacao.nfe.fazenda.pr.gov.br/nfe/NFeRetAutorizacao3',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
@@ -242,7 +242,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://nfe.fazenda.pr.gov.br/nfe/NFeRetAutorizacao3'
+                    'url' => 'https://nfe.fazenda.pr.gov.br/nfe/NFeRetAutorizacao3',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
@@ -283,7 +283,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx'
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
@@ -321,7 +321,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://nfe.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx'
+                    'url' => 'https://nfe.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
@@ -362,7 +362,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx'
+                    'url' => 'https://nfe-homologacao.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
@@ -400,7 +400,7 @@ class Sefaz
                     'method' => 'nfeRetAutorizacaoLote',
                     'op' => 'NfeRetAutorizacao',
                     'versao' => '3.10',
-                    'url' => 'https://nfe.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx'
+                    'url' => 'https://nfe.svrs.rs.gov.br/ws/NfeRetAutorizacao/NFeRetAutorizacao.asmx',
                 ],
                 self::mtCancela => [
                     'method' => 'nfeRecepcaoEvento',
