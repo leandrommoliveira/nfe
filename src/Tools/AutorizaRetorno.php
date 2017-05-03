@@ -80,6 +80,16 @@ class AutorizaRetorno extends Retorno
     }
 
     /**
+     * Retorna o numero do recibo para metodos assincronos.
+     *
+     * @return string
+     */
+    public function getNRec()
+    {
+        return $this->infProt->getElementsByTagName('nRec')->item(0)->textContent;
+    }
+
+    /**
      * Retorna o XML protocolado da NFe.
      *
      * @return string
