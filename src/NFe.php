@@ -112,7 +112,6 @@ class NFe
         $body = NFERetAutBody::loadDOM($xml);
 
         return new RetAutorizaRetorno($this->soap($method, $header, $body), $xml);
-
     }
 
     /**
